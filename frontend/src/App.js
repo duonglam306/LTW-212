@@ -1,13 +1,15 @@
-import logo from './image/logo.png';
-import './App.css';
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Chào mọi người đã đến với cửa hàng Hola Housè</h1>
-      <img src={logo} alt="main-logo" />
-    </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <Switch>
+                    {/* <Route exact path="/" component={HomePage} /> */}
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
