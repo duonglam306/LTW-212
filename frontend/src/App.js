@@ -1,14 +1,19 @@
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Account from "./components/account/Account.js"
+import Main from "./Page/Header.js"
 
 function App() {
     return (
-        <Router>
+        <BrowserRouter>
             <div className="App">
-                <Switch>
+                <Routes>
                     {/* <Route exact path="/" component={HomePage} /> */}
-                </Switch>
+                    <Route path="/account" component={<Account/>}></Route>
+                    <Route path="/haha" component={<Account/>}></Route>
+                    <Route exact path="/" component={<Main/>}></Route>
+                </Routes>
             </div>
-        </Router>
+        </BrowserRouter>
     );
 }
 
