@@ -31,7 +31,7 @@ function AccountNavigation() {
                             ? `${classes.linkBtnActive} ${classes.linkBtn}`
                             : classes.linkBtn
                     }
-                    to="/account"
+                    to="./"
                 >
                     {" "}
                     {/* <AccountCircleOutlinedIcon className={classes.icon} /> */}
@@ -55,7 +55,7 @@ function AccountNavigation() {
                             ? `${classes.linkBtnActive} ${classes.linkBtn}`
                             : classes.linkBtn
                     }
-                    to="/account/orders/"
+                    to="./orders/"
                 >
                     {" "}
                     {/* <ReceiptLongOutlinedIcon className={classes.icon} /> */}
@@ -67,7 +67,7 @@ function AccountNavigation() {
                             ? `${classes.linkBtnActive} ${classes.linkBtn}`
                             : classes.linkBtn
                     }
-                    to="/account/address/"
+                    to="./address/"
                 >
                     {" "}
                     {/* <LocationOnOutlinedIcon className={classes.icon} /> */}
@@ -79,7 +79,7 @@ function AccountNavigation() {
                             ? `${classes.linkBtnActive} ${classes.linkBtn}`
                             : classes.linkBtn
                     }
-                    to="/account/wallet/"
+                    to="./wallet/"
                 >
                     {/* {" "}
                     <AccountBalanceWalletOutlinedIcon

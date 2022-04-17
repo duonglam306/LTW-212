@@ -301,3 +301,8 @@ h1 {
 .submitNoti span {
     display: block;
 }
+
+.gender-label{
+    display: inline-block;
+    margin-right: 20px;
+}
