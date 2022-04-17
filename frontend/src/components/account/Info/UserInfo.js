@@ -27,8 +27,8 @@ function UserInfo(props) {
     const [file, setFile] = useState();
     const initState = {
         name: "test name",
-        phone: "test phone",
-        bdate: "01/01/2020",
+        phone: "0123456789",
+        bdate: "2020-01-01",
         gender: "male",
         email: "dangdangdang@gmail.com",
         img: "",
@@ -120,34 +120,42 @@ function UserInfo(props) {
                     <div className={`form-group ${account.field}`}>
                         <label for="exampleInputEmail1">Name</label>
                         <input
+                            name="name"
                             type="text"
-                            className={`form-control ${account.input}`}
                             id="name"
+                            value={Info.name}
+                            className={`form-control ${account.input}`}
                         />
                     </div>
                     <div className={`form-group ${account.field}`}>
                         <label for="exampleInputPassword1">Phone</label>
                         <input
-                            type="number"
                             className={`form-control ${account.input}`}
+                            name="phone"
+                            type="text"
                             id="phone"
+                            value={Info.phone}
                         />
                     </div>
                     <div className={`form-group ${account.field}`}>
                         <label for="exampleInputEmail1">Email address</label>
                         <input
-                            type="email"
                             className={`form-control ${account.input}`}
+                            name="email"
+                            type="email"
                             id="email"
+                            defaultValue={Info.email}
                         />
                     </div>
 
                     <div className={`form-group ${account.field}`}>
                         <label for="exampleInputEmail1">Birthday</label>
                         <input
-                            type="date"
                             className={`form-control ${account.input}`}
+                            name="bdate"
+                            type="date"
                             id="bdate"
+                            value={Info.bdate}
                         />
                     </div>
 
@@ -156,7 +164,7 @@ function UserInfo(props) {
                         <div
                             className={`${account.gender} d-inline-flex align-items-center`}
                         >
-                            <div class="form-check">
+                            <div className="form-check">
                                 <label
                                     className={`form-check-label ${account["gender-label"]}`}
                                 >
@@ -170,7 +178,7 @@ function UserInfo(props) {
                                     Male
                                 </label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                                 <label
                                     className={`form-check-label ${account["gender-label"]}`}
                                 >
@@ -183,7 +191,7 @@ function UserInfo(props) {
                                     Female
                                 </label>
                             </div>
-                            <div class="form-check disabled">
+                            <div className="form-check">
                                 <label
                                     className={`form-check-label ${account["gender-label"]}`}
                                 >
@@ -220,123 +228,6 @@ function UserInfo(props) {
                     {/* <button type="submit" class="btn btn-primary">
                         Submit
                     </button> */}
-                </form>
-                <form
-                    className={account.infoInsideContent}
-                    // onSubmit={submitHandler}
-                >
-                    <div className={account.field}>
-                        <label htmlFor="name">Họ tên</label>
-                        <textarea
-                            className={account.input}
-                            name="name"
-                            type="text"
-                            id="name"
-                            value={Info.name}
-                            onChange={onHandleChange}
-                            // ref={nameInputRef}
-                        />
-                    </div>
-                    <div className={account.field}>
-                        <label htmlFor="phone">Số điện thoại</label>
-                        <textarea
-                            className={account.input}
-                            name="phone"
-                            type="number"
-                            id="phone"
-                            value={Info.phone}
-                            onChange={onHandleChange}
-                        />
-                    </div>
-                    <div className={account.field}>
-                        <label htmlFor="email">Email</label>
-                        <textarea
-                            className={account.input}
-                            name="email"
-                            type="email"
-                            id="email"
-                            defaultValue={Info.email}
-                            disabled
-                        />
-                    </div>
-                    <div className={account.field}>
-                        <label htmlFor="bdate">Ngày sinh</label>
-                        <textarea
-                            className={account.input}
-                            name="bdate"
-                            type="date"
-                            id="bdate"
-                            value={Info.bdate}
-                            onChange={onHandleChange}
-                        />
-                    </div>
-                    <div className={account.field}>
-                        <label htmlFor="gender">Giới tính</label>
-                        <div className={account.gender}>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input
-                                        type="radio"
-                                        class="form-check-input"
-                                        name="optradio"
-                                    />
-                                    Option 1
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input
-                                        type="radio"
-                                        class="form-check-input"
-                                        name="optradio"
-                                    />
-                                    Option 2
-                                </label>
-                            </div>
-                            <div class="form-check disabled">
-                                <label class="form-check-label">
-                                    <input
-                                        type="radio"
-                                        class="form-check-input"
-                                        name="optradio"
-                                        disabled
-                                    />
-                                    Option 3
-                                </label>
-                            </div>
-                            {/* <FormControl
-                                className={account.selectGender}
-                                component="fieldset"
-                            >
-                                <RadioGroup
-                                    row
-                                    aria-label="gender"
-                                    name="gender"
-                                    value={Info.gender}
-                                    onChange={onHandleChange}
-                                >
-                                    <FormControlLabel
-                                        className={account.genderSelection}
-                                        value="male"
-                                        control={<Radio />}
-                                        label="Nam"
-                                    />
-                                    <FormControlLabel
-                                        className={account.genderSelection}
-                                        value="female"
-                                        control={<Radio />}
-                                        label="Nữ"
-                                    />
-                                    <FormControlLabel
-                                        className={account.genderSelection}
-                                        value="other"
-                                        control={<Radio />}
-                                        label="Khác"
-                                    />
-                                </RadioGroup>
-                            </FormControl> */}
-                        </div>
-                    </div>
                     {submitNoti && (
                         <div
                             className={`${account.field} ${account.submitNoti}`}
@@ -344,7 +235,7 @@ function UserInfo(props) {
                             <span>{submitNoti}</span>
                         </div>
                     )}
-                    <div className={account.field}>
+                    {/* <div className={account.field}>
                         <label htmlFor="bdate">Chọn ảnh đại diện</label>
                         <input
                             className={account.input}
@@ -356,7 +247,7 @@ function UserInfo(props) {
                                 setFile(event.target.files[0]);
                             }}
                         ></input>
-                    </div>
+                    </div> */}
 
                     <button
                         type="button"
@@ -368,18 +259,18 @@ function UserInfo(props) {
                         Cập nhật thông tin
                     </button>
                     {/* {isAdmin && (
-                        <button
-                            type="button"
-                            variant="contained"
-                            size="large"
-                            className={`${account.changeInfo} ${account.update}`}
-                            onClick={() => {
-                                navigate("/admin");
-                            }}
-                        >
-                            Đi tới trang quản lý
-                        </button>
-                    )} */}
+                    <button
+                        type="button"
+                        variant="contained"
+                        size="large"
+                        className={`${account.changeInfo} ${account.update}`}
+                        onClick={() => {
+                            navigate("/admin");
+                        }}
+                    >
+                        Đi tới trang quản lý
+                    </button>
+                )} */}
                     <button
                         type="button"
                         variant="contained"

@@ -133,14 +133,14 @@ function AddAddress(props) {
                     <button type="button" 
                         variant="contained"
                         onClick={onSubmit}
-                        className={`${address.confirmAdd} ${address.update}`}
+                        className={`btn btn-primary ${address.confirmAdd} ${address.update}`}
                     >
                         Thêm địa chỉ
                     </button>
                     <button type="button" 
                         variant="contained"
                         onClick={props.onCancel}
-                        className={`${address.cancelAdd} ${address.update}`}
+                        className={`btn btn-danger ${address.cancelAdd} ${address.update}`}
                     >
                         Hủy
                     </button>

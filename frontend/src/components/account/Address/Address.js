@@ -24,7 +24,7 @@ function Address() {
                             onClick={() => {
                                 setaddPopup(true);
                             }}
-                            className={address.addButton}
+                            className={`btn btn-primary ${address.addButton}`}
                         >
                             {/* <AddIcon /> */}
                             <span>Thêm địa chỉ mới</span>
