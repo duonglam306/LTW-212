@@ -10,8 +10,8 @@ import "./bootstrap-5.1.3-dist/css/bootstrap.css";
 import Nav from "./AccountNavigation/AccountNavigation.js";
 function Account() {
     return (
-        <div className={classes.Info}>
-            <div className={`container row w-100 ${classes.test}`}>
+        <div className={`mx-auto ${classes.Info}`}>
+            <div className={`mx-auto container row w-100 ${classes.test}`}>
                 <div className={"col-3"}>
                     <Nav />
                 </div>

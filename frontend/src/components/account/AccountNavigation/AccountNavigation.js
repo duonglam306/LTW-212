@@ -37,7 +37,7 @@ function AccountNavigation() {
                     {/* <AccountCircleOutlinedIcon className={classes.icon} /> */}
                     <span>Thông tin cá nhân</span>{" "}
                 </NavLink>
-                {/* <NavLink
+                <NavLink
                     className={(navData) =>
                         navData.isActive
                             ? `${classes.linkBtnActive} ${classes.linkBtn}`
@@ -46,9 +46,9 @@ function AccountNavigation() {
                     to="/account/noti/"
                 >
                     {" "}
-                    <NotificationsNoneOutlinedIcon className={classes.icon} />
+                    {/* <NotificationsNoneOutlinedIcon className={classes.icon} /> */}
                     <span>Thông báo</span>{" "}
-                </NavLink> */}
+                </NavLink>
                 <NavLink
                     className={(navData) =>
                         navData.isActive

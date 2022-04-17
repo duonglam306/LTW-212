@@ -26,12 +26,54 @@ function Order() {
         return res;
     };
 
+    const orders = [
+        {
+            id: "firstOrder",
+            data: {
+                books: [
+                    {
+                        bookName: "The Overstory (Pulitzer Prize Winner)",
+                        id: "the-overstory",
+                        img: "https://demo3leotheme.b-cdn.net/prestashop/leo_bookery_demo/167-home_default/mug-the-best-is-yet-to-come.jpg",
+                        price: 350000,
+                        quantity: 1,
+                    },
+                    {
+                        bookName: "The Sanatorium",
+                        id: "the-sanatorium",
+                        img: "https://demo3leotheme.b-cdn.net/prestashop/leo_bookery_demo/163-home_default/the-adventure-begins-framed-poster.jpg",
+                        price: 256000,
+                        quantity: 1,
+                    },
+                    {
+                        bookName: "The Song of Achilles",
+                        id: "the-song-of-achilles",
+                        img: "https://demo3leotheme.b-cdn.net/prestashop/leo_bookery_demo/161-home_default/the-best-is-yet-to-come-framed-poster.jpg",
+                        price: 50000,
+                        quantity: 1,
+                    },
+                ],
+                createAt: "10.35AM November 12 2020",
+                deliveryAt: "11.35AM November 13 2020",
+                location_1: "TP. HCM",
+                location_2: "Thủ Đức",
+                location_3: "Linh Trung",
+                location_detail: "KTX khu A",
+                method: "ViBK",
+                name: "Hải Đăng",
+                phone: "0987654321",
+                status: "complete",
+                totalPay: 2521000,
+            },
+        },
+    ];
+
     return (
         <div className={order.UserOrder}>
             <h1>Đơn hàng của tôi</h1>
             <div className={`${style.MainContent} ${order.order}`}>
                 <div className={style.orderInsideContent}>
-                    {/* {orders.length !== 0 && (
+                    {orders.length !== 0 && (
                         <div className={order.orderList}>
                             <div className={`${order.orderCard} ${order.bar}`}>
                                 <div className={order.orderId}>
@@ -57,9 +99,10 @@ function Order() {
                                     <OrderCard
                                         key={order.id}
                                         id={order.id}
-                                        date={order.data.createAt
-                                            .toDate()
-                                            .toLocaleDateString("pt-PT")}
+                                        // date={order.data.createAt
+                                        //     .toDate()
+                                        //     .toLocaleDateString("pt-PT")}
+                                        date={order.data.createAt}
                                         description={getDescription(order)}
                                         cost={getCost(order)}
                                         status={order.data.status}
@@ -67,12 +110,12 @@ function Order() {
                                 );
                             })}
                         </div>
-                    )} */}
-                    {/* {orders.length === 0 && (
+                    )}
+                    {orders.length === 0 && (
                         <div className={order.empty}>
                             Bạn chưa có đơn hàng nào
                         </div>
-                    )} */}
+                    )}
                 </div>
             </div>
         </div>

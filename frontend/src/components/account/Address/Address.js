@@ -5,6 +5,33 @@ import address from "./Address.module.css";
 import { useState } from "react";
 import AddAddress from "./AddAddress";
 // import { useUserInfo } from "../../../assets/firebase-data/getUserAPI";
+
+const addressInfo = [
+    {
+        id: "address1",
+        data: {
+            name: "Dang",
+            phone: "0987654321",
+            location_1: "Ho Chi Minh",
+            location_2: "Thu Duc",
+            location_3: "Linh Trung",
+            location_detail: "VNU Dormitory Zone A",
+            defaultAddr: true,
+        },
+    },
+    {
+        id: "address1",
+        data: {
+            name: "Dang",
+            phone: "0123456789",
+            location_1: "Ho Chi Minh",
+            location_2: "Thu Duc",
+            location_3: "Linh Trung",
+            location_detail: "VNU Dormitory Zone A",
+            defaultAddr: false,
+        },
+    },
+];
 function Address() {
     // const {getAddress} = useUserContext;
     const [addPopup, setaddPopup] = useState(false);
@@ -19,7 +46,8 @@ function Address() {
             <div className={address.MainContent}>
                 <div className={address.addressInsideContent}>
                     <div className={address.buttonBar}>
-                        <button type="button" 
+                        <button
+                            type="button"
                             variant="contained"
                             onClick={() => {
                                 setaddPopup(true);
@@ -37,9 +65,9 @@ function Address() {
                         />
                     )}
                     <div className={address.addressList}>
-                        {/* {addressInfo.map((doc) => {
+                        {addressInfo.map((doc) => {
                             return <AddressCard key={doc.id} data={doc} />;
-                        })} */}
+                        })}
                     </div>
                 </div>
             </div>

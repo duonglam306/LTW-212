@@ -42,7 +42,7 @@ function AddressCard(props) {
                         type="button"
                         // onClick={setDefault}
                         variant="text"
-                        className={address.chooseDefault}
+                        className={`${address.chooseDefault} btn btn-outlined-primary`}
                     >
                         Đặt làm mặc định
                     </button>
@@ -50,7 +50,7 @@ function AddressCard(props) {
                         type="button"
                         // onClick={delAddr}
                         variant="text"
-                        className={address.delAddr}
+                        className={`${address.delAddr} btn btn-outlined-danger`}
                     >
                         Xóa
                     </button>
