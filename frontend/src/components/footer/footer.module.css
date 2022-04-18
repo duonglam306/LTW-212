@@ -1,0 +1,56 @@
+.main {
+    background-color: #252531bf;
+    color: white;
+}
+.logo img{
+    width: 100%;
+    height: auto;
+}
+.iconSocial {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+.iconSocial:last-child{
+    margin-right: 0rem;
+}
+.iconFb {
+    background-color: #1877F2;
+}
+.iconIs {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.iconTg {
+    background-color: #24B5EA;
+}
+.iconSocial i {
+    font-size: 1rem;
+}
+.divider {
+    height: 1px;
+}
+.logoPartner{
+    width: 50%;
+    height: auto;
+}
+.logoPayment{
+    width: 100%;
+    height: auto;
+}
+.methods{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+h6 {
+    font-weight: normal;
+}

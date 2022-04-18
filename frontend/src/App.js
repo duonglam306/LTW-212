@@ -1,17 +1,17 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Account from "./components/account/Account.js"
-import Main from "./Page/Header.js"
-
+import HomePage from "./components/homePage/homePage"
+import Header from "./components/header/header"
+import Footer from "./components/footer/footer";
 function App() {
     return (
         <BrowserRouter>
             <div className="App">
+                <Header />
                 <Routes>
                     {/* <Route exact path="/" component={HomePage} /> */}
-                    <Route path="/account/*" element={<Account/>}></Route>
-                    <Route path="/haha" element={<Account/>}></Route>
-                    <Route exact path="/" element={<Main/>}></Route>
+                    <Route exact path="/" element={<HomePage />}></Route>
                 </Routes>
+                <Footer />
             </div>
         </BrowserRouter>
     );
