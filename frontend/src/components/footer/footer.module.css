@@ -1,10 +1,13 @@
 .main {
-    background-color: #252531bf;
+    background-color: #303036;
     color: white;
 }
 .logo img{
     width: 100%;
     height: auto;
+}
+.logo {
+    background-color: #4B4E51;
 }
 .iconSocial {
     width: 48px;
