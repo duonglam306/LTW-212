@@ -3,7 +3,7 @@
 // import Button from "@mui/material/Button";
 // import Radio from "@mui/material/Radio";
 // import RadioGroup from "@mui/material/RadioGroup";
-// import FormControlLabel from "@mui/material/FormControlLabel";
+// import FormControllabel htmlFrom "@mui/material/FormControlLabel";
 // import FormControl from "@mui/material/FormControl";
 // import textarea from "@mui/material/textarea";
 import { React } from "react";
@@ -23,13 +23,13 @@ function UserInfo(props) {
     // const { isAdmin } = useUserContext();
     // const { userInfo, updateUserInfo } = useUserInfo();
     const [submitNoti, setSubmitNoti] = useState("");
-    const [img, setImg] = useState("");
-    const [file, setFile] = useState();
+    // const [img, setImg] = useState("");
+    // const [file, setFile] = useState();
     const initState = {
         name: "test name",
         phone: "0123456789",
         bdate: "2020-01-01",
-        gender: "male",
+        gender: "undefined",
         email: "dangdangdang@gmail.com",
         img: "",
 
@@ -41,6 +41,10 @@ function UserInfo(props) {
         // img: userInfo.img,
     };
     const [Info, setInfo] = useState(initState);
+
+    const [gender, setGender] = useState(Info.gender);
+
+    // setGender(Info.gender);
 
     // const [loading, setLoading] = useState(true);
     console.log("render userInfo: ", Info);
@@ -55,9 +59,13 @@ function UserInfo(props) {
                 ...prevInfo,
             };
             newInfo[name] = value;
+            if (name === "gender") {
+                setGender(value);
+            }
             return newInfo;
         });
     }
+    // function radioChecked() {}
 
     // const submitHandler = async (event) => {
     //     event.preventDefault();
@@ -111,56 +119,63 @@ function UserInfo(props) {
     //         toast.warning("Tên và số điện thoại không được để trống");
     //     }
     // };
+    // const radiobtn = document.getElementById(Info.gender);
+    // radiobtn.checked = true;
+
     return (
         <div className={account.UserInfo}>
             <h1>Thông tin tài khoản</h1>
             <div className={`${account.MainContent} ${account.info}`}>
                 {/* <img src={userInfo.img} alt="Ảnh người dùng" /> */}
-                <form>
+                <form name="InfoForm">
                     <div className={`form-group ${account.field}`}>
-                        <label for="exampleInputEmail1">Name</label>
+                        <label htmlFor="exampleInputEmail1">Name</label>
                         <input
                             name="name"
                             type="text"
                             id="name"
                             value={Info.name}
+                            onChange={onHandleChange}
                             className={`form-control ${account.input}`}
                         />
                     </div>
                     <div className={`form-group ${account.field}`}>
-                        <label for="exampleInputPassword1">Phone</label>
+                        <label htmlFor="exampleInputPassword1">Phone</label>
                         <input
                             className={`form-control ${account.input}`}
                             name="phone"
                             type="text"
                             id="phone"
+                            onChange={onHandleChange}
                             value={Info.phone}
                         />
                     </div>
                     <div className={`form-group ${account.field}`}>
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label htmlFor="exampleInputEmail1">Email address</label>
                         <input
                             className={`form-control ${account.input}`}
                             name="email"
                             type="email"
                             id="email"
+                            onChange={onHandleChange}
                             defaultValue={Info.email}
                         />
                     </div>
 
                     <div className={`form-group ${account.field}`}>
-                        <label for="exampleInputEmail1">Birthday</label>
+                        <label htmlFor="exampleInputEmail1">Birthday</label>
                         <input
                             className={`form-control ${account.input}`}
                             name="bdate"
                             type="date"
                             id="bdate"
+                            onChange={onHandleChange}
                             value={Info.bdate}
                         />
                     </div>
 
                     <div className={`form-group ${account.field}`}>
-                        <label for="gender">Gender</label>
+                        <label htmlFor="gender">Gender</label>
                         <div
                             className={`${account.gender} d-inline-flex align-items-center`}
                         >
@@ -172,8 +187,11 @@ function UserInfo(props) {
                                         type="radio"
                                         className={`${account.genderSelection} form-check-input`}
                                         // class="form-check-input"
-                                        name="optradio"
-                                        value="1"
+                                        name="gender"
+                                        value="male"
+                                        onChange={onHandleChange}
+                                        checked={gender === "male"}
+                                        // checked="false"
                                     />
                                     Male
                                 </label>
@@ -185,8 +203,10 @@ function UserInfo(props) {
                                     <input
                                         type="radio"
                                         className={`${account.genderSelection} form-check-input`}
-                                        name="optradio"
-                                        value="2"
+                                        name="gender"
+                                        value="female"
+                                        onChange={onHandleChange}
+                                        checked={gender === "female"}
                                     />
                                     Female
                                 </label>
@@ -198,8 +218,11 @@ function UserInfo(props) {
                                     <input
                                         type="radio"
                                         className={`${account.genderSelection} form-check-input`}
-                                        name="optradio"
-                                        value="3"
+                                        name="gender"
+                                        value="undefined"
+                                        onChange={onHandleChange}
+                                        checked={gender === "undefined"}
+                                        // checked={true}
                                     />
                                     Undefined
                                 </label>
@@ -207,7 +230,7 @@ function UserInfo(props) {
                         </div>
                     </div>
                     <div className={`form-group ${account.field}`}>
-                        <label for="exampleInputEmail1">Avatar</label>
+                        <label htmlFor="exampleInputEmail1">Avatar</label>
                         <input
                             type="file"
                             className={`form-control ${account.input}`}

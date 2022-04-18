@@ -15,12 +15,16 @@
     position: relative;
     top: 0%;
     display: block;
-    height: 670px;
+    height: 2000px;
     background-color: #ffffff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 10px 30px 0px #00000020;
     margin-top: 10px;
+}
+
+.AddressPopup > *{
+display: block;
 }
 
 .AddressPopup .MainContent {
@@ -168,7 +172,7 @@ select {
 .buttonBar .addButton {
     background-color: #4267b2;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
 
@@ -221,10 +225,30 @@ select {
     color: rgb(0, 167, 0);
     padding-right: 5px;
 }
-.defaultIcon{
-    font-size: 18px;;
+.defaultIcon {
+    font-size: 18px;
 }
-.addressName{
-    display:flex;
-   align-items:center;
+.addressName {
+    display: flex;
+    align-items: center;
+}
+
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local("Material Icons"), local("MaterialIcons-Regular"),
+        url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"),
+        url(https://example.com/MaterialIcons-Regular.woff) format("woff"),
+        url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+.material-icons-round {
+    font-family: "Material Icons";
+}
+
+.icon{
+    display: inline-block;
+    margin-right: 20px;
 }

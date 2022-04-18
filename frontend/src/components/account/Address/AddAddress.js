@@ -49,101 +49,109 @@ function AddAddress(props) {
     };
     return (
         <div className={address.AddressPopup}>
-            <h1>Thêm địa chỉ</h1>
+            <h1 className="mt-4">Thêm địa chỉ</h1>
             <div className={`${address.MainContent} ${address.add}`}>
                 <div className={address.infoInsideContent}>
-                    <div className={address.field}>
-                        <label>Họ tên</label>
-                        <input
-                            className={address.fieldinput}
-                            name="name"
-                            type="text"
-                            innerRef={(input) => {
-                                setName(input);
-                            }}
-                            required
-                        />
-                    </div>
-
-                    <div className={address.field}>
-                        <label>Tỉnh/Thành phố:</label>
-                        <input
-                            className={address.fieldinput}
-                            name="loc1"
-                            type="text"
-                            innerRef={(input) => {
-                                setLoc1(input);
-                            }}
-                            required
-                        />
-                    </div>
-
-                    <div className={address.field}>
-                        <label>Quận huyện:</label>
-                        <input
-                            className={address.fieldinput}
-                            name="loc2"
-                            type="text"
-                            innerRef={(input) => {
-                                setLoc2(input);
-                            }}
-                            required
-                        />
-                    </div>
-
-                    <div className={address.field}>
-                        <label>Phường xã</label>
-                        <input
-                            className={address.fieldinput}
-                            name="loc3"
-                            type="text"
-                            innerRef={(input) => {
-                                setLoc3(input);
-                            }}
-                            required
-                        />
-                    </div>
-                    <div className={address.field}>
-                        <label>Địa chỉ chi tiết</label>
-
-                        <input
-                            className={address.fieldinput}
-                            name="loc_detail"
-                            type="text"
-                            innerRef={(input) => {
-                                setLocDetail(input);
-                            }}
-                            required
-                        />
-                    </div>
-                    <div className={address.field}>
-                        <label>Số điện thoại</label>
-                        <input
-                            className={address.fieldinput}
-                            name="phone"
-                            type="text"
-                            innerRef={(input) => {
-                                setPhone(input);
-                            }}
-                            required
-                        />
-                    </div>
-                    {err && <span className={address.invalidForm}>{err}</span>}
-
-                    <button type="button" 
-                        variant="contained"
-                        onClick={onSubmit}
-                        className={`btn btn-primary ${address.confirmAdd} ${address.update}`}
-                    >
-                        Thêm địa chỉ
-                    </button>
-                    <button type="button" 
-                        variant="contained"
-                        onClick={props.onCancel}
-                        className={`btn btn-danger ${address.cancelAdd} ${address.update}`}
-                    >
-                        Hủy
-                    </button>
+                    <form name="InfoForm">
+                        <div className={`form-group ${address.field}`}>
+                            <label htmlFor="exampleInputEmail1">Tên</label>
+                            <input
+                                name="name"
+                                type="text"
+                                id="name"
+                                className={`form-control ${address.input}`}
+                                innerRef={(input) => {
+                                    setName(input);
+                                }}
+                            />
+                        </div>
+                        <div className={`form-group ${address.field}`}>
+                            <label htmlFor="exampleInputPassword1">
+                                Số điện thoại
+                            </label>
+                            <input
+                                className={`form-control ${address.input}`}
+                                name="phone"
+                                type="text"
+                                id="phone"
+                                innerRef={(input) => {
+                                    setPhone(input);
+                                }}
+                            />
+                        </div>
+                        <div className={`form-group ${address.field}`}>
+                            <label htmlFor="exampleInputEmail1">
+                                Tỉnh/Thành phố
+                            </label>
+                            <input
+                                className={`form-control ${address.input}`}
+                                name="province"
+                                type="text"
+                                id="province"
+                                innerRef={(input) => {
+                                    setLoc1(input);
+                                }}
+                            />
+                        </div>
+                        <div className={`form-group ${address.field}`}>
+                            <label htmlFor="exampleInputEmail1">
+                                Quận/Huyện
+                            </label>
+                            <input
+                                className={`form-control ${address.input}`}
+                                name="district"
+                                type="text"
+                                id="district"
+                                innerRef={(input) => {
+                                    setLoc2(input);
+                                }}
+                            />
+                        </div>{" "}
+                        <div className={`form-group ${address.field}`}>
+                            <label htmlFor="exampleInputEmail1">
+                                Xã/Phường
+                            </label>
+                            <input
+                                className={`form-control ${address.input}`}
+                                name="commune"
+                                type="text"
+                                id="commune"
+                                innerRef={(input) => {
+                                    setLoc3(input);
+                                }}
+                            />
+                        </div>{" "}
+                        <div className={`form-group ${address.field}`}>
+                            <label htmlFor="exampleInputEmail1">
+                                Địa chỉ cụ thể
+                            </label>
+                            <input
+                                className={`form-control ${address.input}`}
+                                name="addrDetail"
+                                type="text"
+                                id="addrDetail"
+                                innerRef={(input) => {
+                                    setLocDetail(input);
+                                }}
+                            />
+                        </div>
+                        <button
+                            type="button"
+                            variant="contained"
+                            onClick={onSubmit}
+                            className={`btn btn-primary ${address.confirmAdd} ${address.update}`}
+                        >
+                            Thêm địa chỉ
+                        </button>
+                        <button
+                            type="button"
+                            variant="contained"
+                            onClick={props.onCancel}
+                            className={`btn btn-danger ${address.cancelAdd} ${address.update}`}
+                        >
+                            Hủy
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

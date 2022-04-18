@@ -60,7 +60,7 @@
 }
 
 .UserNoti .delNoti {
-    width: 5%;
+    /* width: 5%; */
     color: red;
     text-transform: none;
 }

@@ -12,11 +12,19 @@ function NotiCard(props) {
                 <div className={noti.notiDate}>{props.date}</div>
                 <div className={noti.notiDescription}>{props.description}</div>
             </div>
-            <div className={noti.right}>
-                <button type="button"  variant="text" className={`${noti.readNoti} ${status}`}>
+            <div className={`${noti.right} row`}>
+                <button
+                    type="button"
+                    variant="text"
+                    className={`btn btn-oulined-primary col-7 ${noti.readNoti} ${status}`}
+                >
                     Đánh dấu đã đọc
                 </button>
-                <button type="button"  variant="text" className={noti.delNoti}>
+                <button
+                    type="button"
+                    variant="text"
+                    className={`btn btn-oulined-danger col-5 ${noti.delNoti}`}
+                >
                     Xóa
                 </button>
             </div>
