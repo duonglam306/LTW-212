@@ -1,19 +1,23 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Account from "./components/account/Account.js"
-import Main from "./Page/Header.js"
+import Account from "./components/account/Account.js";
+import Login from "./components/Login/Login.js";
+import Register from "./components/Login/Register.js";
+import Menu from "./components/Menu/menu.js";
 
 function App() {
     return (
-        <BrowserRouter>
-            <div className="App">
+        <div className="App">
+            <BrowserRouter>
                 <Routes>
                     {/* <Route exact path="/" component={HomePage} /> */}
-                    <Route path="/account" component={<Account/>}></Route>
-                    <Route path="/haha" component={<Account/>}></Route>
-                    <Route exact path="/" component={<Main/>}></Route>
+                    <Route path="/account" element={<Account />}></Route>
+                    <Route path="/haha" element={<Account />}></Route>
+                    <Route exact path="login" element={<Login />}></Route>
+                    <Route exact path="register" element={<Register />}></Route>
+                    <Route exact path="menu" element={<Menu />}></Route>
                 </Routes>
-            </div>
-        </BrowserRouter>
+            </BrowserRouter>
+        </div>
     );
 }
 

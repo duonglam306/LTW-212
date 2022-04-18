@@ -1,0 +1,96 @@
+.loginContainer .search-control {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 213, 59, 1);
+}
+
+.loginContainer .search-control input {
+    width: 100%;
+    height: 35px;
+    padding: 3px;
+    font-size: 17px;
+    border: 1px solid #211931;
+    border-radius: 10px 0 0 10px;
+}
+
+.loginContainer .searchBut {
+    border-radius: 0 10px 10px 0;
+}
+
+.loginContainer .searchBarLoc {
+    width: 60%;
+    margin: 0 3%;
+}
+
+.loginContainer .searchBarCo {
+    background-color: rgba(255, 213, 59, 1);
+}
+
+.loginContainer .loginBut {
+    margin: 2.5%;
+}
+.loginContainer .regisBut {
+    float: right;
+    margin-right: 2%;
+}
+.loginContainer .addPad {
+    padding: 6px 15px;
+}
+
+.loginContainer {
+    display: flex;
+    height: 100vh;
+    background-image: url("https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.loginContainer .modal-login {
+    min-width: 380px;
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+    margin-left: 10%;
+}
+
+.loginContainer .center {
+    text-align: center;
+}
+
+.loginContainer .headerFont {
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.loginContainer .inputBlock {
+    display: flex;
+    flex-direction: column;
+}
+.loginContainer .star {
+    color: red;
+    margin: 0 10px 0 5px;
+}
+
+.loginContainer .inputBlock input {
+    width: 100%;
+    height: 40px;
+    padding: 3px;
+    border: 1px solid #211931;
+    border-radius: 5px;
+}
+
+.loginContainer .addMargin {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 992px) {
+    .loginContainer {
+        justify-content: center;
+        background-size: auto 100vh;
+    }
+    .loginContainer .modal-login {
+        margin-left: 0;
+        min-width: 350px;
+    }
+}
