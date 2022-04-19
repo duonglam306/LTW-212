@@ -6,7 +6,66 @@ import lalamove from "../../image/lalamove.png";
 import paypal from "../../image/paypal.png";
 import momo from "../../image/momo.png";
 import shipcod from "../../image/shipcod.png";
-function Footer() {
+function Footer({isLogin, role = '' }) {
+    function newsLetter(role) {
+        return isLogin && role === "admin" ? (
+            <div className="col-7">
+                    <div className={clsx(style.address, "col-6")}>
+                        We are here{" "}
+                        <i className="fa-solid fa-hand-point-down"></i>
+                    </div>
+                </div>
+        ) : (
+            <>
+            <div className="col-4">
+                    <div className={clsx(style.newsLetter)}>
+                        <h5>NEWSLETTER</h5>
+                        <h6>
+                            Leave your email to receive new decoration ideas and
+                            information, offers from Hola House.
+                        </h6>
+                        <form className="form-inline justify-content-around my-2 my-lg-0">
+                            <label htmlFor="newLetter-name" className="w-25">Name:</label>
+                            <input
+                                className="form-control w-75 my-1 rounded-0"
+                                type="input"
+                                id="newLetter-name"
+                                placeholder="Enter your name"
+                                aria-label="Input_name"
+                            />
+                            <label htmlFor="newLetter-email" className="w-25">E-mail:</label>
+                            <input
+                                className="form-control w-75 my-1 rounded-0"
+                                type="input"
+                                id="newLetter-email"
+                                placeholder="Enter your email"
+                                aria-label="Input_email"
+                            />
+                            <label htmlFor="newLetter-phone" className="w-25">Phone:</label>
+                            <input
+                                className="form-control w-75 my-1 rounded-0"
+                                type="input"
+                                id="newLetter-phone"
+                                placeholder="Enter your phone"
+                                aria-label="Input_phone"
+                            />
+                            <button
+                                className="btn btn-warning rounded-0 my-1"
+                                type="submit"
+                            >
+                                Register
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div className="col-3">
+                    <div className={clsx(style.address)}>
+                        We are here{" "}
+                        <i className="fa-solid fa-hand-point-down"></i>
+                    </div>
+                </div></>
+        );
+    }
     return (
         <div className={clsx(style.main, "d-block p-3")}>
             <div className="d-flex justify-content-center col-12">
@@ -39,31 +98,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="col-4">
-                    <div className={clsx(style.newsLetter)}>
-                        <h5>NEWSLETTER</h5>
-                        <h6>Leave your email to receive new decoration ideas and information, offers from Hola House.</h6>
-                        <form className="form-inline my-2 my-lg-0">
-                            <input
-                                className="form-control rounded-0 mr-sm-2"
-                                type="input"
-                                placeholder="Enter your email"
-                                aria-label="Input_email"
-                            />
-                            <button
-                                className="btn btn-warning rounded-0 my-2 my-sm-0"
-                                type="submit"
-                            >
-                                Register
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div className="col-3">
-                    <div className={clsx(style.address)}>
-                        We are here <i className="fa-solid fa-hand-point-down"></i>
-                    </div>
-                </div>
+                {newsLetter(role)}
             </div>
             <div className={clsx("col-12 mt-3 bg-white", style.divider)}></div>
             <div className="d-flex col-12">
@@ -104,6 +139,9 @@ function Footer() {
                 </div>
                 <div className="col-3 mt-3">
                     <h5>About Hola House</h5>
+                    <a href="/1" className="text-decoration-none text-white">
+                        <h6>Story</h6>
+                    </a>
                     <a href="/1" className="text-decoration-none text-white">
                         <h6>Partners</h6>
                     </a>

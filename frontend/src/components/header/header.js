@@ -5,7 +5,7 @@ import style from "./header.module.css";
 import logo from "../../image/logo.png";
 function Header({ isLogin, role = '' }) {
     function navigation(role) {
-        return role !== "admin" ? (
+        return isLogin && role !== "admin" ? (
             <>
                 <div className="col-2 d-flex justify-content-center align-items-center">
                     SOFAS <i className="ml-1 fa-solid fa-angle-down"></i>
