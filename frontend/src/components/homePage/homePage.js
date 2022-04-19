@@ -4,7 +4,7 @@ import Footer from "../footer/footer";
 function HomePage() {
     return (
         <div>
-            <Header />
+            <Header isLogin={true} role={'admin'} />
             HomePage
             <Footer />
         </div>

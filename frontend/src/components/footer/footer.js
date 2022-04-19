@@ -61,7 +61,7 @@ function Footer() {
                 </div>
                 <div className="col-3">
                     <div className={clsx(style.address)}>
-                        Image on Google Maps
+                        We are here <i className="fa-solid fa-hand-point-down"></i>
                     </div>
                 </div>
             </div>
