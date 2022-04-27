@@ -6,9 +6,9 @@ import lalamove from "../../image/lalamove.png";
 import paypal from "../../image/paypal.png";
 import momo from "../../image/momo.png";
 import shipcod from "../../image/shipcod.png";
-function Footer({isLogin, role = '' }) {
+function Footer({isLogin}) {
     function newsLetter(role) {
-        return isLogin && role === "admin" ? (
+        return isLogin ? (
             <div className="col-7">
                     <div className={clsx(style.address, "col-6")}>
                         We are here{" "}

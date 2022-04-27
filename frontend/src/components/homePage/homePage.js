@@ -6,7 +6,7 @@ function HomePage() {
         <div>
             <Header isLogin={false} role={'admin'} />
             HomePage
-            <Footer isLogin={false} role={'admin'} />
+            <Footer isLogin={false}/>
         </div>
     );
 }
