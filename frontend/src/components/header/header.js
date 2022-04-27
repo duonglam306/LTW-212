@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import style from "./header.module.css";
-import logo from "../../image/logo.png";
+import logo from "../../image/logo_header.png";
 function Header({ isLogin, role = '' }) {
     function navigation(role) {
         return isLogin && role !== "admin" ? (

@@ -1,13 +1,13 @@
 import React from "react";
 import clsx from "clsx";
 import style from "./footer.module.css";
-import logo from "../../image/logo.png";
+import logo from "../../image/logo_footer.png";
 import lalamove from "../../image/lalamove.png";
 import paypal from "../../image/paypal.png";
 import momo from "../../image/momo.png";
 import shipcod from "../../image/shipcod.png";
 function Footer({isLogin}) {
-    function newsLetter(role) {
+    function newsLetter(isLogin) {
         return isLogin ? (
             <div className="col-7">
                     <div className={clsx(style.address, "col-6")}>
@@ -98,7 +98,7 @@ function Footer({isLogin}) {
                         </div>
                     </div>
                 </div>
-                {newsLetter(role)}
+                {newsLetter(isLogin)}
             </div>
             <div className={clsx("col-12 mt-3 bg-white", style.divider)}></div>
             <div className="d-flex col-12">
