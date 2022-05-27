@@ -4,17 +4,74 @@
 .logo img{
     width: 75%;
     height: auto;
+    cursor: pointer;
 }
 .account i, .cart i{
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
-@media screen and (max-width: 992px){
-    .account i, .cart i{
-        font-size: 1.25rem;
+
+.search input{
+    font-size: 0.7rem !important;
+}
+.search button{
+    font-size: 0.7rem !important;
+}
+.listAuthBtn .signIn{
+    font-size: 0.7rem !important;
+}
+.listAuthBtn .signUp{
+    font-size: 0.7rem !important;
+}
+.navBar{
+    font-size: 0.6rem !important;
+}
+.navBar>div{
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 576px){
+    .navBar{
+        font-size: 0.65rem !important;
     }
 }
-@media screen and (max-width: 768px){
+@media screen and (min-width: 768px){
     .account i, .cart i{
-        font-size: 1rem;
+        font-size: 1.5rem;
+    }
+    .search input{
+        font-size: 0.8rem !important;
+    }
+    .search button{
+        font-size: 0.8rem !important;
+    }
+    .listAuthBtn .signIn{
+        font-size: 0.8rem !important;
+    }
+    .listAuthBtn .signUp{
+        font-size: 0.8rem !important;
+    }
+    .navBar{
+        font-size: 0.8rem !important;
+    }
+}
+@media screen and (min-width: 992px){
+    .account i, .cart i{
+        font-size: 1.5rem;
+    }
+    .search input{
+        font-size: 1rem !important;
+    }
+    .search button{
+        font-size: 1rem !important;
+    }
+    .listAuthBtn .signIn{
+        font-size: 1rem !important;
+    }
+    .listAuthBtn .signUp{
+        font-size: 1rem !important;
+    }
+    .navBar{
+        font-size: 1rem !important;
     }
 }

@@ -5,11 +5,12 @@
 .logo img{
     width: 100%;
     height: auto;
+    margin-left: -15px;
 }
 
 .iconSocial {
-    width: 48px;
-    height: 48px;
+    width: 1.4rem;
+    height: 1.4rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -30,7 +31,7 @@
     background-color: #24B5EA;
 }
 .iconSocial i {
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 .divider {
     height: 1px;
@@ -52,6 +53,60 @@
         -ms-flex-direction: row;
             flex-direction: row;
 }
+.methods img{
+    width: 100%;
+}
 h6 {
     font-weight: normal;
+}
+
+.listPrivacy{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 0 30px;
+}
+.listPrivacy h6{
+    font-size: 0.6rem;
+}
+.listPrivacy h5{
+    font-size: 0.7rem;
+}
+.timeWork,.address,.phone,.mail{
+    font-size: 0.7rem;
+}
+@media screen and (min-width: 576px){
+
+}
+@media screen and (min-width: 768px){
+    .logoPartner{
+        width: 30%;
+        height: auto;
+    }
+}
+@media screen and (min-width: 992px){
+    .listPrivacy h6{
+        font-size: 0.8rem;
+    }
+    .listPrivacy h5{
+        font-size: 1rem;
+    }
+    .timeWork,.address,.phone,.mail{
+        font-size: 1rem;
+    }
+    .logoPartner{
+        width: 50%;
+        height: auto;
+    }
+    .iconSocial{
+        width: 2rem;
+        height: 2rem;
+    }
+    .iconSocial i {
+        font-size: 1rem;
+    }
 }

@@ -6,71 +6,77 @@ import lalamove from "../../image/lalamove.png";
 import paypal from "../../image/paypal.png";
 import momo from "../../image/momo.png";
 import shipcod from "../../image/shipcod.png";
-function Footer({isLogin}) {
-    function newsLetter(isLogin) {
-        return isLogin ? (
-            <div className="col-7">
-                    <div className={clsx(style.address, "col-6")}>
-                        We are here{" "}
-                        <i className="fa-solid fa-hand-point-down"></i>
-                    </div>
-                </div>
-        ) : (
-            <>
-            <div className="col-4">
-                    <div className={clsx(style.newsLetter)}>
-                        <h5>NEWSLETTER</h5>
-                        <h6>
-                            Leave your email to receive new decoration ideas and
-                            information, offers from Hola House.
-                        </h6>
-                        <form className="form-inline justify-content-around my-2 my-lg-0">
-                            <label htmlFor="newLetter-name" className="w-25">Name:</label>
-                            <input
-                                className="form-control w-75 my-1 rounded-0"
-                                type="input"
-                                id="newLetter-name"
-                                placeholder="Enter your name"
-                                aria-label="Input_name"
-                            />
-                            <label htmlFor="newLetter-email" className="w-25">E-mail:</label>
-                            <input
-                                className="form-control w-75 my-1 rounded-0"
-                                type="input"
-                                id="newLetter-email"
-                                placeholder="Enter your email"
-                                aria-label="Input_email"
-                            />
-                            <label htmlFor="newLetter-phone" className="w-25">Phone:</label>
-                            <input
-                                className="form-control w-75 my-1 rounded-0"
-                                type="input"
-                                id="newLetter-phone"
-                                placeholder="Enter your phone"
-                                aria-label="Input_phone"
-                            />
-                            <button
-                                className="btn btn-warning rounded-0 my-1"
-                                type="submit"
-                            >
-                                Register
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div className="col-3">
-                    <div className={clsx(style.address)}>
-                        We are here{" "}
-                        <i className="fa-solid fa-hand-point-down"></i>
-                    </div>
-                </div></>
-        );
-    }
+function Footer() {
+    // function newsLetter(isLogin) {
+    //     return isLogin ? (
+    //         <div className="col-7">
+    //             <div className={clsx(style.address, "col-6")}>
+    //                 We are here <i className="fa-solid fa-hand-point-down"></i>
+    //             </div>
+    //         </div>
+    //     ) : (
+    //         <>
+    //             <div className="col-4">
+    //                 <div className={clsx(style.newsLetter)}>
+    //                     <h5>NEWSLETTER</h5>
+    //                     <h6>
+    //                         Leave your email to receive new decoration ideas and
+    //                         information, offers from Hola House.
+    //                     </h6>
+    //                     <form className="form-inline justify-content-around my-2 my-lg-0">
+    //                         <label htmlFor="newLetter-name" className="w-25">
+    //                             Name:
+    //                         </label>
+    //                         <input
+    //                             className="form-control w-75 my-1 rounded-0"
+    //                             type="input"
+    //                             id="newLetter-name"
+    //                             placeholder="Nguyen Van A"
+    //                             aria-label="Input_name"
+    //                         />
+    //                         <label htmlFor="newLetter-email" className="w-25">
+    //                             E-mail:
+    //                         </label>
+    //                         <input
+    //                             className="form-control w-75 my-1 rounded-0"
+    //                             type="input"
+    //                             id="newLetter-email"
+    //                             placeholder="nguyenvana@gmail.com"
+    //                             aria-label="Input_email"
+    //                         />
+    //                         <label htmlFor="newLetter-phone" className="w-25">
+    //                             Phone:
+    //                         </label>
+    //                         <input
+    //                             className="form-control w-75 my-1 rounded-0"
+    //                             type="input"
+    //                             id="newLetter-phone"
+    //                             placeholder="0123 456 789"
+    //                             aria-label="Input_phone"
+    //                         />
+    //                         <button
+    //                             className="btn btn-warning rounded-0 my-1"
+    //                             type="submit"
+    //                         >
+    //                             Register
+    //                         </button>
+    //                     </form>
+    //                 </div>
+    //             </div>
+    //             <div className="col-3">
+    //                 <div className={clsx(style.address)}>
+    //                     We are here{" "}
+    //                     <i className="fa-solid fa-hand-point-down"></i>
+    //                 </div>
+    //             </div>
+    //         </>
+    //     );
+    // }
     return (
         <div className={clsx(style.main, "d-block p-3")}>
-            <div className="d-flex justify-content-center col-12">
-                <div className="col-5">
-                    <div className={clsx("col-4 pl-0", style.logo)}>
+            <div className="d-lg-flex d-block justify-content-center col-12">
+                <div className="col-lg-5 col-12">
+                    <div className={clsx("col-4 col-md-3 col-lg-5 pl-0", style.logo)}>
                         <img src={logo} alt="logoWeb" />
                     </div>
                     <div className={clsx(style.timeWork, "mt-1")}>
@@ -98,11 +104,16 @@ function Footer({isLogin}) {
                         </div>
                     </div>
                 </div>
-                {newsLetter(isLogin)}
+                <div className="col-7 mt-3">
+                    <div className={clsx(style.address, "col-6 px-0")}>
+                        We are here{" "}
+                        <i className="fa-solid fa-hand-point-down"></i>
+                    </div>
+                </div>
             </div>
             <div className={clsx("col-12 mt-3 bg-white", style.divider)}></div>
-            <div className="d-flex col-12">
-                <div className="col-3 mt-3">
+            <div className={clsx(style.listPrivacy,"row justify-content-start")}>
+                <div className="col-6 col-lg-3 mt-3">
                     <h5>Customer Support</h5>
                     <a href="/1" className="text-decoration-none text-white">
                         <h6>Exchange Policy</h6>
@@ -120,7 +131,7 @@ function Footer({isLogin}) {
                         <h6>Terms of Service</h6>
                     </a>
                 </div>
-                <div className="col-3 mt-3">
+                <div className="col-6 col-lg-3 mt-3">
                     <h5>Official Partners</h5>
                     <a href="/1" className="text-decoration-none text-white">
                         <h6>Carbono Design</h6>
@@ -137,7 +148,7 @@ function Footer({isLogin}) {
                         />
                     </a>
                 </div>
-                <div className="col-3 mt-3">
+                <div className="col-6 col-lg-3 mt-3">
                     <h5>About Hola House</h5>
                     <a href="/1" className="text-decoration-none text-white">
                         <h6>Story</h6>
@@ -149,7 +160,7 @@ function Footer({isLogin}) {
                         <h6>Member Benefits</h6>
                     </a>
                 </div>
-                <div className="col-3 mt-3">
+                <div className="col-6 col-lg-3 mt-3 pb-3">
                     <h5>Payment Methods</h5>
                     <div
                         className={clsx(
@@ -157,7 +168,7 @@ function Footer({isLogin}) {
                             "row justify-content-start"
                         )}
                     >
-                        <div className="col-5 my-2 mx-1">
+                        <div className="col-6 col-md-4 col-lg-6 mb-1 mb-lg-3">
                             <a href="/4">
                                 <img
                                     className={style.logoPaymentMethod}
@@ -166,7 +177,7 @@ function Footer({isLogin}) {
                                 />
                             </a>
                         </div>
-                        <div className="col-5 my-2 mx-1">
+                        <div className="col-6 col-md-4 col-lg-6 mb-1 mb-lg-3">
                             <a href="/4">
                                 <img
                                     className={style.logoPaymentMethod}
@@ -175,7 +186,7 @@ function Footer({isLogin}) {
                                 />
                             </a>
                         </div>
-                        <div className="col-5 my-2 mx-1">
+                        <div className="col-6 col-md-4 col-lg-6 mb-1 mb-lg-3">
                             <a href="/4">
                                 <img
                                     className={style.logoPaymentMethod}

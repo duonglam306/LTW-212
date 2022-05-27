@@ -4,9 +4,8 @@ import Footer from "../footer/footer";
 function HomePage() {
     return (
         <div>
-            <Header isLogin={false} role={'admin'} />
-            HomePage
-            <Footer isLogin={false}/>
+            <Header isLogin={true} role={'guess'} />
+            <Footer/>
         </div>
     );
 }
