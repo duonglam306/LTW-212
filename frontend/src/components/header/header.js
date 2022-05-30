@@ -110,13 +110,13 @@ function Header({ isLogin, role = "" }) {
                 <div className={clsx("col-5 col-xl-6", style.search)}>
                     <form className="form-inline my-0">
                         <input
-                            className="form-control border-warning w-75 rounded-0"
+                            className="form-control border-warning rounded-0"
                             type="search"
                             placeholder="Search here..."
                             aria-label="Search"
                         />
                         <button
-                            class="btn btn-warning my-2 w-25 my-sm-0 rounded-0 d-flex justify-content-center align-items-center"
+                            className="btn btn-warning my-2 my-sm-0 rounded-0 d-flex justify-content-center align-items-center"
                             type="submit"
                         >
                             Search

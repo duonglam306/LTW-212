@@ -28,7 +28,12 @@
 .navBar>div{
     cursor: pointer;
 }
-
+.search input{
+    width: 75% !important;
+}
+.search button{
+    width: 25% !important;
+}
 
 @media screen and (min-width: 576px){
     .navBar{
@@ -73,5 +78,13 @@
     }
     .navBar{
         font-size: 1rem !important;
+    }
+}
+@media screen and (min-width: 1200px){
+    .search input{
+        width: 80% !important;
+    }
+    .search button{
+        width: 20% !important;
     }
 }
