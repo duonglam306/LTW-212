@@ -27,6 +27,24 @@
 }
 .navBar>div{
     cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+.navBar>div:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.navBar>div:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 .search input{
     width: 75% !important;

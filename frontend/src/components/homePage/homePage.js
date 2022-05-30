@@ -5,6 +5,7 @@ function HomePage() {
     return (
         <div>
             <Header isLogin={true} role={'admin'} />
+            Homepage
             <Footer/>
         </div>
     );

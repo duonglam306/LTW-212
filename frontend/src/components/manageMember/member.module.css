@@ -20,9 +20,13 @@
     font-size: 0.6rem;
     padding: 0.25rem 0.5rem;
 }
+
 .tdOpenListRating{
-    text-decoration: underline;
     cursor: pointer;
+    color: #007bff;
+}
+.tdOpenListRating:hover{
+    text-decoration: underline;
 }
 .paginationMember li:not(.disabledBtn), .paginationReview li:not(.disabledBtn){
     cursor: pointer;

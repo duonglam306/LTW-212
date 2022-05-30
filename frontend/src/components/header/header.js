@@ -39,19 +39,44 @@ function Header({ isLogin, role = "" }) {
                 )}
             >
                 <div className="col-2  d-flex justify-content-center align-items-center text-center">
-                    STORE INFO
+                    <Link
+                        to="/store-info"
+                        className="text-decoration-none text-dark"
+                    >
+                        STORE INFO
+                    </Link>
                 </div>
                 <div className="col-2  d-flex justify-content-center align-items-center text-center">
-                    PRODUCT
+                    <Link
+                        to="/manage-product"
+                        className="text-decoration-none text-dark"
+                    >
+                        PRODUCT
+                    </Link>
                 </div>
                 <div className="col-2  d-flex justify-content-center align-items-center text-center">
-                    MEMBER
+                    <Link
+                        to="/manage-member"
+                        className="text-decoration-none text-dark"
+                    >
+                        MEMBER
+                    </Link>
                 </div>
                 <div className="col-2  d-flex justify-content-center align-items-center text-center">
-                    NEWS
+                    <Link
+                        to="/manage-news"
+                        className="text-decoration-none text-dark"
+                    >
+                        NEWS
+                    </Link>
                 </div>
                 <div className="col-3  d-flex justify-content-center align-items-center text-center">
-                    CONTACT CUSTOMER
+                    <Link
+                        to="/manage-contact"
+                        className="text-decoration-none text-dark"
+                    >
+                        CONTACT CUSTOMER
+                    </Link>
                 </div>
             </div>
         );
@@ -105,7 +130,9 @@ function Header({ isLogin, role = "" }) {
         <div className={clsx(style.main)}>
             <div className="d-flex justify-content-around align-items-center py-3">
                 <div className={clsx("col-4 col-md-3 col-xl-2", style.logo)}>
+                    <Link to="/">
                     <img src={logo} alt="logoWeb" className="d-block w-100" />
+                    </Link>
                 </div>
                 <div className={clsx("col-5 col-xl-6", style.search)}>
                     <form className="form-inline my-0">

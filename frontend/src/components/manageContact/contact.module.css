@@ -1,0 +1,67 @@
+.main{
+    background-color: #e5e5e5;
+}
+
+.thContact {
+    background-color: #c4c4c4;
+    font-size: 0.75rem;
+}
+
+.tContact tbody{
+    font-size: 0.6rem !important;
+}
+.tdContact{
+    cursor: pointer;
+}
+.titleTableContact h5{
+    font-size: 1rem !important;
+}
+.btnDelete{
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
+}
+.paginationContact li:not(.disabledBtn){
+    cursor: pointer;
+}
+.paginationContact li{
+    font-size: 0.65rem !important;
+}
+
+
+@media screen and (min-width: 768px){
+    .paginationContact li{
+        font-size: 0.725rem !important;
+    }
+    .thContact{
+        font-size: 0.925rem;
+    }
+    .tContact tbody{
+        font-size: 0.775rem !important;
+    }
+    .titleTableContact h5{
+        font-size: 1.125rem !important;
+    }
+    .btnDelete{
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .paginationContact li{
+        font-size: 0.85rem !important;
+    }
+    .thContact{
+        font-size: 1rem;
+    }
+    .tContact tbody{
+        font-size: 0.925rem !important;
+    }
+    .titleTableContact h5{
+        font-size: 1.15rem !important;
+    }
+    .btnDelete{
+        font-size: 0.9rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
