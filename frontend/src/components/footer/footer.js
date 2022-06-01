@@ -87,10 +87,10 @@ function Footer() {
                         City
                     </div>
                     <div className={clsx(style.phone, "mt-1")}>
-                        (+84) 942 826 536
+                        (+84) 914 851 501
                     </div>
                     <div className={clsx(style.mail, "mt-1")}>
-                        lamduong11201@gmail.com
+                        bk.furniture.hcmut@gmail.com
                     </div>
                     <div className={clsx(style.social, "d-flex mt-1")}>
                         <div className={clsx(style.iconFb, style.iconSocial)}>
