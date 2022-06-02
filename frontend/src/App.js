@@ -3,6 +3,7 @@ import Account from "./components/account/Account.js";
 import Login from "./components/Login/Login.js";
 import Register from "./components/Login/Register.js";
 import Menu from "./components/Menu/menu.js";
+import Mapbox from "./components/Mapbox/Mapbox.js";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                     <Route exact path="login" element={<Login />}></Route>
                     <Route exact path="register" element={<Register />}></Route>
                     <Route exact path="menu" element={<Menu />}></Route>
+                    <Route exact path="mapbox" element={<Mapbox />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
