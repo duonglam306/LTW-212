@@ -87,11 +87,27 @@
                 if(mysqli_num_rows($result) > 0){
                     while ($row = mysqli_fetch_assoc($result)){
                         echo "
-                        <div class='col-12 col-md-3 p-5 mt-3'>
-                            <a href='product.php?id=".$row['uid']."'><img src='".$row['image']."'class='rounded-circle img-fluid border' /></a>
-                            <h6 class='text-center mt-3 mb-3'>".$row['name']."</h6>
-                            <p class='text-center'><a href='product.php?id=".$row['uid']."' class='btn btn-success'>Buy now!</a></p>
-                        </div>";
+                        <div class='col-12 col-md-3 mb-4'>
+                                <div class='card h-100'>
+                                    <a href='product.php?id=".$row['uid']."' class='mt-5 mb-5'>
+                                        <img src='".$row['image']."'class='card-img-top' alt='...'>
+                                    </a>
+                                    <div class='card-body'>
+                                        <a href='product.php?id=".$row['uid']."' class='h2 text-decoration-none text-dark'>".$row['name']."</a>
+                                        <p class='card-text mt-2 mb-2 h3 text-danger fw-bold'>"
+                                            .number_format($row['price'])." VND
+                                        </p>
+                                    </div>
+                                    <div class='card-footer text-center'>
+                                        <a href='product.php?id=".$row['uid']."''>
+                                            <button type='button' class='btn btn-outline-danger mb-0'>
+                                                Buy now 
+                                                <i class='fas fa-shopping-cart'></i>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>";
                     }
                 }
             }
@@ -131,21 +147,21 @@
                             echo "
                             <div class='col-12 col-md-3 mb-4'>
                                 <div class='card h-100'>
-                                    <a href='product.php?id=".$row['uid']."'>
+                                    <a href='product.php?id=".$row['uid']."' class='mt-5 mb-5'>
                                         <img src='".$row['image']."'class='card-img-top' alt='...'>
                                     </a>
-                                    <div class='card-body position-relative'>
+                                    <div class='card-body'>
                                         <a href='product.php?id=".$row['uid']."' class='h2 text-decoration-none text-dark'>".$row['name']."</a>
-                                        <p class='card-text mt-2 mb-4 h4'>
+                                        <p class='card-text mt-2 mb-2 h4'>
                                             <del>".number_format($row['price']/(1-$a/100))." VND</del> <span class='h4'>-".$a."% </span>
                                         </p>
-                                        <p class='card-text mt-2 mb-2 h3 text-success fw-bold position-absolute' style='bottom: 0'>"
+                                        <p class='card-text mt-2 mb-2 h3 text-danger fw-bold'>"
                                             .number_format($row['price'])." VND
                                         </p>
                                     </div>
                                     <div class='card-footer text-center'>
                                         <a href='product.php?id=".$row['uid']."''>
-                                            <button type='button' class='btn btn-outline-success mb-0'>
+                                            <button type='button' class='btn btn-outline-danger mb-0'>
                                                 Buy now 
                                                 <i class='fas fa-shopping-cart'></i>
                                             </button>
