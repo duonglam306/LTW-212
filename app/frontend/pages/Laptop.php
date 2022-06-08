@@ -30,7 +30,7 @@
                     </li>
                     <li class="pb-3">
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none nav-link link-dark" href="laptop.php">
-                            Laptops
+                            Tables
                         </a>
                     </li>
                     <li class="pb-3">
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-md-6 pb-4">
                     <div class="d-flex">
-                        <select class="form-control" onchange="filterLaptop(this)">  
+                        <select class="form-control" onchange="filtertable(this)">  
                             <?php
                                 if (!isset($_GET['brand'])) echo "<option selected value='featured'>Featured</option>";
                                 else echo "<option value='featured'>Featured</option>";
@@ -56,7 +56,7 @@
                                 if (!$conn) {
                                     die('Could not connect: ' . mysqli_error($conn));
                                 }
-                                $sql = "SELECT * FROM category WHERE type = 'laptop'";
+                                $sql = "SELECT * FROM category WHERE type = 'table'";
                                 $result = mysqli_query($conn, $sql);
                                 if(mysqli_num_rows($result) > 0){
                                     while ($row = mysqli_fetch_assoc($result)){
@@ -81,7 +81,7 @@
                         die('Could not connect: ' . mysqli_error($conn));
                     }
                     $brand = isset($_GET['brand']) ? $_GET['brand'] : null;
-                    $query = $brand == null ? "SELECT COUNT(uid) as total from product where type='laptop'" : "SELECT COUNT(uid) as total from product where type='laptop' and category='$brand'" ;
+                    $query = $brand == null ? "SELECT COUNT(uid) as total from product where type='table'" : "SELECT COUNT(uid) as total from product where type='table' and category='$brand'" ;
                     $result = mysqli_query($conn,$query);
                     $row = mysqli_fetch_assoc($result);
                     $total_records = $row['total'];
@@ -102,7 +102,7 @@
                     $start = ($current_page - 1) * $limit;
                     // BƯỚC 5: TRUY VẤN LẤY DANH SÁCH TIN TỨC
                     // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
-                    $query = $brand == null ? "SELECT * FROM product WHERE type = 'laptop' LIMIT $start, $limit" : "SELECT * FROM product WHERE type='laptop' and category='$brand' LIMIT $start, $limit";
+                    $query = $brand == null ? "SELECT * FROM product WHERE type = 'table' LIMIT $start, $limit" : "SELECT * FROM product WHERE type='table' and category='$brand' LIMIT $start, $limit";
                     $result = mysqli_query($conn,$query);
                     if(mysqli_num_rows($result) > 0){
                         while ($row = mysqli_fetch_assoc($result)){
@@ -176,8 +176,8 @@
 </div>
 <!-- End Content -->
 <script>
-    function filterLaptop(e) {
+    function filtertable(e) {
         if (e.value=='featured') window.location.href = 'laptop.php';
-        else window.location.href = 'laptop.php?brand=' + e.value;
+        else window.location.href = 'table.php?brand=' + e.value;
     }
 </script>
