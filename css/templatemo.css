@@ -173,8 +173,12 @@ body, ul, li, p, a, label, div {
   width: 6px;
   height: 6px;
 }
-
-
+/*
+  Item-category
+*/
+.category-menu-item:hover {
+  background-color: #ffc107;
+}
 /*
 Icon news - animation
 */
