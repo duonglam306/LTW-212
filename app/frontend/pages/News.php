@@ -43,43 +43,82 @@
 <div class="container" style="margin-top: 15px;">
     <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-lg-pull-9 col-md-pull-9">
-            <h4>Latest news</h4>
-            <div class="list_related_news" style="display:block;">
-                <br>
-                <div class="related_news">
-                    <?php
-                        $host = "localhost";
-                        $user = "root";
-                        $pw = "";
-                        $database = "hola_house";
-                        $conn = mysqli_connect($host,$user,$pw,$database);
-                        if (!$conn) {
-                            die('Could not connect: ' . mysqli_error($conn));
-                        }
-                        $url = $_SERVER['REQUEST_URI'];    
-                        $arr = (explode("?",$url));
-                        $sql = "SELECT * FROM post ORDER BY date DESC LIMIT 6";
-                        $result = mysqli_query($conn, $sql);
-                        if(mysqli_num_rows($result) > 0){
-                            while ($row = mysqli_fetch_assoc($result)){
-                                echo '
-                                <div class="row">
-                                    <div class="col-5">
-                                        <img src="'.$row["image"].'" alt="" width="100px">
-                                    </div>
-                                    <div class="col-7"> 
-                                        <a href="news.php?'.$row["slug"].'" style="text-decoration: none;color: #337AB6;text-align:justify;"><small>'.mb_substr($row["title"],0, 30, "utf-8").'...</small></a>
-                                        <p><small>'.substr($row["date"],0,10).'</small></p>
-                                    </div>
-                                </div>
-                                <hr>';
+            <div class="news-trend">
+                <h4>News bed trend <i id="icon-news-bed" class="fas fa-bed text-warning"></i></h4>
+                <div class="list_related_news" style="display:block;">
+                    <br>
+                    <div class="related_news">
+                        <?php
+                            $host = "localhost";
+                            $user = "root";
+                            $pw = "";
+                            $database = "hola_house";
+                            $conn = mysqli_connect($host,$user,$pw,$database);
+                            if (!$conn) {
+                                die('Could not connect: ' . mysqli_error($conn));
                             }
-                        }
-                     ?>
-
-                    
+                            $url = $_SERVER['REQUEST_URI'];    
+                            $arr = (explode("?",$url));
+                            $sql = "SELECT * FROM post WHERE category='bed' ORDER BY date DESC LIMIT 2";
+                            $result = mysqli_query($conn, $sql);
+                            if(mysqli_num_rows($result) > 0){
+                                while ($row = mysqli_fetch_assoc($result)){
+                                    echo '
+                                    <div class="row">
+                                        <div class="col-5 pr-0">
+                                            <img src="'.$row["image"].'" alt="" class="d-block w-100">
+                                        </div>
+                                        <div class="col-7"> 
+                                            <a href="news.php?'.$row["slug"].'" style="text-decoration: none;color: #337AB6;text-align:justify;"><small style="text-decoration: none;color: #000;font-weight: bold !important">'.mb_substr($row["title"],0, 30, "utf-8").'...</small></a>
+                                            <p><small>'.substr($row["date"],0,10).'</small></p>
+                                        </div>
+                                    </div>
+                                    <hr>';
+                                }
+                            }
+                         ?>
+                    </div>
                 </div>
             </div>
+            <div class="news-trend">
+                <h4>News sofas trend <i id="icon-news-sofas" class="fas fa-couch text-warning"></i></h4>
+                <div class="list_related_news" style="display:block;">
+                    <br>
+                    <div class="related_news">
+                        <?php
+                            $host = "localhost";
+                            $user = "root";
+                            $pw = "";
+                            $database = "hola_house";
+                            $conn = mysqli_connect($host,$user,$pw,$database);
+                            if (!$conn) {
+                                die('Could not connect: ' . mysqli_error($conn));
+                            }
+                            $url = $_SERVER['REQUEST_URI'];    
+                            $arr = (explode("?",$url));
+                            $sql = "SELECT * FROM post WHERE category='chair' ORDER BY date DESC LIMIT 3";
+                            $result = mysqli_query($conn, $sql);
+                            if(mysqli_num_rows($result) > 0){
+                                while ($row = mysqli_fetch_assoc($result)){
+                                    echo '
+                                    <div class="row">
+                                        <div class="col-5 pr-0">
+                                            <img src="'.$row["image"].'" alt="" class="d-block w-100">
+                                        </div>
+                                        <div class="col-7"> 
+                                            <a href="news.php?'.$row["slug"].'" style="text-decoration: none;color: #337AB6;text-align:justify;"><small style="text-decoration: none;color: #000;font-weight: bold !important">'.mb_substr($row["title"],0, 30, "utf-8").'...</small></a>
+                                            <p><small>'.substr($row["date"],0,10).'</small></p>
+                                        </div>
+                                    </div>
+                                    <hr>';
+                                }
+                            }
+                         ?>
+                    </div>
+                </div>
+            </div>
+            <img src="img/poster1.png" alt="" class="w-100">
+            <img src="img/poster2.png" alt="" class="w-100 mt-2">
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-lg-push-3 col-md-push-3">
             <h3>News</h3>
@@ -103,12 +142,12 @@
                             echo '
                             <img src="'.$row["image"].'" width = 930px style="margin-bottom: 15px;">
                             <br>
-                            <h2 style="color: #337AB6; font-weight: bold;">
+                            <h2 style="color: #ffc107; font-weight: bold;">
                             '.$row["title"].'
                             </h2>
                             <br>
-                            <p style="color:gray;display:inline; width:400px;"><small><i class="fas fa-user"></i> &nbsp Content - '.$row["author"].'&nbsp</p>
-                                <span style="color:gray;display:inline;"> <i class="fas fa-clock"></i> &nbsp '.substr($row["date"], 0, 10).'</small></span>
+                            <p style="color:black;display:inline; width:400px;"><small><i class="fas fa-user text-warning"></i> &nbsp Content - '.$row["author"].'&nbsp</p>
+                                <span style="color:black;display:inline;"> <i class="fas fa-clock text-warning"></i> &nbsp '.substr($row["date"], 0, 10).'</small></span>
                                 <div style="float:right; margin-right: 15px;color:gray;">
                                     <i class="fa fa-tags"></i>&nbsp; <span id="category_view">'.$row["category"].'</span>
                                 </div>
@@ -234,6 +273,22 @@
                             // $sql = "SELECT * FROM post ORDER BY date DESC";
                             // $result = mysqli_query($conn, $sql);
                             if(mysqli_num_rows($result) > 0){
+                                $row = mysqli_fetch_assoc($result);
+                                echo "
+                                            <div class='row'>
+                                    <div class='col-8'>
+                                        <img src='".$row["image"]."' alt='' class='w-100'>
+                                    </div>
+                                    <div class='col-4 mt-1'> 
+                                        <p><a style='text-decoration: none;color: #000;font-weight: bold !important' href='news.php?".$row["slug"]."'>".$row["title"]."</a> </p>
+                                        <p style='color:black;display:inline; width:400px;'><small><i class='fas fa-user text-warning'></i> &nbsp Content - ".$row["author"]."&nbsp</p>
+                                        <span style='color:black;display:inline;'> <i class='fas fa-clock text-warning'></i> &nbsp ".substr($row["date"], 0, 10)."</small></span>
+                                        <p style='text-align: justify;'>".mb_substr($row["content"],0, 200, "utf-8")." ...</p>
+                                        <a href='news.php?".$row["slug"]."' class='button_wh_40_blog btn-cart' title=".$row["title"]."' style='font-size: 14px;color: #fff;line-height: 40px;height: 40px;display: inline-block;padding: 0px 25px;background: #ffc107;border-radius: 20px;text-decoration: none;border: solid 1px #ffc107;'>
+                                        <span>Read continue</span>
+                                        </a>
+                                    </div>
+                                </div><hr>";
                                 while ($row = mysqli_fetch_assoc($result)){
                                     echo "
                                             <div class='row'>
@@ -241,12 +296,12 @@
                                         <img src='".$row["image"]."' alt='' width='340px'>
                                     </div>
                                     <div class='col-7'> 
-                                        <p ><a style='text-decoration: none;color: #337AB6;' href='news.php?".$row["slug"]."'>".$row["title"]."</a> </p>
-                                        <p style='color:gray;display:inline; width:400px;'><small><i class='fas fa-user'></i> &nbsp Content - ".$row["author"]."&nbsp</p>
-                                        <span style='color:gray;display:inline;'> <i class='fas fa-clock'></i> &nbsp ".substr($row["date"], 0, 10)."</small></span>
+                                        <p ><a style='text-decoration: none;color: #000;font-weight: bold !important' href='news.php?".$row["slug"]."'>".$row["title"]."</a> </p>
+                                        <p style='color:black;display:inline; width:400px;'><small><i class='fas fa-user text-warning'></i> &nbsp Content - ".$row["author"]."&nbsp</p>
+                                        <span style='color:black;display:inline;'> <i class='fas fa-clock text-warning'></i> &nbsp ".substr($row["date"], 0, 10)."</small></span>
                                         <p style='text-align: justify;'>".mb_substr($row["content"],0, 200, "utf-8")." ...</p>
-                                        <a href='news.php?".$row["slug"]."' class='button_wh_40_blog btn-cart' title='GIÁ CARD ĐỒ HỌA VẪN CAO HƠN GẤP ĐÔI GIÁ NIÊM YẾT' style='font-size: 14px;color: #fff;line-height: 40px;height: 40px;display: inline-block;padding: 0px 25px;background: #ff0034;border-radius: 20px;text-decoration: none;border: solid 1px #ff0034;'>
-                                            <span>Xem tiếp</span>
+                                        <a href='news.php?".$row["slug"]."' class='button_wh_40_blog btn-cart' title=".$row["title"]."' style='font-size: 14px;color: #fff;line-height: 40px;height: 40px;display: inline-block;padding: 0px 25px;background: #ffc107;border-radius: 20px;text-decoration: none;border: solid 1px #ffc107;'>
+                                            <span>Read continue</span>
                                         </a>
                                     </div>
                                 </div><hr>";

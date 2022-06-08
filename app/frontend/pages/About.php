@@ -17,7 +17,7 @@
 
 
 
-<section class="bg-success py-5">
+<section class="py-5" style="background-color: #ffd880;">
     <div class="container">
         <div class="row align-items-center py-5">
         <?php
@@ -36,15 +36,15 @@
                         if(mysqli_num_rows($result) > 0){
                             while ($row = mysqli_fetch_assoc($result)){
                                 echo "
-            <div class='col-md-8 text-white'>
-                <h1>About Us</h1>
-                <p>
-                ".$row['content']."
-                </p>
-            </div>
-            <div class='col-md-4'>
-                <img src='".$row['image']."' alt='About'>
-            </div>";
+                                <div class='col-md-8 text-dark'>
+                                    <h1><strong>About Us</strong></h1>
+                                    <p>
+                                    ".$row['content']."
+                                    </p>
+                                </div>
+                                <div class='col-md-4'>
+                                    <img src='".$row['image']."' alt='About' class='d-block w-100'>
+                                </div>";
                             }
                         }
                         mysqli_close($conn);
@@ -58,39 +58,38 @@
 <section class="container py-5">
     <div class="row text-center pt-5 pb-3">
         <div class="col-lg-6 m-auto">
-            <h1 class="h1">Our Services</h1>
+            <h1 class="h1">What can we bring to you</h1>
             <p>
-            We're your trusted local service and repair professionals. 
-                    </p>
-            <a href="#">How can we help?</a>
+                Quality - Responsibility - Safety - Fast
+            </p>
         </div>
     </div>
     <div class="row">
 
         <div class="col-md-6 col-lg-3 pb-5">
             <div class="h-100 py-5 services-icon-wap shadow">
-                <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
+                <div class="h1 text-warning text-center"><i class="fa fa-truck fa-lg"></i></div>
                 <h2 class="h5 mt-4 text-center">Delivery Services</h2>
             </div>
         </div>
 
         <div class="col-md-6 col-lg-3 pb-5">
             <div class="h-100 py-5 services-icon-wap shadow">
-                <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
-                <h2 class="h5 mt-4 text-center">Shipping & Return</h2>
+                <div class="h1 text-warning text-center"><i class="fas fa-credit-card"></i></div>
+                <h2 class="h5 mt-4 text-center">Safe Payment</h2>
             </div>
         </div>
 
         <div class="col-md-6 col-lg-3 pb-5">
             <div class="h-100 py-5 services-icon-wap shadow">
-                <div class="h1 text-success text-center"><i class="fa fa-percent"></i></div>
-                <h2 class="h5 mt-4 text-center">Promotion</h2>
+                <div class="h1 text-warning text-center"><i class="fa fa-couch"></i></div>
+                <h2 class="h5 mt-4 text-center">Modern Product</h2>
             </div>
         </div>
 
         <div class="col-md-6 col-lg-3 pb-5">
             <div class="h-100 py-5 services-icon-wap shadow">
-                <div class="h1 text-success text-center"><i class="fa fa-user"></i></div>
+                <div class="h1 text-warning text-center"><i class="fa fa-user"></i></div>
                 <h2 class="h5 mt-4 text-center">24 Hours Service</h2>
             </div>
         </div>
@@ -107,50 +106,50 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-3 mb-3">
-                    <div class="card customer-cards">
+                <div class="col-12 col-md-3 mb-3" >
+                    <div class="card customer-cards bg-warning text-dark">
                         <div class="card-body">
                             <div class="text-center" style="height: 280px;">
-                                <img src="img/hoa.jpg" width="89" height="89" alt="" class="rounded-circle img-fluid border">
-                                <p class="m-0 py-3 text-muted">Four are better than one.</p><br>
-                                <h6 class="card-title pt-3">Ho Van Hoa</h6>
-                                <h6 class="customer-designation text-muted m-0">Leader</h6>
+                                <img src="img/duong.jpg" width="89" height="89" alt="" class="rounded-circle img-fluid border">
+                                <p class="m-0 py-3">Make it simple, but significant.</p><br>
+                                <h6 class="card-title pt-3">Lam Thanh Duong</h6>
+                                <h6 class="customer-designation m-0">Leader</h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-3 mb-3">
-                    <div class="card customer-cards">
+                    <div class="card customer-cards bg-dark text-warning">
                         <div class="card-body">
                             <div class="text-center" style="height: 280px;">
-                                <img src="img/bang.jpg" width="89" height="89" alt="" class="rounded-circle img-fluid border">
-                                <p class="m-0 py-3 text-muted">The earth laughs in flowers.</p><br>
-                                <h6 class="card-title pt-3">Nguyen Thi Duyen Bang</h6>
-                                <h6 class="customer-designation text-muted m-0">Member</h6>
+                                <img src="img/long.jpg" width="89" height="89" alt="" class="rounded-circle img-fluid border">
+                                <p class="m-0 py-3">Java is to JavaScript what car is to Carpet.</p>
+                                <h6 class="card-title pt-3">Mai Duc Long</h6>
+                                <h6 class="customer-designation m-0">Member</h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-3 mb-3">
-                    <div class="card customer-cards">
+                    <div class="card customer-cards bg-warning text-dark">
                         <div class="card-body">
                             <div class="text-center" style="height: 280px;">
-                                <img src="img/thanh.jpg" width="89" height="89" alt="" class="rounded-circle img-fluid border">
-                                <p class="m-0 py-3 text-muted">A flower blossoms for <br>its own joy.</p>
-                                <h6 class="card-title pt-3">Ho Ngoc Thanh</h6>
-                                <h6 class="customer-designation text-muted m-0">Member</h6>
+                                <img src="img/dang.jpg" width="89" height="89" alt="" class="rounded-circle img-fluid border">
+                                <p class="m-0 py-3">We design with all our heart.</p> <br>
+                                <h6 class="card-title pt-3">Nguyen Truong Hai Dang</h6>
+                                <h6 class="customer-designation m-0">Member</h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-3 mb-3">
-                    <div class="card customer-cards">
+                    <div class="card customer-cards bg-dark text-warning">
                         <div class="card-body">
                             <div class="text-center" style="height: 280px;">
-                                <img src="img/hieu.jpg" width="89" height="89" alt="" class="rounded-circle img-fluid border">
-                                <p class="m-0 py-3 text-muted">You’re the closest to heaven, that I’ll ever be.</p>
-                                <h6 class="card-title pt-3">Le Nguyen Minh Hieu</h6>
-                                <h6 class="customer-designation text-muted m-0">Member</h6>
+                                <img src="img/kien.jpg" width="89" height="89" alt="" class="rounded-circle img-fluid border">
+                                <p class="m-0 py-3">Power’s not given to you. You have to take it..</p>
+                                <h6 class="card-title pt-3">Nguyen Trung Kien</h6>
+                                <h6 class="customer-designation m-0">Member</h6>
                             </div>
                         </div>
                     </div>

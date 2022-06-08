@@ -95,9 +95,11 @@
 </body>
 
 <?php
+    $array_img = array("img/avatar1.png","img/avatar2.png","img/avatar3.png","img/avatar4.png","img/avatar5.png","img/avatar6.png","img/avatar7.png","img/avatar8.png");
     if (isset($_POST['submitBtn'])){
         $name = $_POST['name'];
         $email = $_POST['mail'];
+        $image = $array_img[rand(0, count($array_img))];
         $username = $_POST['username'];
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 12]);
         if (empty($name) || empty($email) || empty($username) || empty($password)) echo 
@@ -115,7 +117,7 @@
             if (!$conn) {
                 die('Could not connect: ' . mysqli_error($conn));
             }
-            $sql = "INSERT INTO users(name, email, username, password, role) VALUES ('$name','$email','$username','$password','customer')";
+            $sql = "INSERT INTO users(name, email, username, password, role, image) VALUES ('$name','$email','$username','$password','customer', '$image')";
             if ($conn->query($sql) === TRUE) {
                 echo "<script>
                     alert('Account has been signed up');

@@ -4,23 +4,23 @@
             <div class="w-100 d-flex justify-content-between">
                 <?php
                     if (isset($_COOKIE['username']) == true) echo "
-                        <div>
-                            <span class='navbar-sm-brand text-light text-decoration-none'> Welcome, ".$_COOKIE['username']."</span>
+                        <div class='d-flex align-items-center'>
+                            <span class='navbar-sm-brand text-warning text-decoration-none'> Welcome, ".$_COOKIE['username']."</span>
                         </div>";
                 ?>
                 <div>
                     <?php
                         if (isset($_COOKIE['username']) == false) echo "
-                            <a class='nav-icon d-none d-lg-inline px-3' href='login.php' style='text-decoration:none;'>
-                                <i class='fa fa-fw text-white fa-sign-in-alt mr-2'></i>
-                                <span class= 'text-white'>Login<span>
+                            <a class='nav-icon d-none d-lg-inline px-3 text-warning' href='login.php' style='text-decoration:none;'>
+                                <i class='fa fa-fw fa-sign-in-alt mr-2'></i>
+                                <span>Login<span>
                             </a>
-                            <a class='nav-icon d-none d-lg-inline' href='register.php' style='text-decoration:none;'>
-                                <i class='fa fa-fw text-white fa-user mr-2'></i>
-                                <span class= 'text-white'>Create account<span>
+                            <a class='nav-icon d-none d-lg-inline text-warning' href='register.php' style='text-decoration:none;'>
+                                <i class='fa fa-fw fa-user mr-2'></i>
+                                <span>Create account<span>
                             </a>";
                         else echo "
-                                <button class='nav-icon d-none d-lg-inline px-3 btn-dark' onclick='logout()'>
+                                <button class='nav-icon d-none d-lg-inline px-3 btn-warning' onclick='logout()'>
                                     <i class='fa fa-fw text-white fa-sign-out-alt mr-2'></i>
                                     <span class= 'text-white'>Logout<span>
                                 </button>";
@@ -36,8 +36,10 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.php">
-                Tauries 
+            <a class="navbar-brand" href="index.php">
+                <div class="d-flex justify-content-center">
+                    <img src="img\logo.png" alt="logo_hola_house" class="d-block w-50"> 
+                </div>
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

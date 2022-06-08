@@ -5,13 +5,13 @@
             <div class="col-lg-6 m-auto">
                 <h1 class="h1">Our Brands</h1>
                 <p>
-                    The world's best laptop list you can buy
+                    The world's best furniture list you can buy
                 </p>
             </div>
             <div class="col-lg-9 m-auto tempaltemo-carousel">
                 <div class="row d-flex flex-row">
                     <!--Controls-->
-                    <div class="col-1 align-self-center">
+                    <div class="col-1 align-self-center d-none">
                         <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="prev">
                             <i class="text-light fas fa-chevron-left"></i>
                         </a>
@@ -28,16 +28,16 @@
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img" src="img/dell_logo.png" alt="Brand Logo"></a>
+                                            <a href="#"><img class="img-fluid brand-img" src="img/boconcept_logo.png" alt="Brand Logo"></a>
                                         </div>
                                         <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img" src="img/hp_logo.png" alt="Brand Logo"></a>
+                                            <a href="#"><img class="img-fluid brand-img" src="img/adamos_logo.png" alt="Brand Logo"></a>
                                         </div>
                                         <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img" src="img/apple_logo.png" alt="Brand Logo"></a>
+                                            <a href="#"><img class="img-fluid brand-img" src="img/bellavita_logo.png" alt="Brand Logo"></a>
                                         </div>
                                         <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img" src="img/razer_logo.png" alt="Brand Logo"></a>
+                                            <a href="#"><img class="img-fluid brand-img" src="img/lago_logo.png" alt="Brand Logo"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -45,18 +45,15 @@
 
                                 <!--Second slide-->
                                 <div class="carousel-item">
-                                    <div class="row">
+                                    <div class="row justify-content-around">
                                         <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img" src="img/acer_logo.png" alt="Brand Logo"></a>
+                                            <a href="#"><img class="img-fluid brand-img" src="img/calligaris_logo.png" alt="Brand Logo"></a>
                                         </div>
                                         <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img" src="img/asus_logo.png" alt="Brand Logo"></a>
+                                            <a href="#"><img class="img-fluid brand-img" src="img/aacorporation_logo.png" alt="Brand Logo"></a>
                                         </div>
                                         <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img" src="img/lenovo_logo.png" alt="Brand Logo"></a>
-                                        </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img" src="img/msi_logo.png" alt="Brand Logo"></a>
+                                            <a href="#"><img class="img-fluid brand-img" src="img/akafurniture_logo.png" alt="Brand Logo"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +66,7 @@
                     <!--End Carousel Wrapper-->
 
                     <!--Controls-->
-                    <div class="col-1 align-self-center">
+                    <div class="col-1 align-self-center d-none">
                         <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="next">
                             <i class="text-light fas fa-chevron-right"></i>
                         </a>
