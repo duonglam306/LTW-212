@@ -141,7 +141,7 @@
                                 <div class="input-group input-group-lg">
                                     <input type="search" name="key" class="form-control form-control-lg mt-3" placeholder="Type your keywords here" size="100">
                                     <div class="input-group-append mt-3">
-                                        <button type="submit" class="btn btn-lg btn-default">
+                                        <button type="submit" class="btn btn-lg btn-warning">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </div>
