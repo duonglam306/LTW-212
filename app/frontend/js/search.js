@@ -10,6 +10,7 @@ $(document).on('submit','#searchForm', function(e) {
     var key = $("#searchForm input[name='key']").val();
     var tag = $("#product-select").val();
     var typeSearch = $("#type-search").val();
+    console.log(typeSearch);
     if (key != "") {
         $.ajax({
             url: "app/backend/search.php",

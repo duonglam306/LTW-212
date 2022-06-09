@@ -128,13 +128,13 @@
                                             <label class="fw-bold" id="search-type-label"></label>
                                         </div>
                                         <div class="col-6">
-                                            <select id="product-select" class="form-control select2" name="tag" style="width:100%;">
+                                            <select id="product-select" class="form-select select2" name="tag" style="width:100%;">
                                                 <option value="table">Table</option>
                                                 <option value="chair">Chair</option>
                                                 <option value="bed">Bed</option>
                                                 <option value="lamp">Lamp</option>
                                             </select>
-                                            <input type="text" id="type-search" name="typeSearch">
+                                            <input class="d-none" type="text" id="type-search" name="typeSearch">
                                         </div>
                                     </div>
                                 </div>
