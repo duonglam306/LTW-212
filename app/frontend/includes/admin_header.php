@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- select2-->
     <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
-	<link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <!-- sweetalert2-->
     <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-     <!-- icheck bootstrap -->
+    <!-- icheck bootstrap -->
     <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 </head>
 
@@ -35,8 +35,12 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li style="margin-right:10px;"><a href="index.php" class="nav-link">Back to web</a></li>
+                <button class='nav-icon d-none d-lg-inline px-3 btn-warning' onclick='logout()'>
+                    <i class='fa fa-fw text-white fa-sign-out-alt mr-2'></i>
+                    <span class='text-white'>Logout<span>
+                </button>
             </ul>
-            
+
         </nav><!-- /.navbar-->
         <!-- Main Sidebar Container-->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -52,10 +56,10 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item"><a class="nav-link" href="admin_laptop.php"><i class="far fa-circle nav-icon"></i>
                                         <p>List</p>
-                                </a></li>
+                                    </a></li>
                                 <li class="nav-item"><a class="nav-link" href="admin_brand.php"><i class="far fa-circle nav-icon"></i>
                                         <p>Brand</p>
-                                </a></li>
+                                    </a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon fas fa-keyboard"></i>
@@ -64,46 +68,57 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item"><a class="nav-link" href="admin_accessories.php"><i class="far fa-circle nav-icon"></i>
                                         <p>List</p>
-                                </a></li>
+                                    </a></li>
                                 <li class="nav-item"><a class="nav-link" href="admin_type.php"><i class="far fa-circle nav-icon"></i>
                                         <p>Type</p>
-                                </a></li>
+                                    </a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="admin_service.php"><i class="nav-icon far fa-question-circle"></i>
                                 <p>Services</p>
-                        </a></li>
+                            </a></li>
                         <li class="nav-header">CUSTOMER MANAGEMENT</li>
                         <li class="nav-item"><a class="nav-link" href="admin_account.php"><i class="nav-icon far fa-user"></i>
                                 <p>Accounts</p>
-                        </a></li>
+                            </a></li>
                         <li class="nav-header">ORDER MANAGEMENT</li>
                         <li class="nav-item"><a class="nav-link" href="admin_order.php"><i class="fas fa-shopping-cart"></i>
                                 <p>&nbsp&nbspOrder</p>
-                        </a></li>
+                            </a></li>
                         <li class="nav-header">POST MANAGEMENT</li>
                         <li class="nav-item"><a class="nav-link" href="admin_post.php"><i class="nav-icon far fa-newspaper"></i>
                                 <p>Posts</p>
-                        </a></li>
+                            </a></li>
                         <li class="nav-header">COMMENTS MANAGEMENT</li>
                         <li class="nav-item"><a class="nav-link" href="admin_productcomments.php"><i class="fas fa-comment-alt"></i>
                                 <p>&nbsp&nbspProduct Comments </p>
-                        </a></li>
+                            </a></li>
                         <li class="nav-header">USER INTERFACE</li>
                         <li class="nav-item"><a class="nav-link" href="admin_home.php"><i class="nav-icon fa fa-home"></i>
                                 <p>Home</p>
-                        </a></li>
+                            </a></li>
                         <li class="nav-item"><a class="nav-link" href="admin_about.php"><i class="nav-icon fa fa-eye"></i>
                                 <p>About</p>
-                        </a></li>
+                            </a></li>
                         <li class="nav-item"><a class="nav-link" href="admin_contact.php"><i class="nav-icon fa fa-phone"></i>
                                 <p>Contacts</p>
-                        </a></li>
+                            </a></li>
                         <li class="nav-header">FEEDBACK MANAGEMENT</li>
                         <li class="nav-item"><a class="nav-link" href="admin_feedback.php"><i class="nav-icon fa fa-inbox"></i>
                                 <p>Feedback</p>
-                        </a></li>
+                            </a></li>
                     </ul>
                 </nav><!-- /.sidebar-menu-->
             </div><!-- /.sidebar-->
         </aside><!-- Content Wrapper. Contains page content-->
+
+        <?php
+        if (isset($_COOKIE['admin'])) echo "
+        <script>
+            function logout() {
+                sessionStorage.removeItem('" . $_COOKIE['admin'] . "');
+                document.cookie.split(';').forEach(function(c) { document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/'); });
+                window.location.href = 'admin.php';
+            }
+        </script>";
+        ?>

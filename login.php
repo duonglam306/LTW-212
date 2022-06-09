@@ -108,7 +108,8 @@
                     session_start();
                     $_SESSION[$username]=$row['name'];
                     setcookie('username', $username, time() + (86400 * 30), "/");
-                    echo "<script>history.go(-2);</script>";
+                    header('Location: index.php');
+                    // echo "<script>history.go(-2);</script>";
                 }
                 else echo
                     "<script> 
