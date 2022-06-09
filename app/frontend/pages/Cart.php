@@ -35,7 +35,7 @@
                                                 </div>
                                             <div>
                                             <div>
-                                                <a href="#!" type="button" class="btn-remove card-link-secondary small text-uppercase mr-3" style="color:red;" data-name="'.$product['name'].'"><i class="fas fa-trash-alt mr-1"></i> Remove item </a>
+                                                <a href="#!" type="button" class="btn-remove card-link-secondary small text-uppercase mr-3" style="color:red;" data-name="'.$product['name'].'"><i class="fas fa-trash-alt mr-1"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@
                         $total_price += ($product["price"]*$product["quantity"]);
                         }
                     echo '
-                        <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding items to your cart does not mean booking them.</p>
+                        <!-- <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding items to your cart does not mean booking them.</p> -->
                     </div>
                   </div>
                 </div>
@@ -77,8 +77,8 @@
                                     <span id="temporary">'.number_format($total_price).' VND</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                    Tax
-                                    <span>5%</span>
+                                    VAT
+                                    <span>10%</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                     <div>
@@ -87,7 +87,7 @@
                                             <p class="mb-0">(including VAT)</p>
                                         </strong>
                                     </div>
-                                    <span id="total" class="fw-bold">'.number_format(ceil($total_price*1.05)).' VND</span>
+                                    <span id="total" class="fw-bold">'.number_format(ceil($total_price*1.1)).' VND</span>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-primary btn-checkout btn-block"><i class="fas fa-wallet"></i>&nbsp Payment</button>

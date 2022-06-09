@@ -94,13 +94,13 @@
                                     </a>
                                     <div class='card-body'>
                                         <a href='product.php?id=".$row['uid']."' class='h2 text-decoration-none text-dark'>".$row['name']."</a>
-                                        <p class='card-text mt-2 mb-2 h3 text-danger fw-bold'>"
+                                        <p class='card-text mt-2 mb-2 h3 text-warning fw-bold'>"
                                             .number_format($row['price'])." VND
                                         </p>
                                     </div>
                                     <div class='card-footer text-center'>
                                         <a href='product.php?id=".$row['uid']."''>
-                                            <button type='button' class='btn btn-outline-danger mb-0'>
+                                            <button type='button' class='btn btn-outline-warning mb-0'>
                                                 Buy now 
                                                 <i class='fas fa-shopping-cart'></i>
                                             </button>
@@ -155,13 +155,13 @@
                                         <p class='card-text mt-2 mb-2 h4'>
                                             <del>".number_format($row['price']/(1-$a/100))." VND</del> <span class='h4'>-".$a."% </span>
                                         </p>
-                                        <p class='card-text mt-2 mb-2 h3 text-danger fw-bold'>"
+                                        <p class='card-text mt-2 mb-2 h3 text-warning fw-bold'>"
                                             .number_format($row['price'])." VND
                                         </p>
                                     </div>
                                     <div class='card-footer text-center'>
                                         <a href='product.php?id=".$row['uid']."''>
-                                            <button type='button' class='btn btn-outline-danger mb-0'>
+                                            <button type='button' class='btn btn-outline-warning mb-0'>
                                                 Buy now 
                                                 <i class='fas fa-shopping-cart'></i>
                                             </button>
