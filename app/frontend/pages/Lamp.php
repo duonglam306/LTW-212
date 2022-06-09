@@ -48,10 +48,10 @@
         <div class="col-lg-9">
             <div class="row align-items-end">
                 <div class="col-md-4 pb-4">
-                    <label for="brands">Brands:</label> <br />
-                    <select class="form-select" id="filter-brands">
+                    <label for="features">Features:</label> <br />
+                    <select class="form-select" id="filter-features">
                         <?php
-                        if (!isset($_GET['brand'])) echo "<option selected value='all'>All</option>";
+                        if (!isset($_GET['feature'])) echo "<option selected value='all'>All</option>";
                         else echo "<option value='all'>All</option>";
                         $host = "localhost";
                         $user = "root";
@@ -61,11 +61,11 @@
                         if (!$conn) {
                             die('Could not connect: ' . mysqli_error($conn));
                         }
-                        $sql = "SELECT * FROM category WHERE type = 'table'";
+                        $sql = "SELECT * FROM category WHERE type = 'lamp'";
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                if (isset($_GET['brand']) && $_GET['brand'] == $row['name']) echo "<option selected value='" . $row['name'] . "'>" . strtoupper($row['name']) . "</option>";
+                                if (isset($_GET['feature']) && $_GET['feature'] == $row['name']) echo "<option selected value='" . $row['name'] . "'>" . strtoupper($row['name']) . "</option>";
                                 else echo "<option value='" . $row['name'] . "'>" . strtoupper($row['name']) . "</option>";
                             }
                         }
@@ -102,14 +102,14 @@
                 if (!$conn) {
                     die('Could not connect: ' . mysqli_error($conn));
                 }
-                $brand = isset($_GET['brand']) ? $_GET['brand'] : null;
+                $feature = isset($_GET['feature']) ? $_GET['feature'] : null;
                 $price = isset($_GET['price']) ? $_GET['price'] : null;
                 $query = null;
-                if ($brand == null) {
-                    $query = "SELECT COUNT(uid) as total from product where type='table'";
+                if ($feature == null) {
+                    $query = "SELECT COUNT(uid) as total from product where type='lamp'";
                 }
                 else {
-                    $query = "SELECT COUNT(uid) as total from product where type='table' and category='$brand'";
+                    $query = "SELECT COUNT(uid) as total from product where type='lamp' and category='$feature'";
                 }
                 $result = mysqli_query($conn, $query);
                 $row = mysqli_fetch_assoc($result);
@@ -123,26 +123,26 @@
                     $current_page = 1;
                 }
                 $start = ($current_page - 1) * $limit;
-                if ($brand == null && $price == null) {
-                    $query = "SELECT * FROM product WHERE type = 'table' LIMIT $start, $limit";
+                if ($feature == null && $price == null) {
+                    $query = "SELECT * FROM product WHERE type = 'lamp' LIMIT $start, $limit";
                 }
-                elseif ($brand == null && $price != null) {
+                elseif ($feature == null && $price != null) {
                     if ($price == 'low-to-high') {
-                        $query = "SELECT * FROM product WHERE type = 'table' ORDER BY price ASC LIMIT $start, $limit";
+                        $query = "SELECT * FROM product WHERE type = 'lamp' ORDER BY price ASC LIMIT $start, $limit";
                     }
                     else {
-                        $query = "SELECT * FROM product WHERE type = 'table' ORDER BY price DESC LIMIT $start, $limit";
+                        $query = "SELECT * FROM product WHERE type = 'lamp' ORDER BY price DESC LIMIT $start, $limit";
                     }
                 }
-                elseif ($brand != null && $price == null) {
-                    $query = "SELECT * FROM product WHERE type='table' and category='$brand' LIMIT $start, $limit";
+                elseif ($feature != null && $price == null) {
+                    $query = "SELECT * FROM product WHERE type='lamp' and category='$feature' LIMIT $start, $limit";
                 }
                 else {
                     if ($price == 'low-to-high') {
-                        $query = "SELECT * FROM product WHERE type='table' and category='$brand' ORDER BY price ASC LIMIT $start, $limit";
+                        $query = "SELECT * FROM product WHERE type='lamp' and category='$feature' ORDER BY price ASC LIMIT $start, $limit";
                     }
                     else {
-                        $query = "SELECT * FROM product WHERE type='table' and category='$brand' ORDER BY price DESC LIMIT $start, $limit";
+                        $query = "SELECT * FROM product WHERE type='lamp' and category='$feature' ORDER BY price DESC LIMIT $start, $limit";
                     }
                 }
                 $result = mysqli_query($conn, $query);
@@ -180,8 +180,8 @@
 
                 // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
                 if ($current_page > 1 && $total_page > 1) {
-                    if (isset($_GET['brand'])) echo '<li class="page-item"><a  class="page-link" href="table.php?page=' . ($current_page - 1) . '&brand=' . $_GET['brand'] . '">Prev</a><li>';
-                    else echo '<li class="page-item"><a  class="page-link" href="table.php?page=' . ($current_page - 1) . '">Prev</a></li>';
+                    if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="lamp.php?page=' . ($current_page - 1) . '&feature=' . $_GET['feature'] . '">Prev</a><li>';
+                    else echo '<li class="page-item"><a  class="page-link" href="lamp.php?page=' . ($current_page - 1) . '">Prev</a></li>';
                 }
 
                 // Lặp khoảng giữa
@@ -191,15 +191,15 @@
                     if ($i == $current_page) {
                         echo '<li class="page-item"><span class="page-link active">' . $i . '</span> </li> ';
                     } else {
-                        if (isset($_GET['brand'])) echo '<li class="page-item"><a  class="page-link" href="table.php?page=' . $i . '&brand=' . $_GET['brand'] . '">' . $i . '</a></li>';
-                        else echo '<li class="page-item"><a  class="page-link" href="table.php?page=' . $i . '">' . $i . '</a></li>';
+                        if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="lamp.php?page=' . $i . '&feature=' . $_GET['feature'] . '">' . $i . '</a></li>';
+                        else echo '<li class="page-item"><a  class="page-link" href="lamp.php?page=' . $i . '">' . $i . '</a></li>';
                     }
                 }
 
                 // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
                 if ($current_page < $total_page && $total_page > 1) {
-                    if (isset($_GET['brand'])) echo '<li class="page-item"><a  class="page-link" href="table.php?page=' . ($current_page + 1) . '&brand=' . $_GET['brand'] . '">Next</a><li>';
-                    else echo '<li class="page-item"><a  class="page-link" href="table.php?page=' . ($current_page + 1) . '">Next</a></li>';
+                    if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="lamp.php?page=' . ($current_page + 1) . '&feature=' . $_GET['feature'] . '">Next</a><li>';
+                    else echo '<li class="page-item"><a  class="page-link" href="lamp.php?page=' . ($current_page + 1) . '">Next</a></li>';
                 }
                 ?>
             </div>
@@ -209,11 +209,11 @@
 <!-- End Content -->
 <script>
     function filterLaptop(e) {
-        let inputBrand = document.getElementById("filter-brands").value;
+        let inputfeature = document.getElementById("filter-features").value;
         let inputPrice = document.getElementById("filter-prices").value;
-        if (inputBrand == 'all' && inputPrice == 'all') window.location.href = 'table.php';
-        else if (inputBrand == 'all' && inputPrice != 'all') window.location.href = 'table.php?price=' + inputPrice;
-        else if (inputBrand != 'all' && inputPrice == 'all') window.location.href = 'table.php?brand=' + inputBrand;
-        else window.location.href = 'table.php?brand=' + inputBrand + '&price=' + inputPrice;
+        if (inputfeature == 'all' && inputPrice == 'all') window.location.href = 'lamp.php';
+        else if (inputfeature == 'all' && inputPrice != 'all') window.location.href = 'lamp.php?price=' + inputPrice;
+        else if (inputfeature != 'all' && inputPrice == 'all') window.location.href = 'lamp.php?feature=' + inputfeature;
+        else window.location.href = 'lamp.php?feature=' + inputfeature + '&price=' + inputPrice;
     }
 </script>

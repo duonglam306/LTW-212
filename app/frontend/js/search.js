@@ -8,13 +8,13 @@ $(document).ready(function() {
 $(document).on('submit','#searchForm', function(e) {
     e.preventDefault();
     var key = $("#searchForm input[name='key']").val();
-    var tag = $("#searchForm select[name='tag']").val();
-    console.log(tag);
+    var tag = $("#product-select").val();
+    var typeSearch = $("#type-search").val();
     if (key != "") {
         $.ajax({
             url: "app/backend/search.php",
             method: "POST",
-            data: {key: key, tag: tag},
+            data: {key: key, tag: tag, typeSearch: typeSearch},
             success: function(data) {
                 $('#searchResult').html('<div class="list-group-item">' + data + '</div>');
             }

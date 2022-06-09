@@ -44,7 +44,7 @@
                             <div class='carousel-inner product-links-wap' role='listbox'>
                                 <!--First slide-->
                                 <div class='carousel-item active'>
-                                    <div class='row'>
+                                    <div class='row justify-content-around'>
                                         <div class='col-4'>
                                             <a href='#'>
                                                 <img class='card-img img-fluid' src='".$row['image']."' alt='Product Image 1'>
@@ -117,15 +117,15 @@
                                                 <input type='hidden' name='id' value='".$row['uid']."'>
                                                 <input type='hidden' name='available' value='".$row['amount']."'>
                                             </li>
-                                            <li class='list-inline-item'><span class='btn btn-success btn-minus'>-</span></li>
-                                            <li class='list-inline-item'><span class='badge bg-secondary' id='var-value'>0</span></li>
-                                            <li class='list-inline-item'><span class='btn btn-success btn-plus' data-quantity = '".$row['amount']."'>+</span></li>
+                                            <li class='list-inline-item'><span class='btn btn-warning btn-minus mb-0'>-</span></li>
+                                            <li class='list-inline-item'><span class='badge btn-secondary btn' id='var-value'>0</span></li>
+                                            <li class='list-inline-item'><span class='btn btn-warning btn-plus mb-0' data-quantity = '".$row['amount']."'>+</span></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class='row pb-3'>
                                     <div class='col d-grid'>
-                                        <button type='submit' class='btn btn-success btn-lg' name='submit' value='addtocard'>Add To Cart</button>
+                                        <button type='submit' class='btn btn-warning btn-lg' name='submit' value='addtocard'>Add To Cart</button>
                                     </div>
                                 </div>
                             </form>
@@ -163,7 +163,7 @@
                             <textarea class='form-control' id='commentTextarea' name='comment' placeholder='Leave a comment here' style='height: 80px'></textarea>
                         </div>
                         <div class='text-start mt-3'>
-                            <button type='submit' class='btn btn-primary'>Send comment</button>
+                            <button type='submit' class='btn btn-warning'>Send comment</button>
                         </div>
                     </form>
                 </div>
@@ -231,7 +231,7 @@
                             <img class='card-img rounded-0 img-fluid' src='".$row['image']."'>
                             <div class='card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center'>
                                 <ul class='list-unstyled'>
-                                    <li><a class='btn btn-success text-white mt-2' href='product.php?id=".$row['uid']."'><i class='far fa-eye'></i></a></li>
+                                    <li><a class='btn btn-warning text-white mt-2' href='product.php?id=".$row['uid']."'><i class='far fa-eye'></i></a></li>
                                 </ul>
                             </div>
                         </div>
