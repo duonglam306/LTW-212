@@ -23,24 +23,36 @@
         <div class="col-lg-3">
             <h1 class="h2 pb-4">Categories</h1>
             <ul class="list-unstyled">
-            <li class="pb-3 category-menu-item">
-                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none nav-link link-dark" href="table.php">
+            <li class=" category-menu-item">
+                    <a class="collapsed d-flex h3 text-decoration-none nav-link link-dark" href="table.php">
                         Table
+                        <div>
+                            <img class="pl-2 icon-category-menu-1" src="img/table.png" alt=""> <img class="pl-2 icon-category-menu-2" src="img/table.png" alt="">
+                        </div>
                     </a>
                 </li>
-                <li class="pb-3 category-menu-item">
-                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none nav-link link-dark" href="chair.php">
+                <li class=" category-menu-item">
+                    <a class="collapsed d-flex h3 text-decoration-none nav-link link-dark" href="chair.php">
                         Chair
+                        <div>
+                            <img class="pl-2 icon-category-menu-1" src="img/chair.png" alt=""> <img class="pl-2 icon-category-menu-2" src="img/chair.png" alt="">
+                        </div>
                     </a>
                 </li>
-                <li class="pb-3 category-menu-item">
-                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none nav-link link-dark" href="bed.php">
+                <li class=" category-menu-item">
+                    <a class="collapsed d-flex h3 text-decoration-none nav-link link-dark" href="bed.php">
                         Bed
+                        <div>
+                            <img class="pl-2 icon-category-menu-1" src="img/bed.png" alt=""> <img class="pl-2 icon-category-menu-2" src="img/bed.png" alt="">
+                        </div>
                     </a>
                 </li>
-                <li class="pb-3 category-menu-item">
-                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none nav-link link-dark" href="lamp.php">
+                <li class=" category-menu-item">
+                    <a class="collapsed d-flex h3 text-decoration-none nav-link link-dark" href="lamp.php">
                         Lamp
+                        <div>
+                            <img class="pl-2 icon-category-menu-1" src="img/lamp.png" alt=""> <img class="pl-2 icon-category-menu-2" src="img/lamp.png" alt="">
+                        </div>
                     </a>
                 </li>
             </ul>
@@ -107,8 +119,7 @@
                 $query = null;
                 if ($feature == null) {
                     $query = "SELECT COUNT(uid) as total from product where type='table'";
-                }
-                else {
+                } else {
                     $query = "SELECT COUNT(uid) as total from product where type='table' and category='$feature'";
                 }
                 $result = mysqli_query($conn, $query);
@@ -125,23 +136,18 @@
                 $start = ($current_page - 1) * $limit;
                 if ($feature == null && $price == null) {
                     $query = "SELECT * FROM product WHERE type = 'table' LIMIT $start, $limit";
-                }
-                elseif ($feature == null && $price != null) {
+                } elseif ($feature == null && $price != null) {
                     if ($price == 'low-to-high') {
                         $query = "SELECT * FROM product WHERE type = 'table' ORDER BY price ASC LIMIT $start, $limit";
-                    }
-                    else {
+                    } else {
                         $query = "SELECT * FROM product WHERE type = 'table' ORDER BY price DESC LIMIT $start, $limit";
                     }
-                }
-                elseif ($feature != null && $price == null) {
+                } elseif ($feature != null && $price == null) {
                     $query = "SELECT * FROM product WHERE type='table' and category='$feature' LIMIT $start, $limit";
-                }
-                else {
+                } else {
                     if ($price == 'low-to-high') {
                         $query = "SELECT * FROM product WHERE type='table' and category='$feature' ORDER BY price ASC LIMIT $start, $limit";
-                    }
-                    else {
+                    } else {
                         $query = "SELECT * FROM product WHERE type='table' and category='$feature' ORDER BY price DESC LIMIT $start, $limit";
                     }
                 }
