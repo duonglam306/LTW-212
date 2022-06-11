@@ -1,5 +1,5 @@
-//Laptop Datatable
-$("#table-laptop").DataTable({
+
+$("#table-product").DataTable({
     responsive: true,
     lengthChange: false,
     autoWidth: false,
@@ -17,7 +17,7 @@ $("#table-laptop").DataTable({
     // ],
 });
 
-//View laptop jquery
+//View Product jquery
 $(document).on("click", ".btn-view", function (e) {
     var title = $(this).data("title");
     var content = "Description: " + $(this).data("content");
@@ -30,7 +30,7 @@ $(document).on("click", ".btn-view", function (e) {
     $("#viewProductModal").modal("show");
 });
 
-//Edit laptop jquery
+//Edit Product jquery
 $("#edit-brand-sel2").select2({
     theme: "bootstrap4",
     dropdownParent: $("#editProductModal"),
@@ -93,7 +93,7 @@ $(document).on("submit", "#editProductForm", function (e) {
     });
 });
 
-//Add laptop jquery
+//Add Product jquery
 $(document).on("click", ".btn-add", function (e) {
     $("#addProductModal").modal("show");
 });
@@ -139,7 +139,7 @@ $(document).on("submit", "#addProductForm", function (e) {
     });
 });
 
-//Delete laptop jquery
+//Delete Product jquery
 $(document).on("click", ".btn-delete", function (e) {
     var id = $(this).data("id");
     var content =

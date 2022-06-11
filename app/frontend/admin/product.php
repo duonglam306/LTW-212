@@ -21,7 +21,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <table class="table table-bordered table-striped" id="table-laptop">
+                                    <table class="table table-bordered table-striped" id="table-product">
                                         <thead>
                                             <tr class="text-center">
                                                 <th>No.</th>
@@ -250,7 +250,7 @@
     <div class="modal-dialog">
         <div class="modal-content bg-danger">
             <div class="modal-header">
-                <h4 class="modal-title">Delete Laptop</h4>
+                <h4 class="modal-title">Delete <?php echo ucfirst($type) ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

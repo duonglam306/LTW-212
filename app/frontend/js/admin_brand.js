@@ -99,7 +99,7 @@ $(document).on("click", ".btn-delete", function (e) {
     var content =
         "Are you sure you want to delete '" +
         $(this).data("name") +
-        "' from laptop brand?";
+        "' from type?";
     $("#deleteBrandModal .modal-body p").text(content);
     $("#deleteBrandModal input[name='id']").val(id);
     $("#deleteBrandModal").modal("show");

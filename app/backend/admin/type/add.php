@@ -1,5 +1,7 @@
 <?php
     $name = strtolower($_POST['name']);
+    $type=$_POST['type']    
+
     $host = "localhost";
     $user = "root";
     $pw = "";
@@ -8,7 +10,7 @@
     if (!$conn) {
         die('Could not connect: ' . mysqli_error($conn));
     }
-    $sql = "INSERT INTO category(name,type) VALUES('".$name."', 'accessories')";
+    $sql = "INSERT INTO category(name,type) VALUES('".$name."', '".$type."')";
     if ($conn->query($sql) === TRUE) {
         echo "Add successfully!";
     } 

@@ -74,7 +74,6 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-header">PRODUCTS MANAGEMENT</li>
                         <li class="nav-item"><a class="nav-link" href="#">
-                                <!-- <i class="nav-icon fas fa-laptop"></i> -->
                                 <span class="nav-icon material-symbols-rounded">
                                     table_restaurant
                                 </span>

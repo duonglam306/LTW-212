@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
-                                    <button class="btn btn-add btn-primary" type="button">Add new brand</button>
+                                    <button class="btn btn-add btn-primary" type="button">Add new type</button>
                                 </div>
                             </div>
                             <div class="row">
@@ -25,7 +25,7 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th>No.</th>
-                                                <th>Brand Name</th>
+                                                <th>Type Name</th>
                                                 <th>Amount</th>
                                                 <th></th>
                                             </tr>
@@ -79,7 +79,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add Brand</h4>
+                <h4 class="modal-title">Add Type</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -88,7 +88,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Name</label>
-                        <input class="form-control" placeholder="Brand Name" type="text" name="name" />
+                        <input class="form-control" placeholder="Type Name" type="text" name="name" />
                         <input class="form-control" type="hidden" name="type" value='<?php echo $type ?>' />
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                     </div>
                     <div class="form-group">
                         <label>Name</label>
-                        <input class="form-control" placeholder="Brand Name" type="text" name="name" />
+                        <input class="form-control" placeholder="Type Name" type="text" name="name" />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -163,7 +163,7 @@
     <div class="modal-dialog">
         <div class="modal-content bg-danger">
             <div class="modal-header">
-                <h4 class="modal-title">Delete Brand</h4>
+                <h4 class="modal-title">Delete Type</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
