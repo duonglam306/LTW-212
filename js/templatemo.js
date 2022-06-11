@@ -32,6 +32,16 @@ $(document).ready(function() {
     $(document).on('click','.btn-minus', function(){
       var val = $("#var-value").html();
       val = (val=='0')?val:val-1;
+      if (val=='0') {
+        $("#btn-minus-quantity").prop('disabled', true)
+        $("#btn-plus-quantity").prop('disabled', false)
+        $("#btn-add-to-cart").prop('disabled', true)
+      }
+      else {
+        $("#btn-minus-quantity").prop('disabled', false)
+        $("#btn-plus-quantity").prop('disabled', false)
+        $("#btn-add-to-cart").prop('disabled', false)
+      }
       $("#var-value").html(val);
       return false;
     });
@@ -39,6 +49,16 @@ $(document).ready(function() {
       var val = parseInt($("#var-value").html());
       var quantity = $(this).data('quantity');
       val = (val==quantity)? val:val+1;
+      if (val==quantity) {
+        $("#btn-plus-quantity").prop('disabled', true)
+        $("#btn-minus-quantity").prop('disabled', false)
+        $("#btn-add-to-cart").prop('disabled', false)
+      }
+      else {
+        $("#btn-plus-quantity").prop('disabled', false)
+        $("#btn-minus-quantity").prop('disabled', false)
+        $("#btn-add-to-cart").prop('disabled', false)
+      }
       $("#var-value").html(val);
       return false;
     });

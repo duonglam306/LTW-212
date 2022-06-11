@@ -68,7 +68,7 @@
             }
     echo    '<div class="row pb-3 px-5">
                 <div class="col-lg-12 m-auto text-center">
-                    <button type="submit" class="btn btn-primary btn-lg mr-2">Update Information</button>
+                    <button type="submit" class="btn btn-warning btn-lg mr-2">Update Information</button>
                     <button type="button" class="btn btn-secondary btn-lg btn-changepw">Change password</button>
                 </div>
             </div>
@@ -142,7 +142,7 @@
     $('document').ready(function() {
         $('[data-toggle=popover]').popover({
             html: true,
-            content: '<a href="#" class="btn btn-outline-dark btn-change">Change Avatar</a>',
+            content: '<a href="#" class="btn btn-warning btn-change">Change Avatar</a>',
         }) 
     });
 

@@ -71,7 +71,7 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo align-self-center" style="font-size: 30px !important" href="index.php" >
+            <a class="navbar-brand text-warning logo align-self-center" style="font-size: 30px !important" href="index.php" >
             <i class="fa fa-chevron-left"></i>
                 Back
             </a>
@@ -89,7 +89,7 @@
 
                 <div class="mb-md-5 mt-md-4">
 
-                    <h2 class="fw-bold mb-2 text-uppercase text-success">Login to <br> Hola House</h2>
+                    <h2 class="fw-bold mb-2 text-uppercase text-warning">Login to <br> Hola House</h2>
                     <p class="text-white-50 mb-4">Please enter your username and password!</p>
 
                     <form action="" method="post">
@@ -110,12 +110,12 @@
                             </div>
                         </div>
                         <p id="message" class= "mt-2" style="color:#ff4f4f !important;"></p>
-                        <button class="btn btn-success btn-lg px-5 mt-4" type="submit" name="submitBtn">Login</button>
+                        <button class="btn btn-warning btn-lg px-5 mt-4" type="submit" name="submitBtn">Login</button>
                     </form>
                 </div>
 
                 <div>
-                <p class="mb-0 text-success">Don't have an account? <a href="register.php" class="text-white-50 fw-bold">Sign Up</a></p>
+                <p class="mb-0 text-warning">Don't have an account? <a href="register.php" class="text-white-50 fw-bold">Sign Up</a></p>
                 </div>
 
             </div>

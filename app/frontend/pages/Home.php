@@ -81,7 +81,7 @@
                 die('Could not connect: ' . mysqli_error($conn));
             }
             for ($i = 8; $i < 12; $i++) {
-                $a = $i+3*$i;
+                $a = 4*$i;
                 $sql = "SELECT * FROM product WHERE uid = '$a'";
                 $result = mysqli_query($conn, $sql);
                 if(mysqli_num_rows($result) > 0){

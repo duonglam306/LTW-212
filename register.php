@@ -31,7 +31,7 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo align-self-center" style="font-size: 30px !important" href="index.php" >
+            <a class="navbar-brand text-warning logo align-self-center" style="font-size: 30px !important" href="index.php" >
             <i class="fa fa-chevron-left"></i>
                 Back
             </a>
@@ -46,7 +46,7 @@
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <div class="card-body px-3 py-5 text-center">
-                        <h2 class="fw-bold mb-2 text-uppercase text-success">Create an account</h2>
+                        <h2 class="fw-bold mb-2 text-uppercase text-warning">Create an account</h2>
                         <p class="text-white-50 mb-4">Please fill out following information to sign up</p>
                             <form action="" method="post">
                                 <div class="row align-items-center pb-3">
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                                 <p id="message" class= "mt-2"></p>
-                                <button class="btn btn-success btn-lg px-5 mt-3 " name="submitBtn" type="submit">Sign up</button>
+                                <button class="btn btn-warning btn-lg px-5 mt-3 " name="submitBtn" type="submit">Sign up</button>
                             </form>
                         </div>
                     </div>
