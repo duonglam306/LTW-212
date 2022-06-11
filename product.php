@@ -107,15 +107,9 @@
                                                 <input type='hidden' name='id' value='".$row['uid']."'>
                                                 <input type='hidden' name='available' value='".$row['amount']."'>
                                             </li>
-<<<<<<< HEAD
                                             <li class='list-inline-item'><span class='btn btn-warning btn-minus mb-0'>-</span></li>
                                             <li class='list-inline-item'><span class='badge btn-secondary btn' id='var-value'>0</span></li>
                                             <li class='list-inline-item'><span class='btn btn-warning btn-plus mb-0' data-quantity = '".$row['amount']."'>+</span></li>
-=======
-                                            <li class='list-inline-item'><span class='btn btn-success btn-minus'>-</span></li>
-                                            <li class='list-inline-item'><span class='badge bg-secondary' id='var-value'>1</span></li>
-                                            <li class='list-inline-item'><span class='btn btn-success btn-plus' data-quantity = '".$row['amount']."'>+</span></li>
->>>>>>> long
                                         </ul>
                                     </div>
                                 </div>
