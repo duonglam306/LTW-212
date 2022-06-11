@@ -74,7 +74,7 @@ $(document).on("submit", "#editBrandForm", function (e) {
     e.preventDefault();
     var id = $("#editBrandForm input[name='id']").val();
     var name = $("#editBrandForm input[name='name']").val();
-    var type = $("#editBrandForm input[name='type]").val();
+    var type = $("#editBrandForm input[name='type']").val();
     $.ajax({
         url: "app/backend/admin/brand/edit.php",
         method: "POST",

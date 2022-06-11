@@ -40,6 +40,14 @@
         .nav-item .nav-icon {
             margin-right: 10px;
         }
+
+        .nav-treeview li {
+            margin-left: 20px;
+        }
+
+        .nav-treeview li .nav-item {
+            font-size: 10px;
+        }
     </style>
 </head>
 
