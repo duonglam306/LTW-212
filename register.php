@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title> Tauries Laptop  </title>
+<title> Hola House  </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,16 +36,16 @@
                 Back
             </a>
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.php" >
-                Tauries 
-            </a>
+            <div class="col-2">
+                <img src="img/logo.png" alt="logo-login" class="w-100">
+            </div>
         </div>
     </nav>
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="py-5 h-100" style="background-image: url(img/bg_register_form.jpg); background-repeat:no-repeat">
+        <div class="col-12 d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                    <div class="card-body p-5 text-center">
+                    <div class="card-body px-3 py-5 text-center">
                         <h2 class="fw-bold mb-2 text-uppercase text-success">Create an account</h2>
                         <p class="text-white-50 mb-4">Please fill out following information to sign up</p>
                             <form action="" method="post">
@@ -121,7 +121,7 @@
             if ($conn->query($sql) === TRUE) {
                 echo "<script>
                     alert('Account has been signed up');
-                    location.replace('index.php');
+                    location.replace('login.php');
                 </script>";
             }
             else echo "<script>
