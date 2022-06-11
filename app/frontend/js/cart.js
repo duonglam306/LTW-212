@@ -159,7 +159,7 @@ $(document).on('submit','#checkoutForm', function(e) {
                         title: "Notification",
                         text: "Thank you for your order! We hope to see you again",
                         icon: "success" ,
-                        didClose: () => window.location.href = "laptop.php"
+                        didClose: () => window.location.href = "table.php"
                     });
                 }
                 else {
