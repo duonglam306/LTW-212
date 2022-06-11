@@ -25,7 +25,7 @@ $posts_num = $db->query($posts_num_sql)->fetchColumn();
 ?>
 <!-- <script>console.log(<php>$orders_num_res,$acc_num_res,$products_num_res,$news_num_res</php>)</script> -->
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="fur-bg content-wrapper" style="background: '../../../img/background.jpg'">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">

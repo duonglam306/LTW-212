@@ -48,6 +48,11 @@
         .nav-treeview li .nav-item {
             font-size: 10px;
         }
+
+        .fur-bg {
+            background: linear-gradient(#ffffff, rgba(90, 80, 2, 0.8)), url("./img/background.jpg");
+            background-size: 60%;
+        }
     </style>
 </head>
 
