@@ -1,3 +1,50 @@
+<?php
+    if (isset($_POST['submitBtn'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        if (empty($username) || empty($password)) echo 
+            "<script> 
+                var x = document.getElementById('message');
+                x.style.color = 'red';
+                x.innerHTML = 'Please fill out all information';
+            </script>";
+        else {
+            $host = "localhost";
+            $user = "root";
+            $pw = "";
+            $database = "hola_house";
+            $conn = mysqli_connect($host,$user,$pw,$database);
+            if (!$conn) {
+                die('Could not connect: ' . mysqli_error($conn));
+            }
+            $sql = "SELECT * FROM users WHERE username = '$username'";
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                if (password_verify($password,$row['password'])) {
+                    session_start();
+                    $_SESSION[$username]=$row['name'];
+                    setcookie('username', $username, time() + (86400 * 30), "/");
+                    header('Location: index.php');
+                    // echo "<script>history.go(-2);</script>";
+                }
+                else echo
+                    "<script> 
+                        var x = document.getElementById('message');
+                        x.style.color = 'red';
+                        x.innerHTML = 'Incorrect password';
+                    </script>";
+            }
+            else echo
+                "<script> 
+                    var x = document.getElementById('message');
+                    x.style.color = 'red';
+                    x.innerHTML = 'Incorrect username or password';
+                </script>";
+            $conn->close();
+        }
+    }  
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,50 +128,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
-<?php
-    if (isset($_POST['submitBtn'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        if (empty($username) || empty($password)) echo 
-            "<script> 
-                var x = document.getElementById('message');
-                x.style.color = 'red';
-                x.innerHTML = 'Please fill out all information';
-            </script>";
-        else {
-            $host = "localhost";
-            $user = "root";
-            $pw = "";
-            $database = "hola_house";
-            $conn = mysqli_connect($host,$user,$pw,$database);
-            if (!$conn) {
-                die('Could not connect: ' . mysqli_error($conn));
-            }
-            $sql = "SELECT * FROM users WHERE username = '$username'";
-            $result = mysqli_query($conn, $sql);
-            if (mysqli_num_rows($result) > 0) {
-                $row = mysqli_fetch_assoc($result);
-                if (password_verify($password,$row['password'])) {
-                    session_start();
-                    $_SESSION[$username]=$row['name'];
-                    setcookie('username', $username, time() + (86400 * 30), "/");
-                    header('Location: index.php');
-                    // echo "<script>history.go(-2);</script>";
-                }
-                else echo
-                    "<script> 
-                        var x = document.getElementById('message');
-                        x.style.color = 'red';
-                        x.innerHTML = 'Incorrect password';
-                    </script>";
-            }
-            else echo
-                "<script> 
-                    var x = document.getElementById('message');
-                    x.style.color = 'red';
-                    x.innerHTML = 'Incorrect username or password';
-                </script>";
-            $conn->close();
-        }
-    }  
-?>
