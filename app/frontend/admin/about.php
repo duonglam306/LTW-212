@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>HOLA HOUSE ABOUT</h1>
+                    <h1>TAURIES ABOUT</h1>
                 </div>
             </div>
         </div>
@@ -30,59 +30,59 @@
                                                 <th>Description</th>
                                                 <th>Content</th>
                                                 <th>Update Time</th>
-                              
+
                                                 <!-- <th>Image</th> -->
                                                 <th>Option</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $host = "localhost";
-                                                $user = "root";
-                                                $pw = "";
-                                                $database = "hola_house";
-                                                $conn = mysqli_connect($host,$user,$pw,$database);
-                                                if (!$conn) {
-                                                    die('Could not connect: ' . mysqli_error($conn));
-                                                }
-                                                $sql = "SELECT * FROM about_page;
+                                            $host = "localhost";
+                                            $user = "root";
+                                            $pw = "";
+                                            $database = "hola_house";
+                                            $conn = mysqli_connect($host, $user, $pw, $database);
+                                            if (!$conn) {
+                                                die('Could not connect: ' . mysqli_error($conn));
+                                            }
+                                            $sql = "SELECT * FROM about_page;
                                                 
                                                 ";
-                                                $i = 1;
-                                                $result = mysqli_query($conn, $sql);
-                                                if(mysqli_num_rows($result) > 0){
-                                                    while ($row = mysqli_fetch_assoc($result)){
-                                                        echo "
-                                                            <tr class='text-center'>
-                                                                <td>".$i."</td>
-                                                                <td>".$row['title']."</td>
-                                                                <td style='width:300px';>".$row['description']."</td>
-                                                                <td>".substr($row['content'],0,30)."...</td>
-                                                                <td>".$row['date']."</td>
-                                                               
+                                            $i = 1;
+                                            $result = mysqli_query($conn, $sql);
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                    echo "
+                                                        <tr class='text-center'>
+                                                            <td>" . $i . "</td>
+                                                            <td>" . $row['title'] . "</td>
+                                                            <td style='width:300px';>" . $row['description'] . "</td>
+                                                            <td>" . substr($row['content'], 0, 30) . "...</td>
+                                                            <td>" . $row['date'] . "</td>
+                                                            <td>
+                                                                <button type='button' class='btn btn-success btn-view btn-xs mr-1' data-id ='" . $row['id'] . "'
+                                                                data-title ='" . $row['title'] . "' data-content ='" . $row['content'] . "'
+                                                                data-image ='" . $row['image'] . "' data-description ='" . $row['description'] . "'>
+                                                                    <i class='fas fa-eye'></i>
+                                                                </button>
                                                                 
-                                                  
-                                                                <td>
-                                                                <button type='button' class='btn btn-success btn-view btn-xs mr-1' data-id ='".$row['id']."'
-                                                                data-title ='".$row['title']."' data-content ='".$row['content']."'
-                                                                data-image ='".$row['image']."' data-description ='".$row['description']."'><i class='fas fa-eye'></i></button>
-
-                                                                    <button type='button' class='btn btn-primary btn-edit btn-xs mr-1' data-id ='".$row['id']."'
-                                                                    data-title ='".$row['title']."' data-content ='".$row['content']."'
-                                                                    data-image ='".$row['image']."' data-description ='".$row['description']."'><i class='fas fa-edit'></i></button>
-                                                                    
-                                                                    <button type='button' class='btn btn-danger btn-delete btn-xs' data-id ='".$row['id']."'
-                                                                    data-title ='".$row['title']."' data-content ='".$row['content']."'
-                                                                    data-image ='".$row['image']."' data-description ='".$row['description']."'><i class='fas fa-trash'></i></button>
-
-                                                                </td>
-                                                            
+                                                                <button type='button' class='btn btn-primary btn-edit btn-xs mr-1' data-id ='" . $row['id'] . "'
+                                                                data-title ='" . $row['title'] . "' data-content ='" . $row['content'] . "'
+                                                                data-image ='" . $row['image'] . "' data-description ='" . $row['description'] . "'>
+                                                                    <i class='fas fa-edit'></i>                                 
+                                                                </button>
                                                                 
-                                                            </tr>";
-                                                            $i ++;
-                                                    }
+                                                                <button type='button' class='btn btn-danger btn-delete btn-xs' data-id ='" . $row['id'] . "'
+                                                                data-title ='" . $row['title'] . "' data-content ='" . $row['content'] . "'
+                                                                data-image ='" . $row['image'] . "' data-description ='" . $row['description'] . "'>
+                                                                    <i class='fas fa-trash'></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>";
+                                                    $i++;
                                                 }
-                                                mysqli_close($conn);
+                                            }
+                                            mysqli_close($conn);
                                             ?>
                                         </tbody>
                                     </table>
@@ -104,7 +104,7 @@
             <div class="modal-header">
                 <h4 class="modal-title" name="title"></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" style="margin-left:auto; margin-right:auto;">
@@ -132,27 +132,27 @@
             <div class="modal-header">
                 <h4 class="modal-title">Edit About</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form id="editPostForm" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <input class="form-control" type="hidden" name="id"/>
+                    <input class="form-control" type="hidden" name="id" />
                     <div class="form-group">
                         <label>Title</label>
-                        <input class="form-control" type="text" name="title"/>
+                        <input class="form-control" type="text" name="title" />
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <input class="form-control" type="text" name="description"/>
+                        <input class="form-control" type="text" name="description" />
                     </div>
                     <div class="form-group">
                         <label>Content</label>
-                        <textarea class="form-control" type="text" name="content" rows="10" cols="40" ></textarea>
+                        <textarea class="form-control" type="text" name="content" rows="10" cols="40"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Image</label>
-                        <input class="form-control" type="text" name="image"/>
+                        <input class="form-control" type="text" name="image" />
                         <!-- <input class="form-control form-control-lg"  type="file" name="fileToUpload" id="fileToUpload"> -->
                     </div>
                 </div>
@@ -174,22 +174,22 @@
             <div class="modal-header">
                 <h4 class="modal-title">Add About</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form id="addAccessoriesForm">
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Title</label>
-                        <input class="form-control" placeholder="" type="text" name="title"/>
+                        <input class="form-control" placeholder="" type="text" name="title" />
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <input class="form-control" placeholder="" type="text" name="description"/>
+                        <input class="form-control" placeholder="" type="text" name="description" />
                     </div>
                     <div class="form-group">
                         <label>Content</label>
-                        <input class="form-control" placeholder="" type="text" name="content"/>
+                        <input class="form-control" placeholder="" type="text" name="content" />
                     </div>
                     <!-- <div class="form-group">
                         <label>Website</label>
@@ -197,10 +197,10 @@
                     </div> -->
                     <div class="form-group">
                         <label>Image</label>
-                        <input class="form-control" placeholder="" type="text" name="image"/>
+                        <input class="form-control" placeholder="" type="text" name="image" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="" type="hidden" name="create_date"/>
+                        <input class="form-control" placeholder="" type="hidden" name="create_date" />
                     </div>
                     <!-- <div class="form-group">
                         <label>Image</label>
@@ -225,12 +225,12 @@
             <div class="modal-header">
                 <h4 class="modal-title">Delete About</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form id="deleteAccessoriesForm">
                 <div class="modal-body">
-                    <input class="form-control" type="hidden" name="id"/>
+                    <input class="form-control" type="hidden" name="id" />
                     <p></p>
                 </div>
                 <div class="modal-footer">
