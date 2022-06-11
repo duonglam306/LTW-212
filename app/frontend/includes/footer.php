@@ -14,11 +14,11 @@
                         </li>
                         <li>
                             <i class="fa fa-phone fa-wd"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">+84 914 851 501</a>
+                            +84 914 851 501
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">bk.furniture.hcmut@gmail.com</a>
+                            bk.furniture.hcmut@gmail.com
                         </li>
                     </ul>
                 </div>

@@ -75,7 +75,7 @@
 										</div>
 										<div class="row no-gutters">
 											<div class="col-md-7" id="message">
-												<div class="contact-wrap bg-warning w-100 p-md-5 p-4">
+												<div class="w-100 p-md-5 p-4" style="background-color: #FED19C;">
 													<h3 class="mb-4">Write Us</h3>
 													<div id="form-message-warning" class="mb-4"></div>
 													<div id="form-message-success" class="mb-4">
