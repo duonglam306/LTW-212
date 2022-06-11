@@ -82,20 +82,10 @@
                     <div class='card'>
                         <div class='card-body'>
                             <h1 class='h2'>".$row['name']."</h1>
-                            <p class='h3 py-2'>".number_format($row['price'])." VND</p>";
-                        if ($row['type'] == 'laptop') echo "
+                            <p class='h3 py-2'>".number_format($row['price'])." VND</p>
                             <ul class='list-inline'>
                                 <li class='list-inline-item'>
-                                    <h5>Brand:</h5>
-                                </li>
-                                <li class='list-inline-item'>
-                                    <p class='text-muted'><strong>".strtoupper($row['category'])."</strong></p>
-                                </li>
-                            </ul>";
-                        if ($row['type'] == 'accessories') echo "
-                            <ul class='list-inline'>
-                                <li class='list-inline-item'>
-                                    <h5>Type:</h5>
+                                    <h5>Category:</h5>
                                 </li>
                                 <li class='list-inline-item'>
                                     <p class='text-muted'><strong>".strtoupper($row['category'])."</strong></p>
@@ -117,9 +107,15 @@
                                                 <input type='hidden' name='id' value='".$row['uid']."'>
                                                 <input type='hidden' name='available' value='".$row['amount']."'>
                                             </li>
+<<<<<<< HEAD
                                             <li class='list-inline-item'><span class='btn btn-warning btn-minus mb-0'>-</span></li>
                                             <li class='list-inline-item'><span class='badge btn-secondary btn' id='var-value'>0</span></li>
                                             <li class='list-inline-item'><span class='btn btn-warning btn-plus mb-0' data-quantity = '".$row['amount']."'>+</span></li>
+=======
+                                            <li class='list-inline-item'><span class='btn btn-success btn-minus'>-</span></li>
+                                            <li class='list-inline-item'><span class='badge bg-secondary' id='var-value'>1</span></li>
+                                            <li class='list-inline-item'><span class='btn btn-success btn-plus' data-quantity = '".$row['amount']."'>+</span></li>
+>>>>>>> long
                                         </ul>
                                     </div>
                                 </div>

@@ -1,16 +1,12 @@
 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        <li class="mt-5" data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+        <li class="mt-5" data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+        <li class="mt-5" data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-        <?php 
-            $host = "localhost";
-            $user = "root";
-            $pw = "";
-            $database = "hola_house";
-            $conn = mysqli_connect($host,$user,$pw,$database);
+        <?php
+            $conn = mysqli_connect("localhost","root","","hola_house");
             if (!$conn) {
                 die('Could not connect: ' . mysqli_error($conn));
             }
@@ -26,11 +22,8 @@
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left align-self-center">
-                                    <h1 class="h1 text-success">'.$row["title"].'</h1>
+                                    <h1 class="h1" style="color: #E88D06">'.$row["title"].'</h1>
                                     <h3 class="h2">'.$row["title2"].'</h3>
-                                    <p>
-                                    '.$row["content"].'
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -47,11 +40,9 @@
                                     </div>
                                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                                         <div class="text-align-left align-self-center">
-                                            <h1 class="h1 text-success">'.$row["title"].'</h1>
+                                            <h1 class="h1" style="color: #E88D06">'.$row["title"].'</h1>
                                             <h3 class="h2">'.$row["title2"].'</h3>
-                                            <p>
-                                            '.$row["content"].'
-                                            </p>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -85,11 +76,7 @@
     </div>
     <div class="row">
         <?php
-            $host = "localhost";
-            $user = "root";
-            $pw = "";
-            $database = "hola_house";
-            $conn = mysqli_connect($host,$user,$pw,$database);
+            $conn = mysqli_connect("localhost","root","","hola_house");
             if (!$conn) {
                 die('Could not connect: ' . mysqli_error($conn));
             }
@@ -100,11 +87,27 @@
                 if(mysqli_num_rows($result) > 0){
                     while ($row = mysqli_fetch_assoc($result)){
                         echo "
-                        <div class='col-12 col-md-3 p-5 mt-3'>
-                            <a href='product.php?id=".$row['uid']."'><img src='".$row['image']."'class='rounded-circle img-fluid border'></a>
-                            <h6 class='text-center mt-3 mb-3'>".$row['name']."</h6>
-                            <p class='text-center'><a href='product.php?id=".$row['uid']."' class='btn btn-success'>Buy now!</a></p>
-                        </div>";
+                        <div class='col-12 col-md-3 mb-4'>
+                                <div class='card h-100'>
+                                    <a href='product.php?id=".$row['uid']."' class='mt-5 mb-5'>
+                                        <img src='".$row['image']."'class='card-img-top' alt='...'>
+                                    </a>
+                                    <div class='card-body'>
+                                        <a href='product.php?id=".$row['uid']."' class='h2 text-decoration-none text-dark'>".$row['name']."</a>
+                                        <p class='card-text mt-2 mb-2 h3 text-warning fw-bold'>"
+                                            .number_format($row['price'])." VND
+                                        </p>
+                                    </div>
+                                    <div class='card-footer text-center'>
+                                        <a href='product.php?id=".$row['uid']."''>
+                                            <button type='button' class='btn btn-outline-warning mb-0'>
+                                                Buy now 
+                                                <i class='fas fa-shopping-cart'></i>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>";
                     }
                 }
             }
@@ -144,21 +147,21 @@
                             echo "
                             <div class='col-12 col-md-3 mb-4'>
                                 <div class='card h-100'>
-                                    <a href='product.php?id=".$row['uid']."'>
+                                    <a href='product.php?id=".$row['uid']."' class='mt-5 mb-5'>
                                         <img src='".$row['image']."'class='card-img-top' alt='...'>
                                     </a>
                                     <div class='card-body'>
                                         <a href='product.php?id=".$row['uid']."' class='h2 text-decoration-none text-dark'>".$row['name']."</a>
-                                        <p class='card-text mt-2 h4'>
-                                            <del>".number_format($row['price'])." VND</del> <span class='h4'>-".$a."% </span>
+                                        <p class='card-text mt-2 mb-2 h4'>
+                                            <del>".number_format($row['price']/(1-$a/100))." VND</del> <span class='h4'>-".$a."% </span>
                                         </p>
-                                        <p class='card-text mt-2 h3 text-danger fw-bold'>"
-                                            .number_format($row['price']*(1-$a/100))." VND
+                                        <p class='card-text mt-2 mb-2 h3 text-warning fw-bold'>"
+                                            .number_format($row['price'])." VND
                                         </p>
                                     </div>
                                     <div class='card-footer text-center'>
-                                        <a href='product.php?id=".$row['uid']."'  style='color: red'>
-                                            <button type='button' class='btn btn-outline-danger'>
+                                        <a href='product.php?id=".$row['uid']."''>
+                                            <button type='button' class='btn btn-outline-warning mb-0'>
                                                 Buy now 
                                                 <i class='fas fa-shopping-cart'></i>
                                             </button>
