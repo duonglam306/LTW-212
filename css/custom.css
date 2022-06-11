@@ -1,0 +1,13 @@
+.theme-color{
+    color: #E88D06 !important;
+}
+
+.theme-color-btn{
+    background-color: #E88D06 !important;
+    color: white !important;
+    border: 0px;
+}
+.theme-color-btn:focus{
+    border-color: #E88D06 !important;
+    outline-color: white !important;
+}
