@@ -125,7 +125,7 @@ $(document).on('click','.delete-cart', function(e) {
 });
 
 $(document).on('click','.btn-continue', function(e) {
-    window.location.href = "laptop.php";
+    window.location.href = "table.php";
 });
 
 $(document).on('click','.btn-checkout', function(e) {

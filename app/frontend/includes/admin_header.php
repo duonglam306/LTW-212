@@ -282,3 +282,13 @@
                 </nav><!-- /.sidebar-menu-->
             </div><!-- /.sidebar-->
         </aside><!-- Content Wrapper. Contains page content-->
+        <?php
+    if (isset($_COOKIE['admin'])) echo "
+        <script>
+            function logout() {
+                sessionStorage.removeItem('" . $_COOKIE['admin'] . "');
+                document.cookie.split(';').forEach(function(c) { document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/'); });
+                window.location.href = 'admin.php';
+            }
+        </script>";
+    ?>
