@@ -69,10 +69,10 @@ if (isset($_POST['submitBtn'])) {
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="col-1 col-md-2">
-                <img src="img/logo.png" class="w-100" alt="logo_admin_hola_house">
+                <img src="img/logo_admin.png" class="w-100" alt="logo_admin_hola_house">
             </div>
 
-            <a class="navbar-brand text-warning logo h2 align-self-center" href="index.php">
+            <a class="navbar-brand text-warning logo h2 align-self-center fw-bold" href="index.php">
                 Hola House <i class="fa fa-chevron-right"></i>
             </a>
         </div>

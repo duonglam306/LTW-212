@@ -99,7 +99,7 @@
                     </select>
                 </div>
                 <div class="col-md-2 pb-4">
-                    <button type="button" class="btn btn-warning text-dark mb-0" onclick="filterLaptop()">
+                    <button type="button" class="btn btn-warning text-dark mb-0" onclick="filterTable()">
                         Apply
                     </button>
                 </div>
@@ -214,7 +214,7 @@
 </div>
 <!-- End Content -->
 <script>
-    function filterLaptop(e) {
+    function filterTable(e) {
         let inputfeature = document.getElementById("filter-features").value;
         let inputPrice = document.getElementById("filter-prices").value;
         if (inputfeature == 'all' && inputPrice == 'all') window.location.href = 'table.php';
