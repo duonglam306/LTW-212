@@ -32,55 +32,54 @@
                                                 <th>Website</th>
                                                 <th>Date changed</th>
                                                 <th>Option</th>
-                                             
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $host = "localhost";
-                                                $user = "root";
-                                                $pw = "";
-                                                $database = "hola_house";
-                                                $conn = mysqli_connect($host,$user,$pw,$database);
-                                                if (!$conn) {
-                                                    die('Could not connect: ' . mysqli_error($conn));
-                                                }
-                                                $sql = "SELECT * FROM contact_page WHERE 1
+                                            $host = "localhost";
+                                            $user = "root";
+                                            $pw = "";
+                                            $database = "hola_house";
+                                            $conn = mysqli_connect($host, $user, $pw, $database);
+                                            if (!$conn) {
+                                                die('Could not connect: ' . mysqli_error($conn));
+                                            }
+                                            $sql = "SELECT * FROM contact_page WHERE 1
                                                 
                                                 ";
-                                                $i = 1;
-                                                $result = mysqli_query($conn, $sql);
-                                                if(mysqli_num_rows($result) > 0){
-                                                
-                                                    while ($row = mysqli_fetch_assoc($result)){
-                                                        echo "
+                                            $i = 1;
+                                            $result = mysqli_query($conn, $sql);
+                                            if (mysqli_num_rows($result) > 0) {
+
+                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                    echo "
                                                             <tr class='text-center'>
-                                                                <td>".$i."</td>
-                                                                <td>".$row['address']."</td>
-                                                                <td>".$row['phone']."</td>
-                                                                <td>".($row['email'])."</td>
-                                                                <td>".($row['website'])."</td>
-                                                                <td>".$row['create_date']."</td>
-                                                               
+                                                                <td>" . $i . "</td>
+                                                                <td>" . $row['address'] . "</td>
+                                                                <td>" . $row['phone'] . "</td>
+                                                                <td>" . ($row['email']) . "</td>
+                                                                <td>" . ($row['website']) . "</td>
+                                                                <td>" . $row['create_date'] . "</td>
+                                                            
                                                                 <td>
-                                                                <button type='button' class='btn btn-success btn-view btn-xs mr-1' data-id ='".$row['id']."'
-                                                                data-address ='".$row['address']."' data-phone ='".$row['phone']."' data-website ='".$row['website']."'
-                                                                data-image ='".$row['image']."' data-email ='".$row['email']."' data-create_date ='".$row['create_date']."'><i class='fas fa-eye'></i></button>
+                                                                <button type='button' class='btn btn-success btn-view btn-xs mr-1' data-id ='" . $row['id'] . "'
+                                                                data-address ='" . $row['address'] . "' data-phone ='" . $row['phone'] . "' data-website ='" . $row['website'] . "'
+                                                                data-image ='" . $row['image'] . "' data-email ='" . $row['email'] . "' data-create_date ='" . $row['create_date'] . "'><i class='fas fa-eye'></i></button>
                                                                 
-                                                                <button type='button' class='btn btn-primary btn-edit btn-xs mr-1' data-id ='".$row['id']."'
-                                                                data-address ='".$row['address']."' data-phone ='".$row['phone']."' data-website ='".$row['website']."'
-                                                                data-image ='".$row['image']."' data-email ='".$row['email']."'><i class='fas fa-edit'></i></button>
+                                                                <button type='button' class='btn btn-primary btn-edit btn-xs mr-1' data-id ='" . $row['id'] . "'
+                                                                data-address ='" . $row['address'] . "' data-phone ='" . $row['phone'] . "' data-website ='" . $row['website'] . "'
+                                                                data-image ='" . $row['image'] . "' data-email ='" . $row['email'] . "'><i class='fas fa-edit'></i></button>
                                                                 
-                                                                <button type='button' class='btn btn-danger btn-delete btn-xs' data-id ='".$row['id']."'
-                                                                    data-address ='".$row['address']."' data-phone ='".$row['phone']."' data-website ='".$row['website']."'
-                                                                    data-image ='".$row['image']."' data-email ='".$row['email']."' data-create_date ='".$row['create_date']."'><i class='fas fa-trash'></i></button>
+                                                                <button type='button' class='btn btn-danger btn-delete btn-xs' data-id ='" . $row['id'] . "'
+                                                                    data-address ='" . $row['address'] . "' data-phone ='" . $row['phone'] . "' data-website ='" . $row['website'] . "'
+                                                                    data-image ='" . $row['image'] . "' data-email ='" . $row['email'] . "' data-create_date ='" . $row['create_date'] . "'><i class='fas fa-trash'></i></button>
                                                                 </td>
                                                             </tr>";
-                                                            $i ++;
-                                                       
-                                                    }
+                                                    $i++;
                                                 }
-                                                mysqli_close($conn);
+                                            }
+                                            mysqli_close($conn);
                                             ?>
                                         </tbody>
                                     </table>
@@ -102,7 +101,7 @@
             <div class="modal-header">
                 <h4 class="modal-title" name="title"></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" style="margin-left:auto; margin-right:auto;">
@@ -132,33 +131,33 @@
             <div class="modal-header">
                 <h4 class="modal-title">Add Contact</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form id="addAccessoriesForm">
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Address</label>
-                        <input class="form-control" placeholder="" type="text" name="address"/>
+                        <input class="form-control" placeholder="" type="text" name="address" />
                     </div>
                     <div class="form-group">
                         <label>Phone</label>
-                        <input class="form-control" placeholder="" type="number" name="phone"/>
+                        <input class="form-control" placeholder="" type="number" name="phone" />
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input class="form-control" placeholder="" type="email" name="email"/>
+                        <input class="form-control" placeholder="" type="email" name="email" />
                     </div>
                     <div class="form-group">
                         <label>Website</label>
-                        <input class="form-control" placeholder="" type="text" name="website"/>
+                        <input class="form-control" placeholder="" type="text" name="website" />
                     </div>
                     <div class="form-group">
                         <label>Image</label>
-                        <input class="form-control" placeholder="" type="text" name="image"/>
+                        <input class="form-control" placeholder="" type="text" name="image" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="" type="hidden" name="create_date"/>
+                        <input class="form-control" placeholder="" type="hidden" name="create_date" />
                     </div>
                     <!-- <div class="form-group">
                         <label>Image</label>
@@ -186,12 +185,12 @@
             <div class="modal-header">
                 <h4 class="modal-title">Delete Contact</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form id="deleteAccessoriesForm">
                 <div class="modal-body">
-                    <input class="form-control" type="hidden" name="create_date"/>
+                    <input class="form-control" type="hidden" name="create_date" />
                     <p></p>
                 </div>
                 <div class="modal-footer">
@@ -213,35 +212,35 @@
             <div class="modal-header">
                 <h4 class="modal-title">Edit Contact</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form id="editPostForm" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <input class="form-control" type="hidden" name="id"/>
+                    <input class="form-control" type="hidden" name="id" />
                     <div class="form-group">
                         <label>Address</label>
-                        <input class="form-control" type="text" name="address"/>
+                        <input class="form-control" type="text" name="address" />
                     </div>
                     <div class="form-group">
                         <label>Phone</label>
-                        <input class="form-control" type="text" name="phone"/>
+                        <input class="form-control" type="text" name="phone" />
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input class="form-control" type="text" name="email"/>
+                        <input class="form-control" type="text" name="email" />
                     </div>
                     <div class="form-group">
                         <label>Website</label>
-                        <input class="form-control" type="text" name="website"/>
+                        <input class="form-control" type="text" name="website" />
                     </div>
                     <div class="form-group">
                         <label>Image</label>
-                        <input class="form-control" type="text" name="image"/>
+                        <input class="form-control" type="text" name="image" />
                         <!-- <input class="form-control form-control-lg"  type="file" name="fileToUpload" id="fileToUpload"> -->
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="" type="hidden" name="create_date"/>
+                        <input class="form-control" placeholder="" type="hidden" name="create_date" />
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hola House Admin</title><!-- Google Font: Source Sans Pro-->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"><!-- Font Awesome-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"><!-- DataTables-->
     <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -22,7 +25,6 @@
     <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         .material-symbols-rounded {
             font-variation-settings:
@@ -30,6 +32,15 @@
                 'wght'400,
                 'GRAD'0,
                 'opsz'48
+        }
+
+        .material-symbols-rounded.circle {
+            font-variation-settings:
+                'FILL'0,
+                'wght'400,
+                'GRAD'0,
+                'opsz'20;
+            font-size: 15px !important;
         }
 
         .nav-item a {
@@ -45,13 +56,10 @@
             margin-left: 20px;
         }
 
-        .nav-treeview li .nav-item {
-            font-size: 10px;
-        }
-
         .fur-bg {
-            background: linear-gradient(#ffffff, rgba(90, 80, 2, 0.8)), url("./img/background.jpg");
-            background-size: 60%;
+            background: linear-gradient(#f4f6f9, rgba(0, 0, 0, 0.2)), url("./img/bg.jpg");
+            background-size: cover;
+            background-position: center bottom;
         }
     </style>
 </head>
@@ -62,7 +70,10 @@
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links-->
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a></li>
+                <li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                        <span class="material-symbols-rounded">
+                            menu
+                        </span></i></a></li>
                 <li class="nav-item d-none d-sm-inline-block"><a href="admin.php" class="nav-link">Home</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -82,12 +93,16 @@
                                 <span class="nav-icon material-symbols-rounded">
                                     table_restaurant
                                 </span>
-                                <p>Table<i class="fas fa-angle-left right"></i></p>
+                                <p>Table
+                                    <i class="material-symbols-rounded right">
+                                        chevron_left
+                                    </i>
+                                </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin_table.php">
-                                        <span class="nav-icon material-symbols-rounded">
+                                        <span class="circle nav-icon material-symbols-rounded">
                                             circle
                                         </span>
                                         <p>List</p>
@@ -95,7 +110,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin_brand_table.php">
-                                        <span class="nav-icon material-symbols-rounded">
+                                        <span class="circle nav-icon material-symbols-rounded">
                                             circle
                                         </span>
                                         <p>Type</p>
@@ -104,16 +119,19 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#">
-                                <!-- <i class="nav-icon fas fa-solid fa-lamp"></i> -->
                                 <span class="nav-icon material-symbols-rounded">
                                     chair
                                 </span>
-                                <p>Chair<i class="fas fa-angle-left right"></i></p>
+                                <p>Chair
+                                    <i class="material-symbols-rounded right">
+                                        chevron_left
+                                    </i>
+                                </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin_chair.php">
-                                        <span class="nav-icon material-symbols-rounded">
+                                        <span class="circle nav-icon material-symbols-rounded">
                                             circle
                                         </span>
                                         <p>List</p>
@@ -121,7 +139,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin_brand_chair.php">
-                                        <span class="nav-icon material-symbols-rounded">
+                                        <span class="circle nav-icon material-symbols-rounded">
                                             circle
                                         </span>
                                         <p>Type</p>
@@ -133,18 +151,22 @@
                                 <span class="nav-icon material-symbols-rounded">
                                     king_bed
                                 </span>
-                                <p>Bed<i class="fas fa-angle-left right"></i></p>
+                                <p>Bed
+                                    <i class="material-symbols-rounded right">
+                                        chevron_left
+                                    </i>
+                                </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item"><a class="nav-link" href="admin_bed.php">
-                                        <span class="nav-icon material-symbols-rounded">
+                                        <span class="circle nav-icon material-symbols-rounded">
                                             circle
                                         </span>
                                         <p>List</p>
                                     </a></li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin_brand_bed.php">
-                                        <span class="nav-icon material-symbols-rounded">
+                                        <span class="circle nav-icon material-symbols-rounded">
                                             circle
                                         </span>
                                         <p>Type</p>
@@ -157,12 +179,16 @@
                                 <span class="nav-icon material-symbols-rounded">
                                     floor_lamp
                                 </span>
-                                <p>Lamp<i class="fas fa-angle-left right"></i></p>
+                                <p>Lamp
+                                    <i class="material-symbols-rounded right">
+                                        chevron_left
+                                    </i>
+                                </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin_lamp.php">
-                                        <span class="nav-icon material-symbols-rounded">
+                                        <span class="circle nav-icon material-symbols-rounded">
                                             circle
                                         </span>
                                         <p>List</p>
@@ -170,7 +196,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin_brand_lamp.php">
-                                        <span class="nav-icon material-symbols-rounded">
+                                        <span class="circle nav-icon material-symbols-rounded">
                                             circle
                                         </span>
                                         <p>Type</p>

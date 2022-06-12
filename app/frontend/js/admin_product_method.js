@@ -1,4 +1,3 @@
-
 $("#table-product").DataTable({
     responsive: true,
     lengthChange: false,

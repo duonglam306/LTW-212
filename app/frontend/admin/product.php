@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12 col-md-6 m-2">
                                     <button class="btn btn-add btn-primary" type="button">Add new <?php echo $type ?> product</button>
                                 </div>
                             </div>
