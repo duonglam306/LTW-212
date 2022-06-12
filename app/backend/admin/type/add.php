@@ -1,6 +1,6 @@
 <?php
     $name = strtolower($_POST['name']);
-    $type=$_POST['type']    
+    $type=$_POST['type'];    
 
     $host = "localhost";
     $user = "root";

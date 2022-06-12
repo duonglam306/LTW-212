@@ -23,7 +23,7 @@
         <div class="col-lg-3">
             <h1 class="h2 pb-4">Categories</h1>
             <ul class="list-unstyled">
-            <li class=" category-menu-item">
+                <li class=" category-menu-item">
                     <a class="collapsed d-flex h3 text-decoration-none nav-link link-dark" href="table.php">
                         Table
                         <div>
@@ -99,7 +99,7 @@
                     </select>
                 </div>
                 <div class="col-md-2 pb-4">
-                    <button type="button" class="btn btn-warning text-dark mb-0" onclick="filterLaptop()">
+                    <button type="button" class="btn btn-warning text-dark mb-0" onclick="filterChair()">
                         Apply
                     </button>
                 </div>
@@ -125,6 +125,7 @@
                 $result = mysqli_query($conn, $query);
                 $row = mysqli_fetch_assoc($result);
                 $total_records = $row['total'];
+                if ($total_records > 0) {
                 $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
                 $limit = 9;
                 $total_page = ceil($total_records / $limit);
@@ -176,6 +177,9 @@
                             </div>";
                     }
                 }
+            } else {
+                echo "We're sorry that we couldn't find a suitable product.";
+            }
                 mysqli_close($conn);
                 ?>
             </div>
@@ -185,27 +189,29 @@
                 // BƯỚC 7: HIỂN THỊ PHÂN TRANG
 
                 // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
-                if ($current_page > 1 && $total_page > 1) {
-                    if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . ($current_page - 1) . '&feature=' . $_GET['feature'] . '">Prev</a><li>';
-                    else echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . ($current_page - 1) . '">Prev</a></li>';
-                }
-
-                // Lặp khoảng giữa
-                for ($i = 1; $i <= $total_page; $i++) {
-                    // Nếu là trang hiện tại thì hiển thị thẻ span
-                    // ngược lại hiển thị thẻ a
-                    if ($i == $current_page) {
-                        echo '<li class="page-item"><span class="page-link active">' . $i . '</span> </li> ';
-                    } else {
-                        if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . $i . '&feature=' . $_GET['feature'] . '">' . $i . '</a></li>';
-                        else echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . $i . '">' . $i . '</a></li>';
+                if ($total_records > 0) {
+                    if ($current_page > 1 && $total_page > 1) {
+                        if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . ($current_page - 1) . '&feature=' . $_GET['feature'] . '">Prev</a><li>';
+                        else echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . ($current_page - 1) . '">Prev</a></li>';
                     }
-                }
 
-                // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
-                if ($current_page < $total_page && $total_page > 1) {
-                    if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . ($current_page + 1) . '&feature=' . $_GET['feature'] . '">Next</a><li>';
-                    else echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . ($current_page + 1) . '">Next</a></li>';
+                    // Lặp khoảng giữa
+                    for ($i = 1; $i <= $total_page; $i++) {
+                        // Nếu là trang hiện tại thì hiển thị thẻ span
+                        // ngược lại hiển thị thẻ a
+                        if ($i == $current_page) {
+                            echo '<li class="page-item"><span class="page-link active">' . $i . '</span> </li> ';
+                        } else {
+                            if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . $i . '&feature=' . $_GET['feature'] . '">' . $i . '</a></li>';
+                            else echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . $i . '">' . $i . '</a></li>';
+                        }
+                    }
+
+                    // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+                    if ($current_page < $total_page && $total_page > 1) {
+                        if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . ($current_page + 1) . '&feature=' . $_GET['feature'] . '">Next</a><li>';
+                        else echo '<li class="page-item"><a  class="page-link" href="chair.php?page=' . ($current_page + 1) . '">Next</a></li>';
+                    }
                 }
                 ?>
             </div>
@@ -214,7 +220,7 @@
 </div>
 <!-- End Content -->
 <script>
-    function filterLaptop(e) {
+    function filterChair(e) {
         let inputfeature = document.getElementById("filter-features").value;
         let inputPrice = document.getElementById("filter-prices").value;
         if (inputfeature == 'all' && inputPrice == 'all') window.location.href = 'chair.php';

@@ -87,7 +87,7 @@
         </nav><!-- /.navbar-->
         <!-- Main Sidebar Container-->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo--><a class="brand-link" href="#"><img class="brand-image img-circle elevation-3" src="img/favicon.ico" alt="Admin Logo"><span class="brand-text font-weight-light">Hola House</span></a><!-- Sidebar-->
+            <!-- Brand Logo--><a class="brand-link" href="admin_dashboard.php"><img class="brand-image img-circle elevation-3" src="img/favicon.ico" alt="Admin Logo"><span class="brand-text font-weight-light">Hola House</span></a><!-- Sidebar-->
             <div class="sidebar">
                 <!-- Sidebar Menu-->
                 <nav class="mt-2">

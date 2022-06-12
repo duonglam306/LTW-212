@@ -220,7 +220,7 @@
 <!-- Delete modal -->
 <div class="modal fade" id="deleteAccessoriesModal">
     <div class="modal-dialog">
-        <div class="modal-content bg-danger">
+        <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Delete About</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -233,8 +233,8 @@
                     <p></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-outline-light">Confirm</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Confirm</button>
                 </div>
             </form>
         </div>

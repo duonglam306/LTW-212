@@ -99,7 +99,7 @@
                     </select>
                 </div>
                 <div class="col-md-2 pb-4">
-                    <button type="button" class="btn btn-warning text-dark mb-0" onclick="filterLaptop()">
+                    <button type="button" class="btn btn-warning text-dark mb-0" onclick="filterBed()">
                         Apply
                     </button>
                 </div>
@@ -125,36 +125,37 @@
                 $result = mysqli_query($conn, $query);
                 $row = mysqli_fetch_assoc($result);
                 $total_records = $row['total'];
-                $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-                $limit = 9;
-                $total_page = ceil($total_records / $limit);
-                if ($current_page > $total_page) {
-                    $current_page = $total_page;
-                } else if ($current_page < 1) {
-                    $current_page = 1;
-                }
-                $start = ($current_page - 1) * $limit;
-                if ($feature == null && $price == null) {
-                    $query = "SELECT * FROM product WHERE type = 'bed' LIMIT $start, $limit";
-                } elseif ($feature == null && $price != null) {
-                    if ($price == 'low-to-high') {
-                        $query = "SELECT * FROM product WHERE type = 'bed' ORDER BY price ASC LIMIT $start, $limit";
-                    } else {
-                        $query = "SELECT * FROM product WHERE type = 'bed' ORDER BY price DESC LIMIT $start, $limit";
+                if ($total_records > 0) {
+                    $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    $limit = 9;
+                    $total_page = ceil($total_records / $limit);
+                    if ($current_page > $total_page) {
+                        $current_page = $total_page;
+                    } else if ($current_page < 1) {
+                        $current_page = 1;
                     }
-                } elseif ($feature != null && $price == null) {
-                    $query = "SELECT * FROM product WHERE type='bed' and category='$feature' LIMIT $start, $limit";
-                } else {
-                    if ($price == 'low-to-high') {
-                        $query = "SELECT * FROM product WHERE type='bed' and category='$feature' ORDER BY price ASC LIMIT $start, $limit";
+                    $start = ($current_page - 1) * $limit;
+                    if ($feature == null && $price == null) {
+                        $query = "SELECT * FROM product WHERE type = 'bed' LIMIT $start, $limit";
+                    } elseif ($feature == null && $price != null) {
+                        if ($price == 'low-to-high') {
+                            $query = "SELECT * FROM product WHERE type = 'bed' ORDER BY price ASC LIMIT $start, $limit";
+                        } else {
+                            $query = "SELECT * FROM product WHERE type = 'bed' ORDER BY price DESC LIMIT $start, $limit";
+                        }
+                    } elseif ($feature != null && $price == null) {
+                        $query = "SELECT * FROM product WHERE type='bed' and category='$feature' LIMIT $start, $limit";
                     } else {
-                        $query = "SELECT * FROM product WHERE type='bed' and category='$feature' ORDER BY price DESC LIMIT $start, $limit";
+                        if ($price == 'low-to-high') {
+                            $query = "SELECT * FROM product WHERE type='bed' and category='$feature' ORDER BY price ASC LIMIT $start, $limit";
+                        } else {
+                            $query = "SELECT * FROM product WHERE type='bed' and category='$feature' ORDER BY price DESC LIMIT $start, $limit";
+                        }
                     }
-                }
-                $result = mysqli_query($conn, $query);
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "
+                    $result = mysqli_query($conn, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "
                             <div class='col-md-4 card-group'>
                                 <div class='card mb-4 product-wap rounded-0'>
                                     <div class='card rounded-0'>
@@ -174,7 +175,10 @@
                                     </div>
                                 </div>
                             </div>";
+                        }
                     }
+                } else {
+                    echo "We're sorry that we couldn't find a suitable product.";
                 }
                 mysqli_close($conn);
                 ?>
@@ -185,27 +189,29 @@
                 // BƯỚC 7: HIỂN THỊ PHÂN TRANG
 
                 // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
-                if ($current_page > 1 && $total_page > 1) {
-                    if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . ($current_page - 1) . '&feature=' . $_GET['feature'] . '">Prev</a><li>';
-                    else echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . ($current_page - 1) . '">Prev</a></li>';
-                }
-
-                // Lặp khoảng giữa
-                for ($i = 1; $i <= $total_page; $i++) {
-                    // Nếu là trang hiện tại thì hiển thị thẻ span
-                    // ngược lại hiển thị thẻ a
-                    if ($i == $current_page) {
-                        echo '<li class="page-item"><span class="page-link active">' . $i . '</span> </li> ';
-                    } else {
-                        if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . $i . '&feature=' . $_GET['feature'] . '">' . $i . '</a></li>';
-                        else echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . $i . '">' . $i . '</a></li>';
+                if ($total_records > 0) {
+                    if ($current_page > 1 && $total_page > 1) {
+                        if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . ($current_page - 1) . '&feature=' . $_GET['feature'] . '">Prev</a><li>';
+                        else echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . ($current_page - 1) . '">Prev</a></li>';
                     }
-                }
 
-                // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
-                if ($current_page < $total_page && $total_page > 1) {
-                    if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . ($current_page + 1) . '&feature=' . $_GET['feature'] . '">Next</a><li>';
-                    else echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . ($current_page + 1) . '">Next</a></li>';
+                    // Lặp khoảng giữa
+                    for ($i = 1; $i <= $total_page; $i++) {
+                        // Nếu là trang hiện tại thì hiển thị thẻ span
+                        // ngược lại hiển thị thẻ a
+                        if ($i == $current_page) {
+                            echo '<li class="page-item"><span class="page-link active">' . $i . '</span> </li> ';
+                        } else {
+                            if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . $i . '&feature=' . $_GET['feature'] . '">' . $i . '</a></li>';
+                            else echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . $i . '">' . $i . '</a></li>';
+                        }
+                    }
+
+                    // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+                    if ($current_page < $total_page && $total_page > 1) {
+                        if (isset($_GET['feature'])) echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . ($current_page + 1) . '&feature=' . $_GET['feature'] . '">Next</a><li>';
+                        else echo '<li class="page-item"><a  class="page-link" href="bed.php?page=' . ($current_page + 1) . '">Next</a></li>';
+                    }
                 }
                 ?>
             </div>
@@ -214,7 +220,7 @@
 </div>
 <!-- End Content -->
 <script>
-    function filterLaptop(e) {
+    function filterBed(e) {
         let inputfeature = document.getElementById("filter-features").value;
         let inputPrice = document.getElementById("filter-prices").value;
         if (inputfeature == 'all' && inputPrice == 'all') window.location.href = 'bed.php';
