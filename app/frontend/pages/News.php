@@ -181,7 +181,7 @@
                                                     <textarea class="form-control" id="txtComment" placeholder="Leave a comment here!"></textarea>
                                                 </div>
                                                 <div style="margin:10px;float:right;">
-                                                    <button class="btnSubmit btn btn-secondary"  type="submit">Send comment</button>
+                                                    <button class="btnSubmit btn btn-warning"  type="submit">Send comment</button>
                                                 </div>
                                             </form>
                                         </div>

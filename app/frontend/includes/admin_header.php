@@ -74,7 +74,7 @@
                         <span class="material-symbols-rounded">
                             menu
                         </span></i></a></li>
-                <li class="nav-item d-none d-sm-inline-block"><a href="admin.php" class="nav-link">Home</a></li>
+                <li class="nav-item d-none d-sm-inline-block"><a href="admin_dashboard.php" class="nav-link">Home</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li style="margin-right:10px;"><a href="index.php" class="nav-link">Back to web</a></li>
@@ -244,6 +244,14 @@
                                 <p>Product Comments</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_postcomment.php">
+                                <span class="nav-icon material-symbols-rounded">
+                                    reviews
+                                </span>
+                                <p>Post Comments</p>
+                            </a>
+                        </li>
                         <li class="nav-header">USER INTERFACE</li>
                         <li class="nav-item">
                             <a class="nav-link" href="admin_home.php">
@@ -283,7 +291,7 @@
             </div><!-- /.sidebar-->
         </aside><!-- Content Wrapper. Contains page content-->
         <?php
-    if (isset($_COOKIE['admin'])) echo "
+        if (isset($_COOKIE['admin'])) echo "
         <script>
             function logout() {
                 sessionStorage.removeItem('" . $_COOKIE['admin'] . "');
@@ -291,4 +299,4 @@
                 window.location.href = 'admin.php';
             }
         </script>";
-    ?>
+        ?>

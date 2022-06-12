@@ -9,25 +9,26 @@ $("#table-comment").DataTable({
 });
 
 //View comment jquery
-$(document).on('click', '.btn-view-cmt-product',function(e){  
+$(document).on('click', '.btn-view-cmt-post',function(e){  
     var id = $(this).data("id");
     var title = "Comments on " + $(this).data("name");
-    $("#viewCommentProductModal .modal-title").text(title);
+    $("#viewCommentPostModal .modal-title").text(title);
     $.ajax({
-        url: "app/backend/admin/comments/product_view.php",
+        url: "app/backend/admin/comments/post_view.php",
         method: "POST",
         data: {id: id},
         success: function(data) {
-            $('#viewCommentProductModal .modal-body').html(data);
-            $("#viewCommentProductModal").modal("show");
+            $('#viewCommentPostModal .modal-body').html(data);
+            $("#viewCommentPostModal").modal("show");
         }
     });
 });
 
 //Change status jquery
 function read(id) {
-    var readTitle = "#readCheckbox" + id;
-    var blockTitle = "#blockCheckbox" + id;
+    
+    var readTitle = "#readCheckboxPost" + id;
+    var blockTitle = "#blockCheckboxPost" + id;
     var status;
     if ($(readTitle).is(':checked')) {
         status = "read";
@@ -37,8 +38,9 @@ function read(id) {
         status = "unread";
     }
     var title = "#status" + id;
+    console.log(id, status)
     $.ajax({
-        url: "app/backend/admin/comments/product_status.php",
+        url: "app/backend/admin/comments/post_status.php",
         method: "POST",
         data: {id: id, status: status},
         success: function(data) {
@@ -56,8 +58,8 @@ function read(id) {
 }
 
 function block(id) {
-    var blockTitle = "#blockCheckbox" + id;
-    var readTitle = "#readCheckbox" + id;
+    var blockTitle = "#blockCheckboxPost" + id;
+    var readTitle = "#readCheckboxPost" + id;
     var status;
     if ($(blockTitle).is(':checked')) {
         status = "block";
@@ -68,7 +70,7 @@ function block(id) {
     }
     var title = "#status" + id;
     $.ajax({
-        url: "app/backend/admin/comments/product_status.php",
+        url: "app/backend/admin/comments/post_status.php",
         method: "POST",
         data: {id: id, status: status},
         success: function(data) {
