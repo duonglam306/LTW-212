@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2022 at 08:48 AM
+-- Generation Time: Jun 12, 2022 at 02:57 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -86,10 +86,10 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id`, `title`, `title2`, `content`, `image`, `date`) VALUES
-(1, 'HOLA HOUSE', 'TABLE', 'Powerful and affordable laptops for the Student, Gamer, Social Media Connoisseur or the Home Office.', 'img/homepage1.png', '2022-06-08 18:04:08'),
-(2, 'HOLA HOUSE', 'CHAIR', 'Competitively Priced Quality Laptop Accessories.', 'img/homepage2.png', '2022-06-08 18:04:08'),
-(3, 'HOLA HOUSE', 'BED', 'For the best in laptop repair, get in contact with us today.', 'img/homepage3.png', '2022-06-08 18:04:08'),
-(4, 'HOLA HOUSE', 'LAMP', '', 'img/homepage4.png', '2022-06-08 18:05:03');
+(1, 'HOLA HOUSE TABLE', 'SIMPLE TABLE TRENDS', 'Be creative and incorporate furniture table verbs into your tagline to have more of an impact.', 'img/homepage1.png', '2022-06-12 12:49:07'),
+(2, 'HOLA HOUSE CHAIR', 'MODERN CHAIR TRENDS', 'The most comfortable chairs are here to please you.', 'img/homepage2.png', '2022-06-12 12:49:38'),
+(3, 'HOLA HOUSE BED', 'NORTH VUNGLE BED TRENDS', 'The bed you deserve at a price you can afford.', 'img/homepage3.png', '2022-06-12 12:50:52'),
+(4, 'HOLA HOUSE LAMP', 'VINTAGE LAMP TRENDS', 'Choose eco-friendly systems of lighting.', 'img/homepage4.png', '2022-06-12 12:51:04');
 
 -- --------------------------------------------------------
 
@@ -135,21 +135,21 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `type`, `amount`) VALUES
-(1, 'side table', 'table', 0),
-(2, 'dinner table', 'table', 0),
-(3, 'makeup table', 'table', 0),
-(4, 'desk', 'table', 0),
-(5, 'bed 1m2', 'bed', 0),
-(6, 'bed 1m6', 'bed', 0),
-(7, 'bed 1m8', 'bed', 0),
-(8, 'armchair', 'chair', 0),
-(9, 'dining chairs', 'chair', 0),
-(10, 'benches', 'chair', 0),
-(11, 'work chair', 'chair', 0),
-(12, 'standing lamp', 'lamp', 0),
-(13, 'table lamp', 'lamp', 0),
-(14, 'ceiling lamp', 'lamp', 0),
-(15, 'floor lamp', 'lamp', 0);
+(1, 'side table', 'table', 34),
+(2, 'dinner table', 'table', 40),
+(3, 'makeup table', 'table', 40),
+(4, 'desk', 'table', 40),
+(5, 'bed 1m2', 'bed', 10),
+(6, 'bed 1m6', 'bed', 40),
+(7, 'bed 1m8', 'bed', 40),
+(8, 'armchair', 'chair', 40),
+(9, 'dining chairs', 'chair', 40),
+(10, 'benches', 'chair', 40),
+(11, 'work chair', 'chair', 40),
+(12, 'standing lamp', 'lamp', 40),
+(13, 'table lamp', 'lamp', 40),
+(14, 'ceiling lamp', 'lamp', 40),
+(15, 'floor lamp', 'lamp', 40);
 
 -- --------------------------------------------------------
 
@@ -203,6 +203,13 @@ CREATE TABLE `feedback` (
   `message` varchar(300) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `email`, `name`, `subject`, `message`, `create_date`) VALUES
+(4, 'lamduong11201@gmail.com', 'Lâm Thành Dương', 'Sofa', 'Best sofa', '2022-06-12 12:56:29');
 
 -- --------------------------------------------------------
 
@@ -365,7 +372,8 @@ INSERT INTO `users` (`uid`, `username`, `password`, `name`, `role`, `email`, `ad
 -- Indexes for table `about_page`
 --
 ALTER TABLE `about_page`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `title` (`title`);
 
 --
 -- Indexes for table `belong`
@@ -378,7 +386,8 @@ ALTER TABLE `belong`
 -- Indexes for table `carousel`
 --
 ALTER TABLE `carousel`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `title` (`title`,`title2`);
 
 --
 -- Indexes for table `cart`
@@ -398,6 +407,7 @@ ALTER TABLE `category`
 -- Indexes for table `comment_post`
 --
 ALTER TABLE `comment_post`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `1231231231231231` (`username`),
   ADD KEY `comment_user_ibfk_1123` (`id_post`);
 
@@ -417,13 +427,15 @@ ALTER TABLE `feedback`
 -- Indexes for table `post`
 --
 ALTER TABLE `post`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `title` (`title`);
 
 --
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`uid`),
+  ADD UNIQUE KEY `name` (`name`) USING HASH,
   ADD KEY `123123123123123` (`category`);
 
 --
@@ -474,7 +486,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`

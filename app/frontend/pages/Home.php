@@ -24,6 +24,7 @@
                                 <div class="text-align-left align-self-center">
                                     <h1 class="h1" style="color: #E88D06">'.$row["title"].'</h1>
                                     <h3 class="h2">'.$row["title2"].'</h3>
+                                    <p>'.$row["content"].'</p>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +43,7 @@
                                         <div class="text-align-left align-self-center">
                                             <h1 class="h1" style="color: #E88D06">'.$row["title"].'</h1>
                                             <h3 class="h2">'.$row["title2"].'</h3>
-                                            
+                                            <p>'.$row["content"].'</p>
                                         </div>
                                     </div>
                                 </div>
