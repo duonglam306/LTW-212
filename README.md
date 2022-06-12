@@ -1,10 +1,5 @@
 ## ASSIGNMENT WEB PROGRAMMING - SEMESTER 212
 Hola House is a new e-commerce application that helps people to buy items about household, organization, ...
-## JOB LIST
-- [ ] **Hai Dang:** Admin
-- [ ] **Trung Kien:** Login, Sign Up, Contact
-- [ ] **Thanh Duong:** Product, Info, About, News
-- [ ] **Duc Long:** Cart, Home
 
 ## System Requirements
 
