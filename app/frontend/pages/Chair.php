@@ -23,7 +23,7 @@
         <div class="col-lg-3">
             <h1 class="h2 pb-4">Categories</h1>
             <ul class="list-unstyled">
-                <li class=" category-menu-item">
+            <li class=" category-menu-item">
                     <a class="collapsed d-flex h3 text-decoration-none nav-link link-dark" href="table.php">
                         Table
                         <div>

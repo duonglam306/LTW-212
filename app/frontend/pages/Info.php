@@ -142,7 +142,7 @@
     $('document').ready(function() {
         $('[data-toggle=popover]').popover({
             html: true,
-            content: '<a href="#" class="btn btn-outline-dark btn-change">Change Avatar</a>',
+            content: '<a href="#" class="btn btn-warning btn-change">Change Avatar</a>',
         }) 
     });
 

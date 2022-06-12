@@ -34,6 +34,9 @@
                                                     <p class="mb-5 text-muted text-uppercase small">'.$product['description'].'</p>
                                                 </div>
                                             <div>
+                                            <div>
+                                                <a href="#!" type="button" class="btn-remove card-link-secondary small text-uppercase mr-3" style="color:red;" data-name="'.$product['name'].'"><i class="fas fa-trash-alt mr-1"></i></a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center pb-2">
@@ -48,9 +51,6 @@
                                         </select>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <a href="#!" type="button" class="btn-remove card-link-secondary small text-uppercase mr-3" style="color:red;" data-name="'.$product['name'].'"><i class="fas fa-trash-alt mr-1"></i> Remove item </a>
-                                        </div>
                                         <p class="mb-0"><span><strong id="summary">'.number_format($product['price']).' VND</strong></span></p class="mb-0">
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                         $total_price += ($product["price"]*$product["quantity"]);
                         }
                     echo '
-                        <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding items to your cart does not mean booking them.</p>
+                        <!-- <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding items to your cart does not mean booking them.</p> -->
                     </div>
                   </div>
                 </div>
@@ -77,7 +77,7 @@
                                     <span id="temporary">'.number_format($total_price).' VND</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                    Tax
+                                    VAT
                                     <span>10%</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
@@ -90,15 +90,13 @@
                                     <span id="total" class="fw-bold">'.number_format(ceil($total_price*1.1)).' VND</span>
                                 </li>
                             </ul>
-                            <button type="button" class="btn btn-secondary btn-checkout btn-block"><i class="fas fa-wallet"></i>&nbsp Go to checkout</button>
-                            <button type="button" class="btn btn-primary btn-continue btn-block"><i class="fas fa-shopping-cart"></i>&nbspContinue shopping</button>
+                            <button type="button" class="btn btn-primary btn-checkout btn-block"><i class="fas fa-wallet"></i>&nbsp Payment</button>
+                            <!-- <button type="button" class="btn btn-primary btn-continue btn-block"><i class="fas fa-shopping-cart"></i>&nbspContinue shopping</button> -->
                             <button type="button" class="btn btn-danger delete-cart btn-checkout btn-block"><i class="fas fa-trash"></i>&nbspDelete cart</button>
-                            
                         </div>
                     </div>
                   <!-- Card -->
                 </div>
-                <!--Grid column-->
             </div>
             <!-- Grid row -->
         </section>

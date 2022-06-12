@@ -30,7 +30,7 @@
                                 echo "
 											<div class='col-md-3'>
 												<div class='dbox w-100 text-center'>
-													<div class='icon d-flex align-items-center justify-content-center' style='background-color: #28A745;'>
+													<div class='icon d-flex align-items-center justify-content-center' style='background-color: #E88D06;'>
 														<span class='fa fa-map-marker'></span>
 													</div>
 													<div class='text'>
@@ -40,31 +40,31 @@
 											</div>
 											<div class='col-md-3'>
 												<div class='dbox w-100 text-center'>
-													<div class='icon d-flex align-items-center justify-content-center' style='background-color: #28A745;'>
+													<div class='icon d-flex align-items-center justify-content-center' style='background-color: #E88D06;'>
 														<span class='fa fa-phone'></span>
 													</div>
 													<div class='text'>
-														<p><span>Phone:</span> <a href='#'>".$row['phone']."</a></p>
+														<p><span>Phone: </span>".$row['phone']."</p>
 													</div>
 												</div>
 											</div>
 											<div class='col-md-3'>
 												<div class='dbox w-100 text-center'>
-													<div class='icon d-flex align-items-center justify-content-center' style='background-color: #28A745;'>
+													<div class='icon d-flex align-items-center justify-content-center' style='background-color: #E88D06;'>
 														<span class='fa fa-paper-plane'></span>
 													</div>
 													<div class='text'>
-														<p><span>Email:</span> <a href='#'>".$row['email']."</a></p>
+														<p><span>Email: </span>".$row['email']."</p>
 													</div>
 												</div>
 											</div>
 											<div class='col-md-3'>
 												<div class='dbox w-100 text-center'>
-													<div class='icon d-flex align-items-center justify-content-center' style='background-color: #28A745;'>
+													<div class='icon d-flex align-items-center justify-content-center' style='background-color: #E88D06;'>
 														<span class='fa fa-globe'></span>
 													</div>
 													<div class='text'>
-														<p><span>Website</span> <a href='#'>".$row['website']."</a></p>
+														<p><span>Website: </span>".$row['website']."</p>
 													</div>
 												</div>
 											</div>";
@@ -75,7 +75,7 @@
 										</div>
 										<div class="row no-gutters">
 											<div class="col-md-7" id="message">
-												<div class="contact-wrap w-100 p-md-5 p-4">
+												<div class="w-100 p-md-5 p-4" style="background-color: #FED19C;">
 													<h3 class="mb-4">Write Us</h3>
 													<div id="form-message-warning" class="mb-4"></div>
 													<div id="form-message-success" class="mb-4">
@@ -109,7 +109,7 @@
 															</div>
 															<div class="col-md-12">
 																<div class="form-group">
-																	<input type="submit" value="Send Message" class="btn btn-primary" id="sendMessage">
+																	<input type="submit" value="Send Message" class="btn btn-dark" id="sendMessage">
 																	<div class="submitting"></div>
 																</div>
 															</div>

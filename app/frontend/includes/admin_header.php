@@ -78,6 +78,10 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li style="margin-right:10px;"><a href="index.php" class="nav-link">Back to web</a></li>
+                <button class='nav-icon d-none d-lg-inline px-3 btn-warning' onclick='logout()'>
+                    <i class='fa fa-fw text-white fa-sign-out-alt mr-2'></i>
+                    <span class='text-white'>Logout<span>
+                </button>
             </ul>
 
         </nav><!-- /.navbar-->

@@ -32,7 +32,6 @@
                                                 <th>Website</th>
                                                 <th>Date changed</th>
                                                 <th>Option</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>

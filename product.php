@@ -33,9 +33,7 @@ echo "
                         <!--Start Controls-->
                         <div class='col-1 align-self-center'>
                             <a href='#multi-item-example' role='button' data-bs-slide='prev'>
-                                <span class='text-dark material-symbols-rounded'>
-                                    chevron_left
-                                    </span>
+                                <i class='text-dark fas fa-chevron-left'></i>
                                 <span class='sr-only'>Previous</span>
                             </a>
                         </div>
@@ -72,9 +70,7 @@ echo "
                         <!--Start Controls-->
                         <div class='col-1 align-self-center'>
                             <a href='#multi-item-example' role='button' data-bs-slide='next'>
-                                <span class='text-dark material-symbols-rounded'>
-                                    chevron_right
-                                </span>
+                                <i class='text-dark fas fa-chevron-right'></i>
                                 <span class='sr-only'>Next</span>
                             </a>
                         </div>
@@ -86,11 +82,10 @@ echo "
                     <div class='card'>
                         <div class='card-body'>
                             <h1 class='h2'>" . $row['name'] . "</h1>
-                            <p class='h3 py-2'>" . number_format($row['price']) . " VND</p>";
-if ($row['type'] == $type) echo "
+                            <p class='h3 py-2'>" . number_format($row['price']) . " VND</p>
                             <ul class='list-inline'>
                                 <li class='list-inline-item'>
-                                    <h5>Brand:</h5>
+                                    <h5>Category:</h5>
                                 </li>
                                 <li class='list-inline-item'>
                                     <p class='text-muted'><strong>" . strtoupper($row['category']) . "</strong></p>
@@ -110,17 +105,17 @@ echo "
                                             <li class='list-inline-item text-right'>
                                                 Quantity
                                                 <input type='hidden' name='id' value='" . $row['uid'] . "'>
-                                                <input type='hidden' name='available' value='" . $row['amount'] . "'>
+                                                <input type='hidden' id='input-quantity-available' name='available' value='" . $row['amount'] . "'>
                                             </li>
-                                            <li class='list-inline-item'><span class='btn btn-warning btn-minus mb-0'>-</span></li>
+                                            <li class='list-inline-item'><button class='btn btn-warning btn-minus mb-0' disabled id='btn-minus-quantity'>-</button></li>
                                             <li class='list-inline-item'><span class='badge btn-secondary btn' id='var-value'>0</span></li>
-                                            <li class='list-inline-item'><span class='btn btn-warning btn-plus mb-0' data-quantity = '" . $row['amount'] . "'>+</span></li>
+                                            <li class='list-inline-item'><button class='btn btn-warning btn-plus mb-0' id='btn-plus-quantity' data-quantity = '" . $row['amount'] . "'>+</button></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class='row pb-3'>
                                     <div class='col d-grid'>
-                                        <button type='submit' class='btn btn-warning btn-lg' name='submit' value='addtocard'>Add To Cart</button>
+                                        <button type='submit' id='btn-add-to-cart' disabled class='btn btn-warning btn-lg' name='submit' value='addtocard'>Add To Cart</button>
                                     </div>
                                 </div>
                             </form>

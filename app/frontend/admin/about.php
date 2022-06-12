@@ -30,7 +30,6 @@
                                                 <th>Description</th>
                                                 <th>Content</th>
                                                 <th>Update Time</th>
-
                                                 <!-- <th>Image</th> -->
                                                 <th>Option</th>
                                             </tr>
