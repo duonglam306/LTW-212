@@ -3,6 +3,7 @@
         <li class="mt-5" data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
         <li class="mt-5" data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
         <li class="mt-5" data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        <li class="mt-5" data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
         <?php
