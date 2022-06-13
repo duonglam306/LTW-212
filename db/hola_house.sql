@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2022 at 06:26 PM
+-- Generation Time: Jun 13, 2022 at 04:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -171,7 +171,14 @@ CREATE TABLE `comment_post` (
 --
 
 INSERT INTO `comment_post` (`id`, `id_post`, `username`, `content`, `date`, `status`) VALUES
-(0, 22, 'lamduong123', 'useful news', '2022-06-12 16:18:51', 'block');
+(1, 22, 'lamduong123', 'useful news', '2022-06-12 16:26:55', 'read'),
+(2, 22, 'lamduong123', 'Hello', '2022-06-13 13:55:08', 'unread'),
+(3, 43, 'lamduong123', 'Hehe', '2022-06-13 13:56:24', 'unread'),
+(4, 43, 'lamduong123', 'Hohoo', '2022-06-13 13:56:31', 'unread'),
+(5, 43, 'lamduong123', 'Em nop bai day', '2022-06-13 13:56:39', 'unread'),
+(6, 43, 'lamduong123', 'Best News', '2022-06-13 13:56:46', 'unread'),
+(7, 43, 'lamduong123', 'Nhuc cai nach', '2022-06-13 13:57:04', 'unread'),
+(8, 43, 'lamduong123', 'Kien nach tham', '2022-06-13 13:57:52', 'unread');
 
 -- --------------------------------------------------------
 
@@ -350,7 +357,11 @@ CREATE TABLE `product_comments` (
 --
 
 INSERT INTO `product_comments` (`id`, `username`, `content`, `product_id`, `date`, `status`) VALUES
-(22, 'lamduong123', 'Best product. I like it', 1, '2022-06-12 15:52:46', 'read');
+(22, 'lamduong123', 'Best product. I like it', 1, '2022-06-12 15:52:46', 'read'),
+(23, 'lamduong123', 'Best product', 33, '2022-06-13 13:18:22', 'unread'),
+(24, 'lamduong123', 'bad product', 1, '2022-06-13 13:55:51', 'unread'),
+(25, 'lamduong123', 'HAI DANG HAHA', 1, '2022-06-13 13:56:03', 'unread'),
+(26, 'lamduong123', 'EM DEP LAM', 1, '2022-06-13 13:56:10', 'unread');
 
 -- --------------------------------------------------------
 
@@ -499,6 +510,12 @@ ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
+-- AUTO_INCREMENT for table `comment_post`
+--
+ALTER TABLE `comment_post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
@@ -514,7 +531,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product_comments`
 --
 ALTER TABLE `product_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `users`
