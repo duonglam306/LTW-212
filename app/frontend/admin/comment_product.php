@@ -19,13 +19,13 @@
                                     <table class="table table-bordered table-striped" id="table-comment">
                                         <thead>
                                             <tr class="text-center">
-                                                <th>Product ID</th>
-                                                <th>Product Name</th>
-                                                <th>Type</th>
-                                                <th>New Comments</th>
-                                                <th>Read Comments</th>
-                                                <th>Blocked Comments</th>
-                                                <th></th>
+                                                <th class="col-1">Product ID</th>
+                                                <th class="col-3">Product Name</th>
+                                                <th class="col-1">Type</th>
+                                                <th class="col-2">New Comments</th>
+                                                <th class="col-2">Read Comments</th>
+                                                <th class="col-2">Blocked Comments</th>
+                                                <th class="col-1"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
