@@ -170,15 +170,18 @@
                                 </header>
                                 <div class="box-content1">
                                     <div class="row">
-                                        <div class="col-1">
-                                         <img id="cmt-user-avatar" src="'.$row3["image"].'" alt="" style="width: 70px; height: 70px" alt="" class="rounded-circle border mb-2">
+                                        <div class="col-3">
+                                        <div class="d-flex justify-content-center">
+                                        <img id="cmt-user-avatar" src="'.$row3["image"].'" alt="" style="width: 70px; height: 70px" alt="" class="rounded-circle border mb-2">
                                         </div>
-                                        <div class="col-11">
+                                         <p class="text-center" style="margin-left: 10px;">'.$row3["name"].'</p>
+                                        </div>
+                                        <div class="col-9">
                                             <form id="addCommentpost">
                                                 <div class="input clearfix">
-                                                    <input id="userComment" type="text" name="username" value="'.$_COOKIE['username'].'" hidden/>
-                                                    <input id="postComment" type="text" name="username" value="'.$row['id'].'" hidden/>
-                                                    <textarea class="form-control" id="txtComment" placeholder="Leave a comment here!"></textarea>
+                                                    <input id="userCommentPost" type="text" name="username" value="'.$_COOKIE['username'].'" hidden/>
+                                                    <input id="postCommentPost" type="text" name="username" value="'.$row['id'].'" hidden/>
+                                                    <textarea class="form-control" id="txtCommentPost" placeholder="Leave a comment here!"></textarea>
                                                 </div>
                                                 <div style="margin:10px;float:right;">
                                                     <button class="btnSubmit btn btn-warning"  type="submit">Send comment</button>
@@ -187,7 +190,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="comment_list">';
+                                <div id="comment_list_post">';
                                 }
                                 else {
                                     echo "
@@ -196,12 +199,13 @@
                                             <a href='login.php'><h4>Please login to comment</h5></a>
                                         </div>
                                         </div>
-                                    </div><div id='comment_list'>";
+                                    </div><div id='comment_list_post'>";
                                 }
 
 
                             $sql2 = "SELECT * FROM comment_post JOIN users ON comment_post.username = users.username WHERE id_post = $post_id ORDER BY date DESC LIMIT 5;";
                             $result2 = mysqli_query($conn, $sql2);
+                            $row2 = mysqli_fetch_assoc($result2);
                             $sql4 = "SELECT count(*) AS num FROm comment_post WHERE id_post = $post_id";
                             $result4 = mysqli_query($conn, $sql4);
                             $row4 = mysqli_fetch_assoc($result4);
@@ -211,11 +215,13 @@
                                     <hr>
                                     <div class="box-content">
                                         <div class="row">
-                                            <div class="col-2">
-                                                <img id="cmt-user-avatar" src="'.$row2["image"].'" alt="" style="width: 70px; height: 70px" alt="" class="rounded-circle border mb-2">
-                                                <p style="margin-left: 10px;">'.$row2["username"].'</p>
+                                            <div class="col-3">
+                                            <div class="d-flex justify-content-center">
+                                            <img id="cmt-user-avatar" src="'.$row2["image"].'" alt="" style="width: 70px; height: 70px" alt="" class="rounded-circle border mb-2">
                                             </div>
-                                            <div class="col-10">
+                                                <p class="text-center" style="margin-left: 10px;">'.$row2["name"].'</p>
+                                            </div>
+                                            <div class="col-9">
                                                 <div class="input clearfix">
                                                 <p><small>'.substr($row2["date"],0, 10).'</small></p> 
                                             <p>'.$row2["content"].'</p>
@@ -229,8 +235,8 @@
                                 </section>
                                 </div>
                                 <form method="post">
-                                    <input id="read_more_number" name ="number_show" type="number" value="5" hidden/>
-                                    <input id="read_more_id" type="number" value="'.$row["id"].'" hidden/>
+                                    <input id="read_more_number_post" name ="number_show" type="number" value="5" hidden/>
+                                    <input id="read_more_id_post" type="number" value="'.$row["id"].'" hidden/>
                                 </form>';
                                 if($row4["num"]) 
                                     echo ' <button onclick="read_more()" id="read_more" class = "btn btn-secondary">Read more</button>';
