@@ -24,13 +24,13 @@
                                     <table class="table table-bordered table-striped" id="table-product">
                                         <thead>
                                             <tr class="text-center">
-                                                <th>No.</th>
-                                                <th>Name</th>
-                                                <th>Description</th>
-                                                <th>Price</th>
-                                                <th>Brand</th>
-                                                <th>Quantity</th>
-                                                <th></th>
+                                                <th class="col-1">No.</th>
+                                                <th class="col-3">Name</th>
+                                                <th class="col-3">Description</th>
+                                                <th class="col-2">Price</th>
+                                                <th class="col-1">Brand</th>
+                                                <th class="col-1">Quantity</th>
+                                                <th class="col-2"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
