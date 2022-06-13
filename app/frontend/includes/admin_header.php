@@ -223,7 +223,7 @@
                                 <span class="nav-icon material-symbols-rounded">
                                     shopping_cart
                                 </span>
-                                <p>Order</p>
+                                <p>Orders</p>
                             </a>
                         </li>
                         <li class="nav-header">POST MANAGEMENT</li>
