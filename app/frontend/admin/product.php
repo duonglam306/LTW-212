@@ -28,7 +28,7 @@
                                                 <th class="col-3">Name</th>
                                                 <th class="col-3">Description</th>
                                                 <th class="col-2">Price</th>
-                                                <th class="col-1">Brand</th>
+                                                <th class="col-1">Type</th>
                                                 <th class="col-1">Quantity</th>
                                                 <th class="col-2"></th>
                                             </tr>
