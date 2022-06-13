@@ -1,4 +1,9 @@
 <?php
+    if (isset($_COOKIE['admin']) == true) {
+        header('Location: admin_dashboard.php');
+    }
+?>
+<?php
 if (isset($_POST['submitBtn'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];

@@ -17,7 +17,7 @@
                 <div class='card card-outline'>
                     <a class='d-block w-100' data-toggle='collapse' href='#collapse".$row['id']."'>
                         <div class='card-header'>
-                            <h4 class='card-title w-100' style='color:black;'>".$row['content']." commented at ".$row['date']."</h4>
+                            <h4 class='card-title w-100' style='color:black;'>".$row['name']." commented at ".$row['date']."</h4>
                             <div id='status".$row['id']."'>";
                             if ($row['status'] == 'unread') echo "<span class='right badge badge-primary'>New</span>";
                             else if ($row['status'] == 'read') echo "<span class='right badge badge-success'>Read</span>";
