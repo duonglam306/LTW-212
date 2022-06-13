@@ -18,11 +18,13 @@
             echo '                                    <hr>
             <div class="box-content">
                 <div class="row">
-                    <div class="col-2">
-                        <img id="cmt-user-avatar" src="'.$row2["image"].'" alt="" style="width: 70px; height: 70px" alt="" class="rounded-circle border mb-2">
-                        <p style="margin-left: 10px;">'.$row2["username"].'</p>
+                    <div class="col-3">
+                    <div class="d-flex justify-content-center">
+                    <img id="cmt-user-avatar" src="'.$row2["image"].'" alt="" style="width: 70px; height: 70px" alt="" class="rounded-circle border mb-2">
                     </div>
-                    <div class="col-10">
+                        <p class="text-center" style="margin-left: 10px;">'.$row2["name"].'</p>
+                    </div>
+                    <div class="col-9">
                         <div class="input clearfix">
                         <p><small>'.substr($row2["date"],0, 10).'</small></p> 
                     <p>'.$row2["content"].'</p>
