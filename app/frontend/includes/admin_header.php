@@ -26,6 +26,8 @@
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+
         .material-symbols-rounded {
             font-variation-settings:
                 'FILL'1,
@@ -61,6 +63,24 @@
             background-size: cover;
             background-position: center bottom;
         }
+
+        .hola,
+        .house {
+            display: inline;
+            color: white;
+        }
+
+        .hola {
+            font-family: 'Reem Kufi', sans-serif;
+
+        }
+
+        .house {
+            font-family: 'Paytone One', sans-serif;
+        }
+        .nav-header{
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -78,7 +98,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li style="margin-right:10px;"><a href="index.php" class="nav-link">Back to web</a></li>
-                <button class='nav-icon d-none d-lg-inline px-3 btn-warning' onclick='logout()'>
+                <button class='nav-icon d-none d-lg-inline px-3 btn-warning' style="border-radius: 5px" onclick='logout()'>
                     <i class='fa fa-fw text-white fa-sign-out-alt mr-2'></i>
                     <span class='text-white'>Logout<span>
                 </button>
@@ -87,7 +107,16 @@
         </nav><!-- /.navbar-->
         <!-- Main Sidebar Container-->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo--><a class="brand-link" href="admin_dashboard.php"><img class="brand-image img-circle elevation-3" src="img/favicon.ico" alt="Admin Logo"><span class="brand-text font-weight-light">Hola House</span></a><!-- Sidebar-->
+            <!-- Brand Logo-->
+            <a class="brand-link" href="admin_dashboard.php">
+                <img class="brand-image img-circle elevation-3" src="img/favicon.ico" alt="Admin Logo">
+                <span class="brand-text font-weight-light">
+                    <p class="hola">Hola</p>
+                    <p class="house">HOUSÈ</p>
+                </span>
+            </a>
+
+            <!-- Sidebar-->
             <div class="sidebar">
                 <!-- Sidebar Menu-->
                 <nav class="mt-2">
@@ -208,7 +237,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-header">CUSTOMER MANAGEMENT</li>
+                        <li class="nav-header">CUSTOMERS MANAGEMENT</li>
                         <li class="nav-item">
                             <a class="nav-link" href="admin_account.php">
                                 <span class="nav-icon material-symbols-rounded">
@@ -217,7 +246,7 @@
                                 <p>Accounts</p>
                             </a>
                         </li>
-                        <li class="nav-header">ORDER MANAGEMENT</li>
+                        <li class="nav-header">ORDERS MANAGEMENT</li>
                         <li class="nav-item">
                             <a class="nav-link" href="admin_order.php">
                                 <span class="nav-icon material-symbols-rounded">
@@ -226,7 +255,7 @@
                                 <p>Orders</p>
                             </a>
                         </li>
-                        <li class="nav-header">POST MANAGEMENT</li>
+                        <li class="nav-header">POSTS MANAGEMENT</li>
                         <li class="nav-item">
                             <a class="nav-link" href="admin_post.php">
                                 <span class="nav-icon material-symbols-rounded">
@@ -277,7 +306,7 @@
                                 <p>Contacts</p>
                             </a>
                         </li>
-                        <li class="nav-header">FEEDBACK MANAGEMENT</li>
+                        <li class="nav-header">FEEDBACKS MANAGEMENT</li>
                         <li class="nav-item">
                             <a class="nav-link" href="admin_feedback.php">
                                 <span class="nav-icon material-symbols-rounded">

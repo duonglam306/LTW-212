@@ -1,7 +1,7 @@
 <?php
-    if (isset($_COOKIE['admin']) == true) {
-        header('Location: admin_dashboard.php');
-    }
+if (isset($_COOKIE['admin']) == true) {
+    header('Location: admin_dashboard.php');
+}
 ?>
 <?php
 if (isset($_POST['submitBtn'])) {
